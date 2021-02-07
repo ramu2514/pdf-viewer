@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BaseThemeGreen" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:navigationBarColor">@color/colorPrimaryGreen</item>
+    </style>
+
+    <style name="BaseThemeRed" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:navigationBarColor">@color/colorPrimaryRed</item>
+    </style>
+
+    <style name="BaseThemeBlue" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:navigationBarColor">@color/colorPrimaryBlue</item>
+    </style>
+
+    <style name="BaseThemeDark" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:navigationBarColor">@color/colorPrimaryBlack</item>
+    </style>
+
+    <style name="BaseThemeYellow" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:navigationBarColor">@color/colorPrimaryYellow</item>
+    </style>
+</resources>

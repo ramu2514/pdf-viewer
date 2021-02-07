@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="spinner_list_item_array">
+        <item>All Supported</item>
+        <item>PDF</item>
+        <item>EPUB</item>
+        <item>XPS</item>
+        <item>FB2</item>
+        <item>TIF</item>
+        <item>CBZ</item>
+    </array>
+</resources>

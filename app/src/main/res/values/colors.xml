@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDarkGreen">#1B5E20</color>
+    <color name="colorPrimaryGreen">#388E3C</color>
+    <color name="colorAccentGreen">#D81B60</color>
+
+    <color name="colorPrimaryDarkBlue">#311B92</color>
+    <color name="colorPrimaryBlue">#512DA8</color>
+    <color name="colorAccentBlue">#D81B60</color>
+
+    <color name="colorPrimaryDarkRed">#B71C1C</color>
+    <color name="colorPrimaryRed">#D32F2F</color>
+    <color name="colorAccentRed">#D81B60</color>
+
+    <color name="colorPrimaryDarkBlack">#263238</color>
+    <color name="colorPrimaryBlack">#455A64</color>
+    <color name="colorAccentBlack">#D81B60</color>
+
+    <color name="colorPrimaryDarkYellow">#F9A825</color>
+    <color name="colorPrimaryYellow">#FDD835</color>
+    <color name="colorAccentYellow">#D81B60</color>
+
+    <color name="whiteOnDarkMode">#FFFFFF</color>
+
+    <!--Page colors-->
+    <color name="blue">#D3E3FA</color>
+    <color name="pink">#f9eae0</color>
+
+    <!--Below colors switch between Night modes-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="grey">#99000000</color>
+</resources>

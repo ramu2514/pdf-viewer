@@ -1,0 +1,15 @@
+.externalNativeBuild
+.gradle
+.idea
+*.iml
+MAVEN
+android.keystore
+build
+gradle.properties
+local.properties
+gradle/
+.DS_Store
+/build
+/captures
+lib/build/
+signing.properties

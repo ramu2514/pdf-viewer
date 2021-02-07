@@ -1,0 +1,67 @@
+<resources>
+
+    <style name="BaseThemeGreen" parent="Theme.AppCompat.DayNight.NoActionBar" />
+
+    <style name="BaseThemeRed" parent="Theme.AppCompat.DayNight.NoActionBar" />
+
+    <style name="BaseThemeBlue" parent="Theme.AppCompat.DayNight.NoActionBar" />
+
+    <style name="BaseThemeDark" parent="Theme.AppCompat.DayNight.NoActionBar" />
+
+    <style name="BaseThemeYellow" parent="Theme.AppCompat.DayNight.NoActionBar" />
+
+    <style name="AppThemeRed" parent="BaseThemeRed">
+        <item name="colorPrimary">@color/colorPrimaryRed</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkRed</item>
+        <item name="colorAccent">@color/colorAccentRed</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+        <item name="readerControls">@color/colorPrimaryRed</item>
+    </style>
+
+    <style name="AppThemeGreen" parent="BaseThemeGreen">
+        <item name="colorPrimary">@color/colorPrimaryGreen</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkGreen</item>
+        <item name="colorAccent">@color/colorAccentGreen</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+        <item name="readerControls">@color/colorPrimaryGreen</item>
+    </style>
+
+    <style name="AppThemeBlue" parent="BaseThemeBlue">
+        <item name="colorPrimary">@color/colorPrimaryBlue</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkBlue</item>
+        <item name="colorAccent">@color/colorAccentBlue</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+        <item name="readerControls">@color/colorPrimaryBlue</item>
+    </style>
+
+    <style name="AppThemeYellow" parent="BaseThemeYellow">
+        <item name="colorPrimary">@color/colorPrimaryYellow</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkYellow</item>
+        <item name="colorAccent">@color/colorAccentYellow</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+        <item name="readerControls">@color/colorPrimaryYellow</item>
+    </style>
+
+    <style name="AppThemeDark" parent="BaseThemeDark">
+        <item name="colorPrimary">@color/colorPrimaryBlack</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkBlack</item>
+        <item name="colorAccent">@color/colorAccentBlack</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+        <item name="readerControls">@color/colorPrimaryBlack</item>
+    </style>
+
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up_dialog</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_down</item>
+    </style>
+
+    <style name="DialogSlideAnim" parent="@android:style/Theme.Light.Panel">
+        <item name="android:windowBackground">@drawable/background_shadow_rounded</item>
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+    </style>
+</resources>

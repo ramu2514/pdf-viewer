@@ -53,7 +53,7 @@ public class MessagingUtility {
         wv.getSettings().setJavaScriptEnabled(true);
         alert.setCancelable(false);
         alert.setView(wv);
-        alert.setPositiveButton("Close", (dialog, i) -> dialog.dismiss());
+        alert.setPositiveButton(R.string.close, (dialog, i) -> dialog.dismiss());
         alert.show();
     }
 
@@ -61,7 +61,7 @@ public class MessagingUtility {
         new AlertDialog.Builder(context)
                 .setTitle(title)
                 .setMessage(message)
-                .setPositiveButton("Dismiss", null)
+                .setPositiveButton(R.string.dismiss, null)
                 .show();
     }
 
@@ -80,21 +80,19 @@ public class MessagingUtility {
                 .setView(view)
                 .setPositiveButton(okMessage, (d, which) -> callback.onButtonClick(""));
         if (!forceDisplay) {
-            dialog.setNeutralButton("Do not show again", (dialog1, which) -> {
+            dialog.setNeutralButton(R.string.dont_Show_again, (dialog1, which) -> {
                 new AlertDialog.Builder(activity)
-                        .setTitle("Warning")
-                        .setMessage("We will not show you this dialog again. \nSince we don't have access to the folder" +
-                                "you can't edit PDF. Annotations & form filling will be disabled for the files from SDCard." +
-                                "\n\nHowever if you choose to grant access, you can grant access from settings")
-                        .setPositiveButton("Dismiss", null)
+                        .setTitle(R.string.waring)
+                        .setMessage(R.string.dont_show_again_description)
+                        .setPositiveButton(R.string.dismiss, null)
                         .show();
                 SharedPreferences.Editor editor = settings.edit();
                 editor.putBoolean("preference_sdcard_do_not_ask_again", true);
                 editor.apply();
             });
         }
-        dialog.setNegativeButton("Dismiss", (dialog12, which)
-                -> Toast.makeText(activity, "PDF opened as read only", Toast.LENGTH_LONG).show());
+        dialog.setNegativeButton(R.string.dismiss, (dialog12, which)
+                -> Toast.makeText(activity, R.string.open_readonly, Toast.LENGTH_LONG).show());
 
         dialog.show();
         return true;
@@ -110,8 +108,8 @@ public class MessagingUtility {
         wv.setLayoutParams(lp);
 
         alert.setView(wv);
-        alert.setNegativeButton("Close", (dialog, id) -> dialog.dismiss());
-        alert.setPositiveButton("Buy", (dialog, id) -> new BillinUtils(activity).buyApplication());
+        alert.setNegativeButton(R.string.close, (dialog, id) -> dialog.dismiss());
+        alert.setPositiveButton(R.string.buy, (dialog, id) -> new BillinUtils(activity).buyApplication());
         alert.show();
 
     }
@@ -119,9 +117,9 @@ public class MessagingUtility {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public static void askSafPermission(Activity activity) {
 
-        MessagingUtility.showSdcardAccessDialog(activity, "PDF not Editable",
-                "PDF files in the removable storage are not editable unless the Storage access is granted. You need to select the SDCard from side nav and provide access to SDCARD which is one time process. \nDo you want to grant access now?",
-                "Grant Permission", (String returnValue) -> PermissionUtils.takeCardUriPermission(activity), false);
+        MessagingUtility.showSdcardAccessDialog(activity, String.valueOf(R.string.pdf_not_editable),
+                activity.getString(R.string.want_to_grant_Access),
+                activity.getString(R.string.grant_permission), (String returnValue) -> PermissionUtils.takeCardUriPermission(activity), false);
     }
 
     public static void showCheckBoxDialog(Activity activity, String text, CallbackInterface callback) {
@@ -129,14 +127,27 @@ public class MessagingUtility {
         final EditText edittext = new EditText(activity);
         edittext.setText(text);
         edittext.setFocusable(true);
-        alert.setTitle("Enter Field Value");
+        alert.setTitle(R.string.enter_field_value);
         alert.setView(edittext);
-        alert.setPositiveButton("Update Text", (dialog, whichButton) -> {
+        alert.setPositiveButton(R.string.update_text, (dialog, whichButton) -> {
             String textBoxValue = edittext.getText().toString();
             dialog.dismiss();
             callback.onButtonClick(textBoxValue);
         });
-        alert.setNegativeButton("Dismiss", (dialog, which) -> dialog.dismiss());
+        alert.setNegativeButton(R.string.dismiss, (dialog, which) -> dialog.dismiss());
+        alert.setCancelable(false);
+        alert.show();
+    }
+
+    public static void showPositiveMessageDialog(Activity activity, String title, String body, String buttonMessage, CallbackInterface callback) {
+        AlertDialog.Builder alert = new AlertDialog.Builder(activity);
+        alert.setTitle(title);
+        alert.setMessage(body);
+        alert.setPositiveButton(buttonMessage, (dialog, whichButton) -> {
+            dialog.dismiss();
+            callback.onButtonClick("");
+        });
+        alert.setNegativeButton(R.string.dismiss, (dialog, which) -> dialog.dismiss());
         alert.setCancelable(false);
         alert.show();
     }

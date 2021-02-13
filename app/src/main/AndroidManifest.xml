@@ -9,7 +9,7 @@
     <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
-        android:name="com.orm.SugarApp"
+        android:name=".MultidexApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@drawable/ic_launcher"
@@ -25,7 +25,7 @@
             android:value="documents.db" />
         <meta-data
             android:name="VERSION"
-            android:value="5" />
+            android:value="6" />
         <meta-data
             android:name="QUERY_LOG"
             android:value="true" />
@@ -35,7 +35,7 @@
 
         <activity
             android:name=".MainActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
             android:hardwareAccelerated="true"
             android:label="@string/app_name">
             <intent-filter>
@@ -150,6 +150,7 @@
                 <data android:mimeType="*/*" />
             </intent-filter>
         </activity>
+        <activity android:name=".results_fragment.ThumbnailSelectionActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

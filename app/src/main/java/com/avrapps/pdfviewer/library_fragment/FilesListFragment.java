@@ -24,7 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.avrapps.pdfviewer.MainActivity;
 import com.avrapps.pdfviewer.R;
-import com.avrapps.pdfviewer.data.LibraryFiles;
+import com.avrapps.pdfviewer.library_fragment.data.LibraryFiles;
 import com.avrapps.pdfviewer.utils.DateTimeUtils;
 import com.avrapps.pdfviewer.utils.MiscUtils;
 import com.avrapps.pdfviewer.utils.StorageUtils;
@@ -200,7 +200,7 @@ public class FilesListFragment extends Fragment {
         public void onBindViewHolder(@NonNull FilesListRecycler.ViewHolder holder, int position) {
             File file = data.get(position);
             holder.storageName.setText(file.getName());
-            holder.storagePath.setText(file.getParentFile().getName() + "   .   " + DateTimeUtils.getTimeAgo(file.lastModified()));
+            holder.storagePath.setText(file.getParentFile().getName() + "   .   " + DateTimeUtils.getTimeAgo(file.lastModified(), activity));
             holder.checkBox.setVisibility(checkboxVisible && !file.isDirectory() ? View.VISIBLE : View.GONE);
             if (selectedFiles.contains(file.getAbsolutePath()))
                 holder.checkBox.setChecked(true);
@@ -257,7 +257,7 @@ public class FilesListFragment extends Fragment {
                     } else {
                         selectedFiles.remove(data.get(position).getAbsolutePath());
                     }
-                    toolbar.setTitle(selectedFiles.size() + " Selected");
+                    toolbar.setTitle(selectedFiles.size() + getString(R.string.selected));
                 });
                 View.OnClickListener listener = v -> {
                     if (asyncTask != null) asyncTask.cancel(true);

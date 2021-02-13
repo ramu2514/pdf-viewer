@@ -25,7 +25,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-import static com.avrapps.pdfviewer.constants.AppConstants.AUTO_IMPORT_FILES;
+import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.AUTO_IMPORT_FILES;
 
 
 public class PathUtils {
@@ -320,4 +320,23 @@ public class PathUtils {
         return result;
     }
 
+    public static boolean deleteDirectory(File path) {
+            if(path.exists()) {
+                File[] files = path.listFiles();
+                if (files == null) {
+                    return false;
+                }
+                for (File file : files) {
+                    if (file.isDirectory()) {
+                        deleteDirectory(file);
+                    } else {
+                        boolean wasSuccessful = file.delete();
+                        if (wasSuccessful) {
+                            Log.i("Deleted ", "successfully");
+                        }
+                    }
+                }
+            }
+            return(path.delete());
+        }
 }

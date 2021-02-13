@@ -250,7 +250,7 @@ public class BrowseFilesFragment extends Fragment {
             intent.setType(mimeTypesStr.substring(0, mimeTypesStr.length() - 1));
         }
         if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
-            startActivityForResult(Intent.createChooser(intent, "ChooseFile"), REQUEST_CODE_DOC_NEW);
+            startActivityForResult(Intent.createChooser(intent, getString(R.string.choose_file)), REQUEST_CODE_DOC_NEW);
         } else {
             Toast.makeText(getActivity(), R.string.no_file_chooser, Toast.LENGTH_LONG).show();
         }
@@ -339,10 +339,11 @@ public class BrowseFilesFragment extends Fragment {
                 holder.asyncTask.cancel(true);
         }
 
+        @SuppressLint("SetTextI18n")
         @Override
         public void onBindViewHolder(@NonNull FilesListRecycler.ViewHolder holder, int position) {
             holder.storageName.setText(data[position].getName());
-            holder.storagePath.setText("Modified : " + DateTimeUtils.getTimeAgo(data[position].lastModified()));
+            holder.storagePath.setText(getString(R.string.modified_) + DateTimeUtils.getTimeAgo(data[position].lastModified(), activity));
             holder.checkBox.setVisibility(checkboxVisible && !data[position].isDirectory() ? View.VISIBLE : View.GONE);
             if (selectedFiles.contains(data[position].getAbsolutePath()))
                 holder.checkBox.setChecked(true);
@@ -411,7 +412,7 @@ public class BrowseFilesFragment extends Fragment {
                         } else {
                             selectedFiles.remove(data[position].getAbsolutePath());
                         }
-                        toolbar.setTitle(selectedFiles.size() + " Selected");
+                        toolbar.setTitle(getString(R.string._selected, selectedFiles.size()));
                     });
                 }
                 View.OnClickListener listener = v -> {

@@ -1,6 +1,7 @@
 package com.avrapps.pdfviewer.viewer_fragment;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -23,10 +24,13 @@ import android.text.method.PasswordTransformationMethod;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
@@ -56,9 +60,9 @@ import com.artifex.mupdf.fitz.PDFAnnotation;
 import com.artifex.mupdf.fitz.PDFWidget;
 import com.avrapps.pdfviewer.MainActivity;
 import com.avrapps.pdfviewer.R;
-import com.avrapps.pdfviewer.constants.AppConstants;
-import com.avrapps.pdfviewer.data.LastOpenDocuments;
-import com.avrapps.pdfviewer.data.PdfBookmarks;
+import com.avrapps.pdfviewer.library_fragment.data.LastOpenDocuments;
+import com.avrapps.pdfviewer.library_fragment.data.PdfBookmarks;
+import com.avrapps.pdfviewer.settings_fragment.constants.AppConstants;
 import com.avrapps.pdfviewer.utils.LogUtils;
 import com.avrapps.pdfviewer.utils.MessagingUtility;
 import com.avrapps.pdfviewer.utils.MiscUtils;
@@ -79,7 +83,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-import static com.avrapps.pdfviewer.constants.AppConstants.AUTO_IMPORT_FILES;
+import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.AUTO_IMPORT_FILES;
 
 public class DocumentFragment extends Fragment {
     private static final String APP = "Doc2Frag";
@@ -159,6 +163,8 @@ public class DocumentFragment extends Fragment {
         activity.findViewById(R.id.buttonPanel).setVisibility(visibilty);
     }
 
+    String password = null;
+
     void openPDF(Bundle savedInstanceState) {
         if (core == null) {
             if (savedInstanceState != null && savedInstanceState.containsKey("FileName")) {
@@ -174,7 +180,7 @@ public class DocumentFragment extends Fragment {
             shouldExitOnBackButton = getArguments().getBoolean("shouldQuit", false);
             System.out.println("Path to open is: " + path);
             if (!path.contains(".pdf") && !Document.recognize(path)) {
-                Toast.makeText(getActivity(), "Unsupported Document Format", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), R.string.unsuppoted_format, Toast.LENGTH_LONG).show();
                 goToPreviousFragment();
                 return;
             }
@@ -212,6 +218,7 @@ public class DocumentFragment extends Fragment {
         alert.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.okay),
                 (dialog, which) -> {
                     if (core.authenticatePassword(mPasswordView.getText().toString())) {
+                        password = mPasswordView.getText().toString();
                         createUI(savedInstanceState);
                     } else {
                         requestPassword(savedInstanceState);
@@ -276,16 +283,19 @@ public class DocumentFragment extends Fragment {
                 }
             }
             if (!isPdfFromExternalStorage) {
-                core.setInternalFile();
+                if (core != null)
+                    core.setInternalFile();
                 isEditable = true;
                 return;
             }
             if (!isPermissionAlreadyGranted) {
-                core.setPickedDir(null);
+                if (core != null)
+                    core.setPickedDir(null);
                 MessagingUtility.askSafPermission(activity);
                 Log.e("Main", "Requesting SAF Permission");
             } else {
-                core.setPickedDir(fileDirectoty);
+                if (core != null)
+                    core.setPickedDir(fileDirectoty);
                 Log.e("Main", "Doc Id : " + fileDirectoty.getUri());
                 isEditable = true;
             }
@@ -507,6 +517,7 @@ public class DocumentFragment extends Fragment {
         // Stick the document view and the buttons overlay into a parent view
         readerView = view.findViewById(R.id.reader_view);
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        boolean darkMode = sp.getBoolean(AppConstants.DARK_THEME, false);
         int pageTheme = sp.getInt(AppConstants.PAGE_THEME, 0);
         int mTheme = AppConstants.PAGE_THEME_IDS.get(pageTheme);
         int readerBg = getResources().getColor(R.color.white);
@@ -515,7 +526,9 @@ public class DocumentFragment extends Fragment {
                 readerBg = getResources().getColor(R.color.blue);
                 break;
             case R.id.page_theme_dark:
-                readerBg = getResources().getColor(R.color.black);
+                if(!darkMode) {
+                    readerBg = getResources().getColor(R.color.black);
+                }
                 break;
             case R.id.page_theme_pink:
                 readerBg = getResources().getColor(R.color.pink);
@@ -523,6 +536,16 @@ public class DocumentFragment extends Fragment {
         }
         view.findViewById(R.id.docfragment).setBackgroundColor(readerBg);
         readerView.addView(mDocView);
+    }
+
+    private void showOptionsPopup(View v) {
+        new OptionsDialog(activity).show();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Log.d("LifeCycle","OnStop");
     }
 
     private void showAnnotations(List<PDFAnnotation> annotations, List<PDFWidget> widgets) {
@@ -750,7 +773,7 @@ public class DocumentFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-
+        Log.d("LifeCycle","OnPause");
         if (mSearchTask != null)
             mSearchTask.stop();
 
@@ -759,6 +782,30 @@ public class DocumentFragment extends Fragment {
             SharedPreferences.Editor edit = prefs.edit();
             edit.putInt("page" + mFileKey, mDocView.getDisplayedViewIndex());
             edit.apply();
+        }
+    }
+
+    private void makeButtonsView() {
+        mFilenameView = view.findViewById(R.id.docNameText);
+        mPageSlider = view.findViewById(R.id.pageSlider);
+        mPageNumberView = view.findViewById(R.id.pageNumber);
+        mSearchButton = view.findViewById(R.id.searchButton);
+        moreFilesButton = view.findViewById(R.id.moreFilesButton);
+        mOutlineButton = view.findViewById(R.id.outlineButton);
+        mTopBarSwitcher = view.findViewById(R.id.switcher);
+        mLowerButtons = view.findViewById(R.id.lowerButtons);
+        mSearchBack = view.findViewById(R.id.searchBack);
+        mSearchFwd = view.findViewById(R.id.searchForward);
+        mSearchClose = view.findViewById(R.id.searchClose);
+        mSearchText = view.findViewById(R.id.searchText);
+        mLayoutButton = view.findViewById(R.id.layoutButton);
+        bookmarksButton = view.findViewById(R.id.bookmarkButton);
+        handleBookmarks();
+        view.findViewById(R.id.moreOptions).setOnClickListener(this::showOptionsPopup);
+        view.findViewById(R.id.seamlessMode).setOnClickListener(this::goFullScreen);
+        if (isFullscreen) {
+            mTopBarSwitcher.setVisibility(View.INVISIBLE);
+            mLowerButtons.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -842,28 +889,11 @@ public class DocumentFragment extends Fragment {
         bookmarksButton.setImageResource(core.isBookmarkedAlready(index + 1) ? R.drawable.ic_bookmark_on : R.drawable.ic_bookmark_off);
     }
 
-    private void makeButtonsView() {
-        mFilenameView = view.findViewById(R.id.docNameText);
-        mPageSlider = view.findViewById(R.id.pageSlider);
-        mPageNumberView = view.findViewById(R.id.pageNumber);
-        mSearchButton = view.findViewById(R.id.searchButton);
-        moreFilesButton = view.findViewById(R.id.moreFilesButton);
-        mOutlineButton = view.findViewById(R.id.outlineButton);
-        mTopBarSwitcher = view.findViewById(R.id.switcher);
-        mLowerButtons = view.findViewById(R.id.lowerButtons);
-        mSearchBack = view.findViewById(R.id.searchBack);
-        mSearchFwd = view.findViewById(R.id.searchForward);
-        mSearchClose = view.findViewById(R.id.searchClose);
-        mSearchText = view.findViewById(R.id.searchText);
-        mLayoutButton = view.findViewById(R.id.layoutButton);
-        bookmarksButton = view.findViewById(R.id.bookmarkButton);
-        handleBookmarks();
-        view.findViewById(R.id.moreOptions).setOnClickListener(this::showPoPup);
-        view.findViewById(R.id.seamlessMode).setOnClickListener(this::goFullScreen);
-        if (isFullscreen) {
-            mTopBarSwitcher.setVisibility(View.INVISIBLE);
-            mLowerButtons.setVisibility(View.INVISIBLE);
-        }
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d("LifeCycle","OnResume");
+        setParents(View.GONE);
     }
 
     private void handleBookmarks() {
@@ -879,39 +909,6 @@ public class DocumentFragment extends Fragment {
             }
             manageOutline();
         });
-    }
-
-    private void showPoPup(View v) {
-        PopupMenu popup = new PopupMenu(activity, v);
-        popup.getMenuInflater().inflate(R.menu.actions, popup.getMenu());
-        popup.getMenu().findItem(R.id.print).setVisible((Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) && core.isPDF());
-
-        popup.getMenu().findItem(R.id.favorites).setTitle
-                (core.isFavorite() ? R.string.unmark_favorite : R.string.mark_favorite);
-        popup.setOnMenuItemClickListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.share:
-                    SharingUtils.sharePdf(activity, path);
-                    break;
-                case R.id.print:
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                        printPdf(activity, path);
-                    }
-                    break;
-                case R.id.fileInformation:
-                    showDocInfo();
-                    break;
-                case R.id.demo:
-                    showControls();
-                    break;
-                case R.id.favorites:
-                    handleFavoriteClick();
-                    break;
-            }
-            return true;
-        });
-
-        popup.show();
     }
 
     private void handleFavoriteClick() {
@@ -1076,10 +1073,73 @@ public class DocumentFragment extends Fragment {
         return true;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        setParents(View.GONE);
+    class OptionsDialog extends Dialog {
+
+        public OptionsDialog(@NonNull Context context) {
+            super(context, R.style.DialogSlideAnim);
+        }
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            Log.d("LifeCycle","OnCreate");
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+            setCanceledOnTouchOutside(true);
+            setDialogView(getWindow(), R.layout.options_layout);
+            boolean needPassword = core != null && core.needsPassword();
+            boolean printSupported = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && core.isPDF();
+            findViewById(R.id.tv_bm_remove_password).setVisibility(needPassword ? View.VISIBLE : View.GONE);
+            findViewById(R.id.tv_bm_protect_pdf).setVisibility(needPassword ? View.GONE : View.VISIBLE);
+            findViewById(R.id.tv_bm_print).setVisibility(printSupported && !needPassword ? View.VISIBLE : View.GONE);
+            ((TextView) findViewById(R.id.tv_bm_mark_favorite)).setText(
+                    core.isFavorite() ? R.string.unmark_favorite : R.string.mark_favorite);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                findViewById(R.id.tv_bm_print).setOnClickListener(v -> {
+                    printPdf(activity, path);
+                    dismiss();
+                });
+            }
+            findViewById(R.id.tv_bm_share).setOnClickListener(v -> {
+                SharingUtils.sharePdf(activity, path);
+                dismiss();
+            });
+            findViewById(R.id.tv_bm_document_details).setOnClickListener(v -> {
+                showDocInfo();
+                dismiss();
+            });
+            findViewById(R.id.tv_bm_navigation_help).setOnClickListener(v -> {
+                showControls();
+                dismiss();
+            });
+            findViewById(R.id.tv_bm_mark_favorite).setOnClickListener(v -> {
+                handleFavoriteClick();
+                dismiss();
+            });
+            findViewById(R.id.tv_bm_delete_pages).setOnClickListener(v -> {
+                activity.continueOperationsOnFileSelect(path, password, 3);
+                dismiss();
+            });
+            findViewById(R.id.tv_bm_remove_password).setOnClickListener(v -> {
+                activity.continueOperationsOnFileSelect(path, password, 2);
+                dismiss();
+            });
+            findViewById(R.id.tv_bm_protect_pdf).setOnClickListener(v -> {
+                activity.continueOperationsOnFileSelect(path, password, 1);
+                dismiss();
+            });
+            findViewById(R.id.tv_bm_compress_pdf).setOnClickListener(v -> {
+                activity.continueOperationsOnFileSelect(path, password, 0);
+                dismiss();
+            });
+        }
+
+        private void setDialogView(Window window, int layout) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+            window.setDimAmount(0.7f); //0 for no dim to 1 for full dim
+            window.setContentView(layout);
+            window.setGravity(Gravity.BOTTOM);
+            window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        }
     }
 
     /* The core rendering instance */

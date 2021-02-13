@@ -8,6 +8,8 @@ dependencies {
     implementation 'com.artifex.mupdf:fitz:1.17.0'
     implementation 'com.github.satyan:sugar:1.5'
     implementation 'com.android.billingclient:billing:3.0.2'
+    implementation 'com.itextpdf:itext7-core:7.1.14'
+    implementation 'com.madgag.spongycastle:core:1.58.0.0'
 }
 allprojects {
     repositories {
@@ -22,9 +24,10 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 29
-        versionName '3.2'
-        versionCode 90015
+        versionName '3.5'
+        versionCode 90016
         ndkVersion '21.3.6528147'
+        multiDexEnabled true
     }
     buildTypes {
         debug {

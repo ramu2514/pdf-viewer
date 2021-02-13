@@ -14,7 +14,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.avrapps.pdfviewer.MainActivity;
 import com.avrapps.pdfviewer.R;
-import com.avrapps.pdfviewer.data.LastOpenDocuments;
+import com.avrapps.pdfviewer.library_fragment.data.LastOpenDocuments;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -26,12 +26,10 @@ public class LibraryFragment extends Fragment {
 
     MainActivity activity;
     Toolbar toolbar;
-    List<String> tabHead = Arrays.asList("Recent", "Favorite", "Browse", "PDF Library", "EPUB", "TIFF", "XPS/CBZ/FB2"),
-            tabHeadExtensions = Arrays.asList("", "", "", ".pdf", ".epub", ".tif,.tiff", ".xps,.oxps,.cbz,.fb2"),
-            toolbarHeads = Arrays.asList("Recent Files", "Your Favorites", "Browse Files", "PDF Library", "EPUB Library", "TIFF Library", "XPS/CBZ/FB2 Library");
     ViewPager2 viewPager;
     FileListingAdapter fileListingAdapter;
     BrowseFilesFragment browseFilesFragment;
+    List<String> tabHead,tabHeadExtensions,toolbarHeads;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -43,6 +41,9 @@ public class LibraryFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         activity = (MainActivity) getActivity();
         toolbar = activity.findViewById(R.id.my_toolbar);
+        tabHead = Arrays.asList(getString(R.string.recent_title), getString(R.string.favorite_title), getString(R.string.browse_title), getString(R.string.pdf_library_title), getString(R.string.epub_library_title), getString(R.string.tiff_library_title), getString(R.string.xps_library_title));
+        tabHeadExtensions = Arrays.asList("", "", "", ".pdf", ".epub", ".tif,.tiff", ".xps,.oxps,.cbz,.fb2");
+        toolbarHeads = Arrays.asList(getString(R.string.recent_files), getString(R.string.favorites), getString(R.string.browse_files), getString(R.string.pdf_library), getString(R.string.epub_library), getString(R.string.tiff_library), getString(R.string.xps_library));
         showViewPager(view);
     }
 

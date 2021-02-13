@@ -108,7 +108,7 @@ public class DocFragment extends Fragment {
     private void openPDF(View view) {
         path = getArguments().getString("path");
         if (!path.contains(".pdf") && !Document.recognize(path)) {
-            Toast.makeText(getActivity(), "Unsupported Document Format", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), R.string.document_not_supported, Toast.LENGTH_LONG).show();
             getActivity().onBackPressed();
             return;
         }

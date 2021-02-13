@@ -21,6 +21,14 @@
     <color name="colorAccentYellow">#D81B60</color>
 
     <color name="whiteOnDarkMode">#FFFFFF</color>
+    <color name="parrot_green">#00cd43</color>
+    <color name="orange">#ff4c24</color>
+    <color name="light_green">#24b15f</color>
+    <color name="navy_blue">#3e99f5</color>
+    <color name="violet">#7961f2</color>
+    <color name="light_orange">#ff7918</color>
+    <color name="light_blue">#4ac8f2</color>
+    <color name="dark_pink">#c00c00</color>
 
     <!--Page colors-->
     <color name="blue">#D3E3FA</color>

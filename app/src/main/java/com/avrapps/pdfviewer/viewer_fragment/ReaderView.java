@@ -19,7 +19,7 @@ import android.widget.Scroller;
 import com.artifex.mupdf.fitz.PDFAnnotation;
 import com.artifex.mupdf.fitz.PDFWidget;
 import com.avrapps.pdfviewer.R;
-import com.avrapps.pdfviewer.constants.AppConstants;
+import com.avrapps.pdfviewer.settings_fragment.constants.AppConstants;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

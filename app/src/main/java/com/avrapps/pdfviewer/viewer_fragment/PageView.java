@@ -42,7 +42,7 @@ import com.artifex.mupdf.fitz.Quad;
 import com.artifex.mupdf.fitz.StructuredText;
 import com.avrapps.pdfviewer.MainActivity;
 import com.avrapps.pdfviewer.R;
-import com.avrapps.pdfviewer.constants.AppConstants;
+import com.avrapps.pdfviewer.settings_fragment.constants.AppConstants;
 import com.avrapps.pdfviewer.utils.LogUtils;
 import com.avrapps.pdfviewer.utils.MiscUtils;
 import com.avrapps.pdfviewer.utils.SharingUtils;
@@ -185,7 +185,7 @@ public class PageView extends ViewGroup {
         float scale = mSourceScale * (float) getWidth() / (float) mSize.x;
         selectText(x0, y0, x1, y1);
         if (wordsSelected.length == 0) {
-            Toast.makeText(getContext(), "No text selected", Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), R.string.no_text_selected, Toast.LENGTH_LONG).show();
             return;
         }
         int lineHeight = (int) (wordsSelected[0].ll_x - wordsSelected[0].ul_x) + cursorWidth;
@@ -221,7 +221,7 @@ public class PageView extends ViewGroup {
         setSearchBoxes(wordsSelected);
         textSelected = result.copy(a, b);
         if (textSelected.isEmpty()) {
-            Toast.makeText(mContext, "Nothing Selected", Toast.LENGTH_LONG).show();
+            Toast.makeText(mContext, R.string.nothing_selected, Toast.LENGTH_LONG).show();
             exitPopUp();
         }
     }
@@ -383,11 +383,11 @@ public class PageView extends ViewGroup {
             case R.id.comment:
                 Context context = getContext();
                 AlertDialog.Builder alert = new AlertDialog.Builder(context);
-                alert.setTitle("Comment For Note");
-                alert.setMessage("Provide a comment for the note");
+                alert.setTitle(R.string.comment_title);
+                alert.setMessage(R.string.comment_description);
                 EditText input = new EditText(context);
                 alert.setView(input);
-                alert.setPositiveButton("Add Note", (dialog, whichButton) -> annotate(PDFAnnotation.TYPE_TEXT, null));
+                alert.setPositiveButton(R.string.add_note, (dialog, whichButton) -> annotate(PDFAnnotation.TYPE_TEXT, null));
                 alert.show();
                 break;
             case R.id.shareText:

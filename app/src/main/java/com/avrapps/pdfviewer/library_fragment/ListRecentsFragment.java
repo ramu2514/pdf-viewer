@@ -24,7 +24,7 @@ import com.artifex.mupdf.fitz.Page;
 import com.artifex.mupdf.fitz.android.AndroidDrawDevice;
 import com.avrapps.pdfviewer.MainActivity;
 import com.avrapps.pdfviewer.R;
-import com.avrapps.pdfviewer.data.LastOpenDocuments;
+import com.avrapps.pdfviewer.library_fragment.data.LastOpenDocuments;
 import com.avrapps.pdfviewer.utils.DateTimeUtils;
 import com.avrapps.pdfviewer.utils.MiscUtils;
 
@@ -120,7 +120,7 @@ public class ListRecentsFragment extends Fragment {
             } else {
                 holder.fileName.setText(filename);
             }
-            holder.lastOpenDate.setText(DateTimeUtils.getTimeAgo(new Date(lastOpenDocument.getLastOpenTime()).getTime()));
+            holder.lastOpenDate.setText(DateTimeUtils.getTimeAgo(new Date(lastOpenDocument.getLastOpenTime()).getTime(), activity));
             AsyncTask.execute(() -> {
                 try {
                     Document doc = Document.openDocument(lastOpenDocument.getPathToDocument());
@@ -175,12 +175,12 @@ public class ListRecentsFragment extends Fragment {
                         dialog.setTitle(R.string.delete_faviorie_list);
                         dialog.setMessage(R.string.delete_favorite);
                     }
-                    dialog.setPositiveButton("Yes", (dialoginterface, i) -> {
+                    dialog.setPositiveButton(R.string.yes, (dialoginterface, i) -> {
                         data.get(position).delete();
                         data.remove(position);
                         notifyDataSetChanged();
                     });
-                    dialog.setNegativeButton("Dismiss", null);
+                    dialog.setNegativeButton(R.string.dismiss, null);
                     dialog.setCancelable(false);
                     dialog.show();
                     return true;

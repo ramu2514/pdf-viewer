@@ -26,18 +26,29 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:weightSum="3">
+        android:weightSum="4">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:id="@+id/open_file_button"
             android:background="?android:attr/selectableItemBackground"
             android:drawableTop="@drawable/ic_folder_black_24dp"
             android:onClick="openLibraryFragment"
             android:text="@string/open_files" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/open_tools_button"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_baseline_construction_24"
+            android:onClick="openToolsFragment"
+            android:text="@string/tools" />
 
         <Button
+            android:id="@+id/open_settings_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -50,6 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:id="@+id/more_button"
             android:background="?android:attr/selectableItemBackground"
             android:drawableTop="@drawable/ic_apps_black_24dp"
             android:onClick="openOthersFragment"

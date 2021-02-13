@@ -4,4 +4,5 @@
     <dimen name="ambilwarna_hsvWidth">240dp</dimen>
     <dimen name="ambilwarna_hueWidth">30dp</dimen>
     <dimen name="ambilwarna_spacer">8dp</dimen>
+    <dimen name="icon_size">24dp</dimen>
 </resources>

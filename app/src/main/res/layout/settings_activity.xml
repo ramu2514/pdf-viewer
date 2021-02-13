@@ -385,7 +385,7 @@
                 android:textColor="@color/black" />
 
             <Button
-                android:id="@+id/clearAllimports"
+                android:id="@+id/clearAllImports"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="?android:attr/selectableItemBackground"

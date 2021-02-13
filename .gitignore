@@ -13,3 +13,4 @@ gradle/
 /captures
 lib/build/
 signing.properties
+/app/release

@@ -17,7 +17,7 @@ import com.android.billingclient.api.BillingResult;
 import com.android.billingclient.api.Purchase;
 import com.android.billingclient.api.SkuDetails;
 import com.android.billingclient.api.SkuDetailsParams;
-import com.avrapps.pdfviewer.constants.AppConstants;
+import com.avrapps.pdfviewer.settings_fragment.constants.AppConstants;
 
 import java.util.ArrayList;
 

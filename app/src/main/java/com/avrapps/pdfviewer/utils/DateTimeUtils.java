@@ -1,5 +1,9 @@
 package com.avrapps.pdfviewer.utils;
 
+import android.content.Context;
+
+import com.avrapps.pdfviewer.R;
+
 import java.util.Date;
 
 public class DateTimeUtils {
@@ -8,7 +12,7 @@ public class DateTimeUtils {
     private static final int HOUR_MILLIS = 60 * MINUTE_MILLIS;
     private static final int DAY_MILLIS = 24 * HOUR_MILLIS;
 
-    public static String getTimeAgo(long time) {
+    public static String getTimeAgo(long time, Context c) {
         if (time < 1000000000000L) {
             // if timestamp given in seconds, convert to millis
             time *= 1000;
@@ -22,19 +26,19 @@ public class DateTimeUtils {
 
         final long diff = now - time;
         if (diff < MINUTE_MILLIS) {
-            return "Moments ago";
+            return c.getString(R.string.moments_Ago);
         } else if (diff < 2 * MINUTE_MILLIS) {
-            return "A minute ago";
+            return c.getString(R.string.minute_ago);
         } else if (diff < 50 * MINUTE_MILLIS) {
-            return diff / MINUTE_MILLIS + " minutes ago";
+            return c.getString(R.string.minutes_ago, diff / MINUTE_MILLIS);
         } else if (diff < 90 * MINUTE_MILLIS) {
-            return "An hour ago";
+            return c.getString(R.string.hour_ago);
         } else if (diff < 24 * HOUR_MILLIS) {
-            return diff / HOUR_MILLIS + " hours ago";
+            return c.getString(R.string.hours_ago, diff / HOUR_MILLIS);
         } else if (diff < 48 * HOUR_MILLIS) {
-            return "Yesterday";
+            return c.getString(R.string.yesterday);
         } else {
-            return diff / DAY_MILLIS + " days ago";
+            return c.getString(R.string.days_ago, diff / DAY_MILLIS);
         }
     }
 }

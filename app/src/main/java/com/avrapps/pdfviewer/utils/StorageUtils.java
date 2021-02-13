@@ -22,7 +22,7 @@ import androidx.core.app.ActivityCompat;
 
 import com.avrapps.pdfviewer.MainActivity;
 import com.avrapps.pdfviewer.R;
-import com.avrapps.pdfviewer.constants.AppConstants;
+import com.avrapps.pdfviewer.settings_fragment.constants.AppConstants;
 
 import java.io.File;
 import java.io.IOException;

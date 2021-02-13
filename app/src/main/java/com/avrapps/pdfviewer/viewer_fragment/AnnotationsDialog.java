@@ -3,7 +3,6 @@ package com.avrapps.pdfviewer.viewer_fragment;
 import android.app.Activity;
 import android.app.Dialog;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -74,7 +73,6 @@ public class AnnotationsDialog extends Dialog {
         window.setContentView(layout);
         window.setGravity(Gravity.BOTTOM);
         window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        window.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
     }
 
     private String getDefaultComment(int type) {
@@ -170,7 +168,7 @@ public class AnnotationsDialog extends Dialog {
             String annotationComment = annotation.getContents();
             String comment = annotationComment == null || annotationComment.isEmpty() ? annotationType : annotationComment;
             String author = String.format(activity.getString(R.string.annotation_update_info), annotationType,
-                    annotation.getAuthor(), DateTimeUtils.getTimeAgo(annotation.getModificationDate().getTime()));
+                    annotation.getAuthor(), DateTimeUtils.getTimeAgo(annotation.getModificationDate().getTime(), activity));
             holder.author.setText(author);
             holder.comment.setText(comment);
             if (isEditable) {

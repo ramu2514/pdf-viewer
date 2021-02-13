@@ -33,7 +33,7 @@ public class SharingUtils {
                 activity.startActivity(Intent.createChooser(intentShareFile, "Share File"));
             }
         } catch (Exception ex) {
-            Toast.makeText(activity, "Could not start file share", Toast.LENGTH_LONG).show();
+            Toast.makeText(activity, R.string.could_not_share, Toast.LENGTH_LONG).show();
             ex.printStackTrace();
         }
     }
@@ -73,7 +73,7 @@ public class SharingUtils {
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
         sendIntent.putExtra(Intent.EXTRA_TEXT,
-                "Hey check out this interesting app at: https://play.google.com/store/apps/details?id=" + c.getPackageName());
+                c.getString(R.string.check_out) +"https://play.google.com/store/apps/details?id=" + c.getPackageName());
         sendIntent.setType("text/plain");
         if (myStartActivity(c, sendIntent)) {
             Toast.makeText(c, R.string.error_no_apptoshare, Toast.LENGTH_SHORT).show();

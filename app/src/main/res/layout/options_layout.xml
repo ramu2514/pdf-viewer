@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+
+
+    <TextView
+        android:id="@+id/tv_bm_share"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:padding="8dp"
+        android:text="@string/share"
+        android:textColor="@color/black"
+        app:drawableLeftCompat="@drawable/ic_share_black_24dp" />
+
+    <TextView
+        android:id="@+id/tv_bm_print"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:padding="8dp"
+        android:text="@string/print"
+        android:textColor="@color/black"
+        app:drawableLeftCompat="@drawable/ic_baseline_print_24" />
+
+    <TextView
+        android:id="@+id/tv_bm_mark_favorite"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:padding="8dp"
+        android:text="@string/mark_favorite"
+        android:textColor="@color/black"
+        app:drawableLeftCompat="@drawable/ic_star_rate_black_24dp" />
+
+    <TextView
+        android:id="@+id/tv_bm_document_details"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:padding="8dp"
+        android:text="@string/document_details"
+        android:textColor="@color/black"
+        app:drawableLeftCompat="@drawable/ic_outline_info_24" />
+
+    <TextView
+        android:id="@+id/tv_bm_navigation_help"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:padding="8dp"
+        android:text="@string/navigation_help"
+        android:textColor="@color/black"
+        app:drawableLeftCompat="@drawable/ic_baseline_help_24" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/grey"
+        />
+
+    <TextView
+        android:id="@+id/tv_bm_compress_pdf"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:drawableTint="@color/black"
+        android:padding="8dp"
+        android:text="@string/compress_pdf"
+        android:textColor="@color/black"
+        app:drawableLeftCompat="@drawable/ic_compress_pdf" />
+
+    <!-- protect/unprotect single -->
+    <TextView
+        android:id="@+id/tv_bm_protect_pdf"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:drawableTint="@color/black"
+        android:padding="8dp"
+        android:text="@string/protect_pdf"
+        android:textColor="@color/black"
+        app:drawableLeftCompat="@drawable/ic_add_password"
+        />
+
+    <TextView
+        android:id="@+id/tv_bm_remove_password"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:drawableTint="@color/black"
+        android:padding="8dp"
+        android:text="@string/remove_password"
+        android:textColor="@color/black"
+        app:drawableLeftCompat="@drawable/ic_remove_password" />
+
+    <TextView
+        android:id="@+id/tv_bm_delete_pages"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:drawableTint="@color/black"
+        android:padding="8dp"
+        android:text="@string/delete_pages"
+        android:textColor="@color/black"
+        app:drawableLeftCompat="@drawable/ic_delete_pages"
+        />
+
+</LinearLayout>

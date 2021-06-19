@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <ImageView
+        android:id="@+id/storage_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="8dp" />
+
+    <TextView
+        android:id="@+id/storage_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/storage_icon"
+        android:layout_toRightOf="@id/storage_icon"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/storage_path"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/storage_name"
+        android:layout_toEndOf="@id/storage_icon"
+        android:layout_toRightOf="@id/storage_icon"
+        android:textColor="@color/black"
+        android:paddingStart="8dp"
+        android:paddingLeft="8dp" />
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:visibility="gone" />
+</RelativeLayout>

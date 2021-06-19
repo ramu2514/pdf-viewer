@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.avrapps.pdfviewer"
+    android:installLocation="auto">
+
+    <uses-sdk tools:overrideLibrary="tools.fastlane.screengrab" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <application
+        android:name=".MultidexApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppThemeGreen"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <meta-data
+            android:name="DATABASE"
+            android:value="documents.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="6" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.avrapps.pdfviewer" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2637104647414332~7260147300" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity android:name=".results_fragment.ThumbnailSelectionActivity" />
+
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="locale|orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+            android:hardwareAccelerated="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:mimeType="application/pdf" />
+                <data android:mimeType="application/vnd.ms-xpsdocument" />
+                <data android:mimeType="application/xps" />
+                <data android:mimeType="application/oxps" />
+                <data android:mimeType="application/x-cbz" />
+                <data android:mimeType="application/vnd.comicbook+zip" />
+                <data android:mimeType="application/epub+zip" />
+                <data android:mimeType="application/x-fictionbook" />
+                <data android:mimeType="text/xml" />
+                <data android:mimeType="image/tif" />
+                <data android:mimeType="image/tiff" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="file" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.pdf" />
+                <data android:pathPattern=".*\\.xps" />
+                <data android:pathPattern=".*\\.oxps" />
+                <data android:pathPattern=".*\\.cbz" />
+                <data android:pathPattern=".*\\.epub" />
+                <data android:pathPattern=".*\\.fb2" />
+                <data android:pathPattern=".*\\.tif" />
+                <data android:pathPattern=".*\\.tiff" />
+                <data android:pathPattern=".*\\..*\\.pdf" />
+                <data android:pathPattern=".*\\..*\\.xps" />
+                <data android:pathPattern=".*\\..*\\.oxps" />
+                <data android:pathPattern=".*\\..*\\.cbz" />
+                <data android:pathPattern=".*\\..*\\.epub" />
+                <data android:pathPattern=".*\\..*\\.fb2" />
+                <data android:pathPattern=".*\\..*\\.tif" />
+                <data android:pathPattern=".*\\..*\\.tiff" />
+                <data android:pathPattern=".*\\..*\\..*\\.pdf" />
+                <data android:pathPattern=".*\\..*\\..*\\.xps" />
+                <data android:pathPattern=".*\\..*\\..*\\.oxps" />
+                <data android:pathPattern=".*\\..*\\..*\\.cbz" />
+                <data android:pathPattern=".*\\..*\\..*\\.epub" />
+                <data android:pathPattern=".*\\..*\\..*\\.fb2" />
+                <data android:pathPattern=".*\\..*\\..*\\.tif" />
+                <data android:pathPattern=".*\\..*\\..*\\.tiff" />
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.pdf" />
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.xps" />
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.oxps" />
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.cbz" />
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.epub" />
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.fb2" />
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.tif" />
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.tiff" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="file" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.pdf" />
+                <data android:pathPattern=".*\\.xps" />
+                <data android:pathPattern=".*\\.oxps" />
+                <data android:pathPattern=".*\\.cbz" />
+                <data android:pathPattern=".*\\.epub" />
+                <data android:pathPattern=".*\\.fb2" />
+                <data android:pathPattern=".*\\.tif" />
+                <data android:pathPattern=".*\\.tiff" />
+                <data android:pathPattern=".*\\..*\\.pdf" />
+                <data android:pathPattern=".*\\..*\\.xps" />
+                <data android:pathPattern=".*\\..*\\.oxps" />
+                <data android:pathPattern=".*\\..*\\.cbz" />
+                <data android:pathPattern=".*\\..*\\.epub" />
+                <data android:pathPattern=".*\\..*\\.fb2" />
+                <data android:pathPattern=".*\\..*\\.tif" />
+                <data android:pathPattern=".*\\..*\\.tiff" />
+                <data android:pathPattern=".*\\..*\\..*\\.pdf" />
+                <data android:pathPattern=".*\\..*\\..*\\.xps" />
+                <data android:pathPattern=".*\\..*\\..*\\.oxps" />
+                <data android:pathPattern=".*\\..*\\..*\\.cbz" />
+                <data android:pathPattern=".*\\..*\\..*\\.epub" />
+                <data android:pathPattern=".*\\..*\\..*\\.fb2" />
+                <data android:pathPattern=".*\\..*\\..*\\.tif" />
+                <data android:pathPattern=".*\\..*\\..*\\.tiff" />
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.pdf" />
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.xps" />
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.oxps" />
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.cbz" />
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.epub" />
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.fb2" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".TextViewerActivity"
+            android:label="@string/text_viewer"
+            android:theme="@style/AppThemeGreen">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="file" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.txt" />
+                <data android:pathPattern=".*\\.py" />
+                <data android:pathPattern=".*\\.cmd" />
+                <data android:pathPattern=".*\\.bat" />
+                <data android:pathPattern=".*\\.js" />
+                <data android:pathPattern=".*\\.css" />
+                <data android:pathPattern=".*\\.java" />
+                <data android:pathPattern=".*\\.cpp" />
+                <data android:pathPattern=".*\\.cfg" />
+                <data android:pathPattern=".*\\.props" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".HtmlViewerActivity"
+            android:label="@string/html_viewer"
+            android:theme="@style/AppThemeGreen">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:mimeType="text/html" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="file" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.html" />
+                <data android:pathPattern=".*\\.htm" />
+                <data android:pathPattern=".*\\.php" />
+                <data android:pathPattern=".*\\.aspx" />
+                <data android:pathPattern=".*\\.jsp" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

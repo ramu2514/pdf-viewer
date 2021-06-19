@@ -1,0 +1,64 @@
+{
+  "device_frame_version": "latest",
+  "default": {
+
+    "background": "./background.jpg",
+    "show_complete_frame": true,
+    "padding": 1,
+    "stack_title" : false,
+    "title_below_image": false,
+    "force_device_type": "Samsung Galaxy S10+",
+    "frame": "BLACK",
+    "use_platform": "ANDROID"
+  },
+  "data": [
+    {
+      "filter": "document_screen",
+      "keyword": {
+        "color": "#d21559"
+      }
+    },
+    {
+      "filter": "settings_screen",
+      "keyword": {
+        "color": "#feb909"
+      }
+    },
+    {
+      "filter": "tools_screen",
+      "keyword": {
+        "color": "#aa4dbc"
+      }
+    },
+    {
+      "filter": "main_screen_recents",
+      "keyword": {
+        "color": "#31bb48"
+      }
+    },
+    {
+      "filter": "toc_bookmarks",
+      "keyword": {
+        "color": "#feb909"
+      }
+    },
+    {
+      "filter": "doc_more_options",
+      "keyword": {
+        "color": "#d21559"
+      }
+    },
+    {
+      "filter": "text_selection",
+      "keyword": {
+        "color": "#feb909"
+      }
+    },
+    {
+      "filter": "annotations",
+      "keyword": {
+        "color": "#aa4dbc"
+      }
+    }
+  ]
+}

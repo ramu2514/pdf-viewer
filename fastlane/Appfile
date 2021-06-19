@@ -1,0 +1,2 @@
+json_key_file("google_play_access.json")
+package_name("com.avrapps.pdfviewer")

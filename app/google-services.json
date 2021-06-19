@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "654243674662",
+    "project_id": "pdfviewer-aeefe",
+    "storage_bucket": "pdfviewer-aeefe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654243674662:android:8a2aba83ce21b1ccb244e7",
+        "android_client_info": {
+          "package_name": "com.avrapps.pdfviewer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "654243674662-4mm72o6iuo2m79jhn2289de0vrpacs5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVa7JWn4guVKHMoBpnzv77VsKV8Aw4zYk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "654243674662-4mm72o6iuo2m79jhn2289de0vrpacs5k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

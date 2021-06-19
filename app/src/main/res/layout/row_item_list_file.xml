@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@color/white"
+    android:clickable="true"
+    android:descendantFocusability="blocksDescendants"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:ignore="UnusedAttribute">
+
+    <ImageView
+        android:id="@+id/doc_thumbnail"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:contentDescription="@string/blank" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dip"
+        android:layout_marginEnd="25dp"
+        android:layout_toEndOf="@+id/doc_thumbnail"
+        android:layout_toRightOf="@+id/doc_thumbnail"
+        android:singleLine="true"
+        android:text="Text header"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/file_extension"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_marginStart="16dip"
+        android:layout_marginEnd="25dp"
+        android:layout_toEndOf="@+id/doc_thumbnail"
+        android:layout_toRightOf="@+id/doc_thumbnail"
+        android:text="size"
+        tools:ignore="HardcodedText">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/lastOpenDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/file_extension"
+        android:layout_marginStart="16dip"
+        android:layout_marginEnd="25dp"
+        android:layout_toEndOf="@+id/doc_thumbnail"
+        android:layout_toRightOf="@+id/doc_thumbnail"
+        android:text="date of today"
+        tools:ignore="HardcodedText" />
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:visibility="gone"/>
+</RelativeLayout>

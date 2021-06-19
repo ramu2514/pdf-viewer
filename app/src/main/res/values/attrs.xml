@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="readerControls" format="color|reference" />
+
+    <declare-styleable name="ZoomRecyclerView">
+        <attr name="min_scale" format="float" />
+        <attr name="max_scale" format="float" />
+        <attr name="default_scale" format="float" />
+        <attr name="zoom_duration" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="TemplateView">
+        <attr name="gnt_template_type" format="reference"/>
+    </declare-styleable>
+</resources>

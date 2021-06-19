@@ -1,0 +1,22 @@
+# Refer: https://support.crowdin.com/configuration-file/#introduction
+#  crowdin init
+# Commands:
+#  crowdin upload sources     (or)  crowdin upload sources --identity /app/src/main/res/values/strings.xml
+#  crowdin download (or) crowdin download --identity /build/title.strings.xml
+#
+# Note: Use it only from fastlane.
+
+
+"project_id" : "440574"
+"api_token" : "ad1ea3217c49f4056373f9a75ba56909c4c3a6e32559dff110942f2fe96e738f1a0f3efa799ebc2b"
+"base_path" : "."
+"base_url" : "https://api.crowdin.com"
+"preserve_hierarchy": true
+
+files: [
+ {
+  "source" : "/app/src/main/res/values/strings.xml",
+  "translation" : "app/src/main/res/values-%android_code%/strings.xml",
+  "skip_untranslated_files": false
+ }
+ ]

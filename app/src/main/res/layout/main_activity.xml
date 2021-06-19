@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/whiteOnDarkMode" />
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/buttonPanel"
+        android:layout_below="@+id/my_toolbar" />
+
+    <LinearLayout
+        android:id="@+id/buttonPanel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:weightSum="4">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/open_file_button"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_folder_black_24dp"
+            android:onClick="openLibraryFragment"
+            android:text="@string/open_files" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/open_tools_button"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_baseline_construction_24"
+            android:onClick="openToolsFragment"
+            android:text="@string/tools" />
+
+        <Button
+            android:id="@+id/open_settings_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_settings_white_24dp"
+            android:onClick="openSettingsFragment"
+            android:text="@string/settings" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/more_button"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_apps_black_24dp"
+            android:onClick="openOthersFragment"
+            android:text="@string/more" />
+
+    </LinearLayout>
+
+</RelativeLayout>

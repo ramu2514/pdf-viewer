@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDarkGreen">#1B5E20</color>
+    <color name="colorPrimaryGreen">#388E3C</color>
+    <color name="colorAccentGreen">#D81B60</color>
+
+    <color name="colorPrimaryDarkBlue">#311B92</color>
+    <color name="colorPrimaryBlue">#512DA8</color>
+    <color name="colorAccentBlue">#D81B60</color>
+
+    <color name="colorPrimaryDarkRed">#B71C1C</color>
+    <color name="colorPrimaryRed">#D32F2F</color>
+    <color name="colorAccentRed">#D81B60</color>
+
+    <color name="colorPrimaryDarkBlack">#263238</color>
+    <color name="colorPrimaryBlack">#455A64</color>
+    <color name="colorAccentBlack">#D81B60</color>
+
+    <color name="colorPrimaryDarkYellow">#F9A825</color>
+    <color name="colorPrimaryYellow">#FDD835</color>
+    <color name="colorAccentYellow">#D81B60</color>
+
+    <color name="whiteOnDarkMode">#FFFFFF</color>
+    <color name="parrot_green">#00cd43</color>
+    <color name="orange">#ff4c24</color>
+    <color name="light_green">#24b15f</color>
+    <color name="navy_blue">#3e99f5</color>
+    <color name="violet">#7961f2</color>
+    <color name="light_orange">#ff7918</color>
+    <color name="light_blue">#4ac8f2</color>
+    <color name="dark_pink">#c00c00</color>
+
+    <color name="transparent">#00000000</color>
+
+    <!--Native ads-->
+    <color name="gnt_white">#FFFFFF</color>
+    <color name="gnt_green">#00FF00</color>
+    <color name="gnt_blue">#4285f4</color>
+    <color name="gnt_ad_green">#3A6728</color>
+    <color name="gnt_gray">#808080</color>
+    <color name="gnt_outline">#E0E0E0</color>
+
+    <!--Page colors-->
+    <color name="blue">#D3E3FA</color>
+    <color name="pink">#f9eae0</color>
+
+    <!--Below colors switch between Night modes-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="grey">#99000000</color>
+
+    <!-- BuyPro Dialog -->
+    <color name="cyan_800">#00838F</color>
+    <color name="grey_60">#666666</color>
+
+</resources>

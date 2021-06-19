@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/share_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:onClick="performAction">
+
+        <ImageView
+            android:id="@+id/share_app_icon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_share_black_24dp" />
+
+        <TextView
+            android:id="@+id/share_app_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_toEndOf="@id/share_app_icon"
+            android:layout_toRightOf="@id/share_app_icon"
+            android:text="@string/share_app"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/share_app_title"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@id/share_app_icon"
+            android:layout_toRightOf="@id/share_app_icon"
+            android:text="@string/share_our_app_body" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rate_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:onClick="performAction">
+
+        <ImageView
+            android:id="@+id/rate_app_icon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_star_rate_black_24dp" />
+
+        <TextView
+            android:id="@+id/rate_app_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_toEndOf="@id/rate_app_icon"
+            android:layout_toRightOf="@id/rate_app_icon"
+            android:text="@string/rate_app"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rate_app_title"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@id/rate_app_icon"
+            android:layout_toRightOf="@id/rate_app_icon"
+            android:text="@string/rate_app_body" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/more_apps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:onClick="performAction">
+
+        <ImageView
+            android:id="@+id/more_apps_icon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_apps_black_24dp" />
+
+        <TextView
+            android:id="@+id/more_apps_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_toEndOf="@id/more_apps_icon"
+            android:layout_toRightOf="@id/more_apps_icon"
+            android:text="@string/more_apps"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/more_apps_title"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@id/more_apps_icon"
+            android:layout_toRightOf="@id/more_apps_icon"
+            android:text="@string/more_apps_body" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/install_doc_scanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:onClick="performAction"
+        android:src="@drawable/doc_scanner" />
+</LinearLayout>

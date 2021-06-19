@@ -1,0 +1,86 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="?attr/readerControls"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/readerControls"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/searchText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:src="@drawable/ic_search_white_24dp"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/copyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:src="@drawable/ic_content_copy_white_24dp" />
+
+        <ImageButton
+            android:id="@+id/shareText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:src="@drawable/ic_share_white_24dp" />
+
+        <ImageButton
+            android:id="@+id/translateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:src="@drawable/ic_translate_white_24dp" />
+
+        <ImageButton
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:src="@drawable/ic_baseline_comment_24" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/readerControls"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/highlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:src="@drawable/ic_marker" />
+
+        <ImageButton
+            android:id="@+id/underline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:src="@drawable/ic_underline" />
+
+        <ImageButton
+            android:id="@+id/strike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:src="@drawable/ic_strikethrough" />
+
+        <ImageButton
+            android:id="@+id/exitPopup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:src="@drawable/ic_close_white_24dp" />
+
+    </LinearLayout>
+</LinearLayout>

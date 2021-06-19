@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/action_layout_4pt"
+        android:title="4pt"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/action_layout_5pt"
+        android:title="5pt"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/action_layout_6pt"
+        android:title="6pt"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/action_layout_7pt"
+        android:title="7pt"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/action_layout_8pt"
+        android:title="8pt"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/action_layout_9pt"
+        android:title="9pt"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/action_layout_10pt"
+        android:title="10pt"
+        tools:ignore="HardcodedText" />
+</menu>

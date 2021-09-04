@@ -4,7 +4,10 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
+import android.os.Environment;
+import android.provider.Settings;
 import android.util.Log;
 
 import androidx.annotation.RequiresApi;
@@ -31,7 +34,18 @@ public class PermissionUtils {
 
     public boolean checkRunTimePermission(Activity activity) {
         String[] permissionArrays = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE};
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && !Environment.isExternalStorageManager()) {
+            if (Environment.isExternalStorageManager()) {
+                //when permission is granted
+                ((MainActivity) activity).continueOperations();
+            } else {
+                //request for the permission
+                Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                Uri uri = Uri.fromParts("package", activity.getPackageName(), null);
+                intent.setData(uri);
+                activity.startActivity(intent);
+            }
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             int res = ActivityCompat.checkSelfPermission(activity, permissionArrays[0]);
             if (res != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(activity, permissionArrays, AppConstants.PERMISSIONS_REQUEST_CODE);

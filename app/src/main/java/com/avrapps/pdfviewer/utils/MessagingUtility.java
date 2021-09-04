@@ -64,20 +64,13 @@ public class MessagingUtility {
                 return true;
             }
         });
-        wv.getSettings().setJavaScriptEnabled(true);
+        wv.getSettings().setJavaScriptEnabled(false);
         alert.setCancelable(false);
         alert.setView(wv);
         alert.setPositiveButton(R.string.close, (dialog, i) -> dialog.dismiss());
         alert.show();
     }
 
-    public static void showDialogWithPositiveOption(Context context, String title, String message) {
-        new AlertDialog.Builder(context)
-                .setTitle(title)
-                .setMessage(message)
-                .setPositiveButton(R.string.dismiss, null)
-                .show();
-    }
     public static void showHtmlDialogWithPositiveOption(Context context, String message) {
         new AlertDialog.Builder(context)
                 .setMessage(Html.fromHtml(message))
@@ -159,7 +152,7 @@ public class MessagingUtility {
         alert.show();
     }
 
-    public static void showPositiveMessageDialog(Activity activity, String title, String body, String buttonMessage, CallbackInterface callback) {
+    public static void showPositiveMessageDialog(Activity activity, String title, String body, String buttonMessage, CallbackInterface callback, boolean shouldShownegative) {
         AlertDialog.Builder alert = new AlertDialog.Builder(activity);
         alert.setTitle(title);
         alert.setMessage(body);
@@ -167,7 +160,9 @@ public class MessagingUtility {
             dialog.dismiss();
             callback.onButtonClick("");
         });
-        alert.setNegativeButton(R.string.dismiss, (dialog, which) -> dialog.dismiss());
+        if(shouldShownegative) {
+            alert.setNegativeButton(R.string.dismiss, (dialog, which) -> dialog.dismiss());
+        }
         alert.setCancelable(false);
         alert.show();
     }
@@ -196,24 +191,24 @@ public class MessagingUtility {
             openSupportLink(mContext, v);
             dialog.dismiss();
         });
+        view.findViewById(R.id.change_log).setOnClickListener(v -> {
+            showWebviewDialog(mContext,"file:///android_asset/change_log.html");
+            dialog.dismiss();
+        });
         dialog.show();
     }
 
 
     public static void openSupportLink(Activity context, View view) {
-        switch (view.getId()) {
-            case R.id.twitter:
-                MiscUtils.viewInBrowser(context, "https://twitter.com/AvrApps");
-                break;
-            case R.id.facebook:
-                MiscUtils.viewInBrowser(context, "https://www.facebook.com/Avrapps");
-                break;
-            case R.id.youtube:
-                MiscUtils.viewInBrowser(context, "https://www.youtube.com/channel/UCpaFI1o4vvgK9vK5ckpGOSA/featured");
-                break;
-            case R.id.telegram:
-                MiscUtils.viewInBrowser(context, "https://t.me/joinchat/RkQRo-ZwZFmJpdLj");
-                break;
+        int id = view.getId();
+        if (id == R.id.twitter) {
+            MiscUtils.viewInBrowser(context, "https://twitter.com/AvrApps");
+        } else if (id == R.id.facebook) {
+            MiscUtils.viewInBrowser(context, "https://www.facebook.com/Avrapps");
+        } else if (id == R.id.youtube) {
+            MiscUtils.viewInBrowser(context, "https://www.youtube.com/channel/UCpaFI1o4vvgK9vK5ckpGOSA/featured");
+        } else if (id == R.id.telegram) {
+            MiscUtils.viewInBrowser(context, "https://t.me/joinchat/RkQRo-ZwZFmJpdLj");
         }
     }
 }

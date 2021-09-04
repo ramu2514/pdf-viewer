@@ -7,17 +7,40 @@
     <uses-sdk tools:overrideLibrary="tools.fastlane.screengrab" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.android.vending.BILLING" />
-
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="*" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:scheme="*" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND_MULTIPLE" />
+            <data android:scheme="*" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.GET_CONTENT" />
+            <data android:scheme="*" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.OPEN_DOCUMENT_TREE" />
+            <data android:scheme="*" />
+        </intent>
+    </queries>
     <application
         android:name=".MultidexApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@drawable/ic_launcher"
+        android:banner="@drawable/banner_pdf_viewer"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:requestLegacyExternalStorage="true"
-        android:roundIcon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeGreen"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
@@ -29,13 +52,10 @@
             android:value="6" />
         <meta-data
             android:name="QUERY_LOG"
-            android:value="true" />
+            android:value="false" />
         <meta-data
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="com.avrapps.pdfviewer" />
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2637104647414332~7260147300" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -53,10 +73,11 @@
             android:name=".MainActivity"
             android:configChanges="locale|orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
             android:hardwareAccelerated="true"
+            android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
@@ -162,6 +183,7 @@
         <activity
             android:name=".TextViewerActivity"
             android:label="@string/text_viewer"
+            android:exported="true"
             android:theme="@style/AppThemeGreen">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -195,6 +217,7 @@
         <activity
             android:name=".HtmlViewerActivity"
             android:label="@string/html_viewer"
+            android:exported="true"
             android:theme="@style/AppThemeGreen">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

@@ -120,8 +120,8 @@ public class MainActivity extends AppCompatActivity {
     private void refreshCurrentFragment() {
         Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.frame_layout);
         if (currentFragment != null) {
-            if(currentFragment instanceof LibraryFragment) {
-                ((LibraryFragment)currentFragment).onRefresh();
+            if (currentFragment instanceof LibraryFragment) {
+                ((LibraryFragment) currentFragment).onRefresh();
             }
         }
     }
@@ -210,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
         if (uri != null) {
             shouldExitOnBackButton = true;
             MiscUtils.openDoc(uri, this, new ArrayList<>());
-            FirebaseUtils.analyticsFileOpen(this,"FILE_OPEN_EXTERNAL",uri);
+            FirebaseUtils.analyticsFileOpen(this, "FILE_OPEN_EXTERNAL", uri);
         }
     }
 
@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
             TypedValue typedValue = new TypedValue();
             getApplicationContext().getTheme().resolveAttribute(android.R.attr.selectableItemBackground, typedValue, true);
 
-            Button mainButton = ((Button) findViewById(id));
+            Button mainButton = findViewById(id);
             findViewById(R.id.open_file_button).setBackgroundResource(typedValue.resourceId);
             findViewById(R.id.open_tools_button).setBackgroundResource(typedValue.resourceId);
             findViewById(R.id.open_settings_button).setBackgroundResource(typedValue.resourceId);
@@ -238,12 +238,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setButtonStyle(int button, int primaryColor) {
-        Button mainButton = ((Button) findViewById(button));
+        Button mainButton = findViewById(button);
         Drawable[] drawables = mainButton.getCompoundDrawables();
         for (Drawable drawable : drawables) {
             if (drawable != null) {
                 drawable.mutate();
-                drawable.setColorFilter(ContextCompat.getColor(this,primaryColor), PorterDuff.Mode.SRC_ATOP);
+                drawable.setColorFilter(ContextCompat.getColor(this, primaryColor), PorterDuff.Mode.SRC_ATOP);
             }
         }
         mainButton.setTextColor(ContextCompat.getColor(this, primaryColor));
@@ -329,7 +329,7 @@ public class MainActivity extends AppCompatActivity {
     public void performOperation(int operation) {
         this.operation = operation;
         Bundle bundle = new Bundle();
-        bundle.putInt( "OPERATION_" + operation , operation);
+        bundle.putInt("OPERATION_" + operation, operation);
         mFirebaseAnalytics.logEvent("TOOL_OPERATION_START", bundle);
         openBrowseFilesFragment();
     }
@@ -383,12 +383,12 @@ public class MainActivity extends AppCompatActivity {
             Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.frame_layout);
             if (fragment instanceof DocumentFragment) {
                 if ((keyCode == KeyEvent.KEYCODE_VOLUME_DOWN)) {
-                    if(event.getAction() == KeyEvent.ACTION_UP) {
+                    if (event.getAction() == KeyEvent.ACTION_UP) {
                         ((DocumentFragment) fragment).goToNextPage();
                     }
                     return true;
                 } else if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
-                    if(event.getAction() == KeyEvent.ACTION_UP) {
+                    if (event.getAction() == KeyEvent.ACTION_UP) {
                         ((DocumentFragment) fragment).goToPrevPage();
                     }
                     return true;
@@ -399,7 +399,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showGridListViewOption(boolean show) {
-            shouldShowListGridOption = show;
-            invalidateOptionsMenu();
+        shouldShowListGridOption = show;
+        invalidateOptionsMenu();
     }
 }

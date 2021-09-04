@@ -1,5 +1,9 @@
 package com.avrapps.pdfviewer.utils;
 
+import static com.android.billingclient.api.BillingClient.BillingResponseCode.OK;
+import static com.android.billingclient.api.BillingClient.BillingResponseCode.USER_CANCELED;
+import static com.android.billingclient.api.Purchase.PurchaseState.PURCHASED;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -21,10 +25,6 @@ import com.avrapps.pdfviewer.R;
 import com.avrapps.pdfviewer.settings_fragment.constants.AppConstants;
 
 import java.util.ArrayList;
-
-import static com.android.billingclient.api.BillingClient.BillingResponseCode.OK;
-import static com.android.billingclient.api.BillingClient.BillingResponseCode.USER_CANCELED;
-import static com.android.billingclient.api.Purchase.PurchaseState.PURCHASED;
 
 public class BillinUtils {
 
@@ -120,17 +120,20 @@ public class BillinUtils {
         billingClient.queryPurchasesAsync(BillingClient.SkuType.INAPP, (billingResult, list) -> {
             if (list == null || list.isEmpty()) {
                 Log.i(TAG, "No existing in app purchases found.");
-                return;
-            }
-            Log.i(TAG, "Existing purchases: " + list);
-            for (Purchase purchase : list)
-                if (purchase.getSkus().contains("pdf_viewer_lite") && purchase.getPurchaseState() == PURCHASED && purchase.isAcknowledged()) {
-                    Log.e("app_purchased","app_purchased");
-                    activity.runOnUiThread(() -> MessagingUtility.showDialogWithPositiveOption(activity, activity.getString(R.string.already_purchased), activity.getString(R.string.already_purchased_desc)));
-                    updatePreferencePurchased(purchase);
-                    return;
+                queryOneTimeProducts();
+            } else {
+                Log.i(TAG, "Existing purchases: " + list);
+                for (Purchase purchase : list) {
+                    if (purchase.getSkus().contains("pdf_viewer_lite") && purchase.getPurchaseState() == PURCHASED && purchase.isAcknowledged()) {
+                        Log.e("app_purchased", "app_purchased");
+                        activity.runOnUiThread(() -> MessagingUtility.showPositiveMessageDialog(activity, activity.getString(R.string.already_purchased),
+                                activity.getString(R.string.already_purchased_desc),
+                                activity.getString(R.string.dismiss), returnValue -> activity.recreate(), true));
+                        updatePreferencePurchased(purchase);
+                        return;
+                    }
                 }
-            queryOneTimeProducts();
+            }
         });
     }
 

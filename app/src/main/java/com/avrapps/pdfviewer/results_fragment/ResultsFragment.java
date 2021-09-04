@@ -1,5 +1,7 @@
 package com.avrapps.pdfviewer.results_fragment;
 
+import static com.avrapps.pdfviewer.tools_fragment.constants.AppConstants.TOOL_NAMES;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -10,7 +12,6 @@ import android.os.Environment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.format.Formatter;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,17 +34,10 @@ import androidx.fragment.app.Fragment;
 import com.artifex.mupdf.fitz.Document;
 import com.avrapps.pdfviewer.MainActivity;
 import com.avrapps.pdfviewer.R;
-import com.avrapps.pdfviewer.native_ads.NativeTemplateStyle;
-import com.avrapps.pdfviewer.native_ads.TemplateView;
 import com.avrapps.pdfviewer.tools_fragment.PDFUtilities;
 import com.avrapps.pdfviewer.tools_fragment.data.PDFUtilsHistory;
 import com.avrapps.pdfviewer.utils.MessagingUtility;
 import com.avrapps.pdfviewer.utils.MiscUtils;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdLoader;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
 import com.itextpdf.kernel.crypto.BadPasswordException;
 
 import java.io.File;
@@ -53,8 +47,6 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-
-import static com.avrapps.pdfviewer.tools_fragment.constants.AppConstants.TOOL_NAMES;
 
 
 public class ResultsFragment extends Fragment {
@@ -139,10 +131,6 @@ public class ResultsFragment extends Fragment {
         pagenumberButtonView.setVisibility(View.GONE);
         deletePagesView.setVisibility(View.GONE);
         extractPagesView.setVisibility(View.GONE);
-
-        TemplateView template = view.findViewById(R.id.ad_template);
-        template.setVisibility(View.GONE);
-        loadAds(template);
 
         File outputDir = new File(Environment.getExternalStorageDirectory(), "PDFViewerLite/Tools/");
         outputDir.mkdirs();
@@ -742,31 +730,5 @@ public class ResultsFragment extends Fragment {
             resultDiv.setVisibility(View.VISIBLE);
             ((TextView) activity.findViewById(R.id.result_text)).setText(result);
         });
-    }
-
-
-    private void loadAds(TemplateView template) {
-        MobileAds.initialize(activity);
-        AdLoader adLoader = new AdLoader.Builder(activity, "ca-app-pub-3940256099942544/2247696110")
-                .forNativeAd(NativeAd -> {
-                    NativeTemplateStyle styles = new NativeTemplateStyle.Builder().build();
-                    template.setStyles(styles);
-                    template.setNativeAd(NativeAd);
-
-                })
-                .withAdListener(new AdListener() {
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError adError) {
-                        Log.e("ResultFragment", "Native Ads failed to load");
-                    }
-
-                    @Override
-                    public void onAdLoaded() {
-                        super.onAdLoaded();
-                        template.setVisibility(View.VISIBLE);
-                    }
-                })
-                .build();
-        adLoader.loadAd(new AdRequest.Builder().build());
     }
 }

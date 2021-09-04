@@ -1,5 +1,13 @@
 package com.avrapps.pdfviewer.settings_fragment;
 
+import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.APP_THEME_IDS;
+import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.AUTO_IMPORT_FILES;
+import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.DARK_THEME;
+import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.KEEP_SCREEN_ON;
+import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.PAGE_THEME_IDS;
+import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.VOLUME_BUTTON_SCROLL;
+import static com.avrapps.pdfviewer.tools_fragment.constants.AppConstants.SUPPORTED_LANGUAGES;
+
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -36,14 +44,6 @@ import com.avrapps.pdfviewer.utils.PreferenceUtil;
 import java.io.File;
 import java.util.List;
 import java.util.Set;
-
-import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.APP_THEME_IDS;
-import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.AUTO_IMPORT_FILES;
-import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.DARK_THEME;
-import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.KEEP_SCREEN_ON;
-import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.PAGE_THEME_IDS;
-import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.VOLUME_BUTTON_SCROLL;
-import static com.avrapps.pdfviewer.tools_fragment.constants.AppConstants.SUPPORTED_LANGUAGES;
 
 public class SettingsFragment extends Fragment {
     private static final String TAG = "SettingsActivity";
@@ -163,7 +163,7 @@ public class SettingsFragment extends Fragment {
                 if(PathUtils.deleteDirectory(folder)){
                     Log.e("Test","Error deleting folder "+ folder);
                 }
-            });
+            }, false);
         });
         /*ContentResolver resolver1 = activity.getContentResolver();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

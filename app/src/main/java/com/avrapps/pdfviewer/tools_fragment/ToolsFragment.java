@@ -1,5 +1,8 @@
 package com.avrapps.pdfviewer.tools_fragment;
 
+import static com.avrapps.pdfviewer.tools_fragment.constants.AppConstants.TOOLS;
+import static com.avrapps.pdfviewer.tools_fragment.constants.AppConstants.TOOL_NAMES;
+
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -33,9 +36,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import static com.avrapps.pdfviewer.tools_fragment.constants.AppConstants.TOOLS;
-import static com.avrapps.pdfviewer.tools_fragment.constants.AppConstants.TOOL_NAMES;
-
 public class ToolsFragment extends Fragment {
 
     List<PDFUtilsHistory> pdfUtilsHistories;
@@ -57,7 +57,7 @@ public class ToolsFragment extends Fragment {
         this.view = view;
 
         RecyclerView recyclerView = view.findViewById(R.id.toolsRecycleView);
-        int numberOfColumns = 3;
+        final int numberOfColumns = getResources().getInteger(R.integer.grid_columns);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), numberOfColumns));
         SquareBoxesAdapter adapter = new SquareBoxesAdapter(getActivity(), TOOLS);
         recyclerView.setAdapter(adapter);
@@ -78,7 +78,7 @@ public class ToolsFragment extends Fragment {
                 }
                 PDFUtilsHistory.deleteAll(PDFUtilsHistory.class);
                 refreshRecyclerView();
-            });
+            }, false);
         });
     }
 

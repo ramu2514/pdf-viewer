@@ -96,7 +96,8 @@ public class ListRecentsFragment extends Fragment {
         if (isListViewPreferred) {
             recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         } else {
-            recyclerView.setLayoutManager(new GridLayoutManager(activity, 3));
+            final int numberOfColumns = getResources().getInteger(R.integer.grid_columns);
+            recyclerView.setLayoutManager(new GridLayoutManager(activity, numberOfColumns));
         }
         recyclerView.setAdapter(adapter);
     }

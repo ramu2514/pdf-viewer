@@ -2,27 +2,26 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'androidx.viewpager2:viewpager2:1.1.0-alpha01'
-    implementation 'com.artifex.mupdf:fitz:1.18.0' //Looks like 1.18.0 is crashing SDK 30. Rolling back to stable lib.
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.viewpager2:viewpager2:1.1.0-beta01'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'com.artifex.mupdf:fitz:1.17.0' //Looks like 1.18.0 is crashing SDK 30. Rolling back to stable lib.
     implementation 'com.github.satyan:sugar:1.5'
     implementation 'com.android.billingclient:billing:4.0.0'
     implementation 'com.itextpdf:itext7-core:7.1.14'
     implementation 'com.madgag.spongycastle:core:1.58.0.0'
-    implementation 'com.google.android.play:core:1.10.0'
-    implementation 'com.google.android.gms:play-services-ads:20.2.0'
-    implementation 'com.google.firebase:firebase-core:19.0.0'
+    implementation 'com.google.firebase:firebase-core:19.0.1'
 
-    androidTestImplementation 'tools.fastlane:screengrab:2.0.0'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test:core:1.3.0'
-    androidTestImplementation 'androidx.test:runner:1.3.0'
-    androidTestImplementation 'androidx.test:rules:1.3.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.3.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.3.0'
+    androidTestImplementation 'tools.fastlane:screengrab:2.1.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test:core:1.4.0'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test:rules:1.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.4.0'
 }
 
 allprojects {
@@ -34,12 +33,12 @@ android {
     signingConfigs {
         release
     }
-    compileSdkVersion 30
+    compileSdkVersion 31
     defaultConfig {
-        minSdkVersion 16 //change to 18while running fastlane screengrab
-        targetSdkVersion 30
-        versionName '3.8'
-        versionCode 90022
+        minSdkVersion 16 //change to 18 while running fastlane screengrab
+        targetSdkVersion 31
+        versionName '3.82'
+        versionCode 90027
         ndkVersion '21.3.6528147'
         multiDexEnabled true
 

@@ -58,7 +58,7 @@ public class ThumbnailSelectionActivity extends AppCompatActivity {
         if (bundle != null) {
             String filePath = bundle.getString("filePath");
             RecyclerView recyclerView = findViewById(R.id.recycler_view);
-            int numberOfColumns = 3;
+            final int numberOfColumns = getResources().getInteger(R.integer.grid_columns);
             recyclerView.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
             try {
                  adapter = new PdfThumbnailAdapter(filePath, this);

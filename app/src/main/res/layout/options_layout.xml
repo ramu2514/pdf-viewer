@@ -31,6 +31,18 @@
         app:drawableLeftCompat="@drawable/ic_delete_black_24dp" />
 
     <TextView
+        android:id="@+id/tv_bm_rename"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:padding="10dp"
+        android:text="@string/rename"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        app:drawableLeftCompat="@drawable/ic_edit_black_24dp" />
+
+    <TextView
         android:id="@+id/tv_bm_print"
         style="@style/TextAppearance.MaterialComponents.Headline6"
         android:layout_width="match_parent"
@@ -60,6 +72,7 @@
         android:drawablePadding="8dp"
         android:padding="10dp"
         android:text="@string/document_details"
+        android:visibility="gone"
         android:textColor="@color/black"
         app:drawableLeftCompat="@drawable/ic_outline_info_24" />
 
@@ -87,6 +100,7 @@
         android:layout_height="wrap_content"
         android:drawablePadding="8dp"
         android:drawableTint="@color/black"
+        android:visibility="gone"
         android:padding="10dp"
         android:text="@string/speak_out_visible_page"
         android:textColor="@color/black"
@@ -99,11 +113,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawablePadding="8dp"
+        android:visibility="gone"
         android:drawableTint="@color/black"
         android:padding="10dp"
         android:text="@string/compress_pdf"
         android:textColor="@color/black"
         app:drawableLeftCompat="@drawable/ic_compress_pdf" />
+
+    <TextView
+        android:id="@+id/tv_split_pdf"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:drawableTint="@color/black"
+        android:padding="10dp"
+        android:text="@string/split_pdf"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        app:drawableLeftCompat="@drawable/ic_split_pdf" />
 
     <!-- protect/unprotect single -->
     <TextView
@@ -112,6 +140,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawablePadding="8dp"
+        android:visibility="gone"
         android:drawableTint="@color/black"
         android:padding="10dp"
         android:text="@string/protect_pdf"
@@ -125,6 +154,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawablePadding="8dp"
+        android:visibility="gone"
         android:drawableTint="@color/black"
         android:padding="10dp"
         android:text="@string/remove_password"
@@ -138,6 +168,7 @@
         android:layout_height="wrap_content"
         android:drawablePadding="8dp"
         android:drawableTint="@color/black"
+        android:visibility="gone"
         android:padding="10dp"
         android:text="@string/delete_pages"
         android:textColor="@color/black"
@@ -151,6 +182,7 @@
         android:layout_height="wrap_content"
         android:drawablePadding="8dp"
         android:drawableTint="@color/black"
+        android:visibility="gone"
         android:padding="10dp"
         android:text="@string/rotate_this_page"
         android:textColor="@color/black"
@@ -163,6 +195,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawablePadding="8dp"
+        android:visibility="gone"
         android:drawableTint="@color/black"
         android:padding="10dp"
         android:text="@string/extract_pages"

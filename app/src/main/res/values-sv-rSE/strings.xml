@@ -184,7 +184,8 @@
     <string name="blank"></string>
     <string name="download">Spara till\ndokument</string>
     <string name="delete">Radera</string>
-    <string name="select_atleast_one_file">Välj minst 2 fil</string>
+    <string name="select_at_least_one_file">Välj minst 1 fil</string>
+    <string name="select_at_least_two_files">Välj minst 2 filer</string>
     <string name="entr_password_desc">Ange lösenord för den PDF du har valt. Tryck på avbryt för att välja en annan fil</string>
     <string name="enter_password_title">Ange ägarens lösenord</string>
     <string name="incorrect_password">Felaktigt lösenord. Försök att ange lösenord igen</string>
@@ -276,4 +277,13 @@
     <string name="watermark_failed"><![CDATA[Vår programvara kommer bara att ta bort under typ av vattenstämplar.\n \u25CF  Vattenstämplar av camscanner programvara på PDF-fil genereras.\n \u25CF Vattenstämplar tillagda som anteckningar i PDF\n \u25CF Vattenstämplar som läggs till som lager i PDF-sidan som inte är låsta.\n\nVattenmärken skapade av något annat sätt kommer inte att tas bort av detta verktyg. I framtiden kommer vi att försöka lägga till fler algoritmer för att ta bort vattenmärken.\n\nPDF-dokument kan uttrycka ett vattenstämpel med någon av följande tekniker:\n \u25CF Sidgrafik (som sidbakgrund, Bilder etc…) inbäddade inuti sidan.\n \u25CF Sidnumrering artefakter (rubriker, Sidfot etc…)\n \u25CF Lager i sidan(alias Valfria innehållsgrupper)\n \u25CF PDF Anteckningar (liknande andra anteckningar som Strike, Highlight, Kommentar etc…)]]></string>
     <string name="already_purchased">Redan köpt</string>
     <string name="already_purchased_desc">Du har redan köpt appen tidigare. Vi har återställt ditt köp</string>
+    <string name="rename">Döp om fil</string>
+    <string name="err_file_delete">Fel vid borttagning av filen</string>
+    <string name="err_file_rename">Det gick inte att byta namn på filen</string>
+    <string name="rename_description">Ange ett nytt namn för din fil.</string>
+    <string name="file_delete_success">Filen har tagits bort</string>
+    <string name="rename_success">Filen har bytt namn</string>
+    <string name="manage_permission_description"><![CDATA[Från och med Android 11 inaktiverades behörigheten att läsa filer på SD -kort av android om inte uttryckligt tillstånd beviljades. Vi kommer nu att omdirigera dig till inställningarna. Vänligen ge oss behörighet att läsa och hantera filerna i ditt lagringsutrymme för att aktivera funktioner som bläddra i filer, PDF -bibliotek, aktivera PDF -verktyg för att spara pdf -resultat etc. ...]]></string>
+    <string name="proceed">Fortsätt</string>
+    <string name="select_multiple_enabled">Flera urval aktiverat</string>
 </resources>

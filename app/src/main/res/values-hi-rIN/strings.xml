@@ -184,7 +184,8 @@
     <string name="blank"></string>
     <string name="download">में सहेजें\nदस्तावेज़</string>
     <string name="delete">मिटाएँ</string>
-    <string name="select_atleast_one_file">कृपया कम से कम 2 फ़ाइल चुनें</string>
+    <string name="select_at_least_one_file">कृपया कम से कम 1 फ़ाइल चुनें</string>
+    <string name="select_at_least_two_files">कृपया कम से कम 2 फ़ाइलें चुनें</string>
     <string name="entr_password_desc">आपके द्वारा चुने गए पीडीएफ के लिए पासवर्ड दर्ज करें। दूसरी फ़ाइल चुनने के लिए रद्द करें दबाएं</string>
     <string name="enter_password_title">स्वामी पासवर्ड दर्ज करें</string>
     <string name="incorrect_password">गलत पासवर्ड। पासवर्ड फिर से दर्ज करने का प्रयास करें</string>
@@ -273,7 +274,16 @@
     <string name="watermark_remove_success">वाटरमार्क सफलतापूर्वक हटाया गया</string>
     <string name="error_watermark_remove">वॉटरमार्क हटाने में त्रुटि।</string>
     <string name="watermark_not_removed">वॉटरमार्क हटाया नहीं गया?</string>
-    <string name="watermark_failed"><![CDATA[Our software will only remove below kind of watermarks.\n \u25CF  Watermarks by camscanner software on PDF file generated.\n \u25CF Watermarks added as annotations in PDF\n \u25CF Watermarks which are added as Layers in PDF page which are not locked.\n\nWatermarks created by any other way will not be removed by this tool. In future we will try to add more algorithms to remove watermarks.\n\nPDF documents may express a watermark using any of the following techniques:\n \u25CF Page Graphics(Like Page backgrounds, Images etc…) embedded inside page.\n \u25CF Pagination Artifacts(Headers, Footers etc…)\n \u25CF Layer in Page(aka Optional Content Groups)\n \u25CF PDF Annotations (similar to other annotations like Strike, Highlight, Comment etc…)]]></string>
+    <string name="watermark_failed"><![CDATA[हमारा सॉफ़्टवेयर केवल निम्न प्रकार के वॉटरमार्क हटाएगा।\n \u25CF  पीडीएफ फाइल पर कैमस्कैनर सॉफ्टवेयर द्वारा वॉटरमार्क जेनरेट किए गए।\n \u25CF वॉटरमार्क पीडीएफ में एनोटेशन के रूप में जोड़े गए\n \u25CF वॉटरमार्क जो पीडीएफ पेज में परतों के रूप में जोड़े गए हैं जो लॉक नहीं हैं।\n\nकिसी अन्य तरीके से बनाए गए वॉटरमार्क इस टूल द्वारा नहीं हटाए जाएंगे। भविष्य में हम वॉटरमार्क हटाने के लिए और एल्गोरिदम जोड़ने का प्रयास करेंगे।\n\nपीडीएफ दस्तावेज़ निम्न में से किसी भी तकनीक का उपयोग करके वॉटरमार्क व्यक्त कर सकते हैं:\n \u25CF पेज ग्राफ़िक्स (जैसे पेज बैकग्राउंड, इमेज आदि…) पेज के अंदर एम्बेडेड।\n \u25CF पेजिनेशन आर्टिफैक्ट्स (हेडर, फुटर आदि…)\n \u25CF लेयर इन पेज (उर्फ वैकल्पिक कंटेंट ग्रुप)\n \u25CF पीडीएफ एनोटेशन (स्ट्राइक, हाइलाइट, कमेंट आदि जैसे अन्य एनोटेशन के समान…)]]></string>
     <string name="already_purchased">पहले ही खरीदा गया है</string>
     <string name="already_purchased_desc">आपने पहले ही ऐप को अतीत में खरीदा है। हमने आपकी खरीद बहाल कर दी है</string>
+    <string name="rename">फाइल का नाम बदलो</string>
+    <string name="err_file_delete">फ़ाइल को हटाने में त्रुटि</string>
+    <string name="err_file_rename">फ़ाइल का नाम बदलने में त्रुटि</string>
+    <string name="rename_description">कृपया अपनी फ़ाइल के लिए नए नाम में।</string>
+    <string name="file_delete_success">फ़ाइल सफलतापूर्वक हटाई गई</string>
+    <string name="rename_success">फ़ाइल का नाम सफलतापूर्वक बदला गया</string>
+    <string name="manage_permission_description"><![CDATA[एंड्रॉइड 11 शुरू करते हुए, एसडी कार्ड में फाइलों को पढ़ने की अनुमति एंड्रॉइड द्वारा अक्षम कर दी गई थी जब तक कि स्पष्ट अनुमति नहीं दी गई थी। अब हम आपको सेटिंग्स पर रीडायरेक्ट करेंगे। कृपया हमें अपने स्टोरेज में फाइलों को पढ़ने और प्रबंधित करने की अनुमति दें ताकि ब्राउज फाइल्स, पीडीएफ लाइब्रेरी, पीडीएफ टूल्स को सेव करने के लिए पीडीएफ टूल्स को सक्षम करने जैसी सुविधाओं को सक्षम किया जा सके।]]></string>
+    <string name="proceed">आगे बढ़ना</string>
+    <string name="select_multiple_enabled">एकाधिक चयन सक्षम</string>
 </resources>

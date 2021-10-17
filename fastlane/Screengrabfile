@@ -6,6 +6,11 @@ tests_package_name('com.avrapps.pdfviewer.test')
 app_apk_path('app/build/outputs/apk/debug/app-debug.apk')
 tests_apk_path('app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk')
 
+#locales(['af','ca','cs','da','de','el','es-ES','fi','fr-FR','hu','hi','it','ja','ko','nl','no','pl','pt-BR','pt-PT','ro','ru','sv','tr','uk','vi','zh-CN','zh-TW'])
+#Additional languages not in console : https://support.google.com/googleplay/android-developer/table/4419860?hl=en :- 'ar','te',
 locales(['de-DE'])
+#Old Config-locales(['af','ar','ca','cs-CZ','da-DK','de-DE','el-GR','es-ES','fi-FI','fr-FR','hu-HU','hi-IN','it-IT','iw-IL','ja-JP','ko-KR','nl-NL','no-NO','pl-PL','pt-BR','pt-PT','ro','ru-RU','sr','sv-SE','tr-TR','uk','vi','zh-CN','zh-TW'])
+
 
 clear_previous_screenshots(false)
+#clear_previous_screenshots(true)

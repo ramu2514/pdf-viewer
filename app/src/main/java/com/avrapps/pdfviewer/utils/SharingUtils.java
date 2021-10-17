@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.StrictMode;
+import android.webkit.MimeTypeMap;
 import android.widget.Toast;
 
 import androidx.core.content.FileProvider;
@@ -22,20 +23,23 @@ public class SharingUtils {
         try {
             String authority = activity.getPackageName() + ".fileprovider";
             Uri contentUri = FileProvider.getUriForFile(activity, authority, new File(path));
-
             if (contentUri != null) {
-
                 Intent intentShareFile = new Intent(Intent.ACTION_SEND);
-                intentShareFile.setType("application/pdf");
+                intentShareFile.setType(getMimeType(contentUri));
                 intentShareFile.putExtra(Intent.EXTRA_STREAM, contentUri);
                 intentShareFile.putExtra(Intent.EXTRA_SUBJECT, activity.getString(R.string.share_subject));
                 intentShareFile.putExtra(Intent.EXTRA_TEXT, activity.getString(R.string.share_message));
-                activity.startActivity(Intent.createChooser(intentShareFile, "Share File"));
+                activity.startActivity(Intent.createChooser(intentShareFile, activity.getString(R.string.share_file)));
             }
         } catch (Exception ex) {
             Toast.makeText(activity, R.string.could_not_share, Toast.LENGTH_LONG).show();
             ex.printStackTrace();
         }
+    }
+
+    public static String getMimeType(Uri uri) {
+        String fileExtension = MimeTypeMap.getFileExtensionFromUrl(uri.toString());
+        return MimeTypeMap.getSingleton().getMimeTypeFromExtension(fileExtension.toLowerCase());
     }
 
     public static void openDeveloperPage(Context c) {

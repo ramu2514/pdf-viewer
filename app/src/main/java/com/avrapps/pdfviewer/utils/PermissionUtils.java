@@ -14,6 +14,7 @@ import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 
 import com.avrapps.pdfviewer.MainActivity;
+import com.avrapps.pdfviewer.R;
 import com.avrapps.pdfviewer.settings_fragment.constants.AppConstants;
 
 import java.util.Arrays;
@@ -39,11 +40,16 @@ public class PermissionUtils {
                 //when permission is granted
                 ((MainActivity) activity).continueOperations();
             } else {
-                //request for the permission
-                Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
-                Uri uri = Uri.fromParts("package", activity.getPackageName(), null);
-                intent.setData(uri);
-                activity.startActivity(intent);
+                MessagingUtility.showPositiveMessageDialog(activity, activity.getString(R.string.grant_permission),
+                        activity.getString(R.string.manage_permission_description),
+                        activity.getString(R.string.proceed), ret -> {
+                            //request for the permission
+                            Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                            Uri uri = Uri.fromParts("package", activity.getPackageName(), null);
+                            intent.setData(uri);
+                            activity.startActivity(intent);
+                        }, false);
+
             }
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             int res = ActivityCompat.checkSelfPermission(activity, permissionArrays[0]);

@@ -186,7 +186,8 @@
     <string name="blank" />
     <string name="download">Save To\nDocuments</string>
     <string name="delete">Delete</string>
-    <string name="select_atleast_one_file">Please select atleast 2 file</string>
+    <string name="select_at_least_one_file">Please select at least 1 file</string>
+    <string name="select_at_least_two_files">Please select at least 2 files</string>
     <string name="entr_password_desc">Enter password for the PDF you have selected. Press cancel to select another file</string>
     <string name="enter_password_title">Enter Owner Password</string>
     <string name="incorrect_password">Incorrect Password. Try entering password again</string>
@@ -278,4 +279,13 @@
     <string name="watermark_failed"><![CDATA[Our software will only remove below kind of watermarks.\n \u25CF  Watermarks by camscanner software on PDF file generated.\n \u25CF Watermarks added as annotations in PDF\n \u25CF Watermarks which are added as Layers in PDF page which are not locked.\n\nWatermarks created by any other way will not be removed by this tool. In future we will try to add more algorithms to remove watermarks.\n\nPDF documents may express a watermark using any of the following techniques:\n \u25CF Page Graphics(Like Page backgrounds, Images etc…) embedded inside page.\n \u25CF Pagination Artifacts(Headers, Footers etc…)\n \u25CF Layer in Page(aka Optional Content Groups)\n \u25CF PDF Annotations (similar to other annotations like Strike, Highlight, Comment etc…)]]></string>
     <string name="already_purchased">Already Purchased</string>
     <string name="already_purchased_desc">You have already purchased the app in the past. We have restored your purchase</string>
+    <string name="rename">Rename File</string>
+    <string name="err_file_delete">Error deleting the file</string>
+    <string name="err_file_rename">Error renaming the file</string>
+    <string name="rename_description">Please into new name for your file.</string>
+    <string name="file_delete_success">File deleted Successfully</string>
+    <string name="rename_success">File renamed successfully</string>
+    <string name="manage_permission_description"><![CDATA[Starting Android 11, the permissions to read files in SD cards was disabled by android unless explicit permission was granted. We will now redirect you to the settings. Please grant us permissions to read & manage the files in your storage to enable features like browse files, PDF library, enable PDF Tools to Save pdf result etc...]]></string>
+    <string name="proceed">Proceed</string>
+    <string name="select_multiple_enabled">Multiple Selection Enabled</string>
 </resources>

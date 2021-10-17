@@ -39,6 +39,7 @@ import com.avrapps.pdfviewer.settings_fragment.constants.AppConstants;
 import com.avrapps.pdfviewer.utils.MessagingUtility;
 import com.avrapps.pdfviewer.utils.MiscUtils;
 import com.avrapps.pdfviewer.utils.PreferenceUtil;
+import com.avrapps.pdfviewer.viewer_fragment.models.Item;
 
 import java.io.File;
 import java.text.DecimalFormat;
@@ -359,22 +360,22 @@ public class MuPDFCore {
         return outline != null;
     }
 
-    private void flattenOutlineNodes(ArrayList<DocumentFragment.Item> result, Outline[] list, String indent) {
+    private void flattenOutlineNodes(ArrayList<Item> result, Outline[] list, String indent) {
         if (list == null) {
             return;
         }
         for (Outline node : list) {
             if (node.title != null) {
                 int page = doc.pageNumberFromLocation(doc.resolveLink(node));
-                result.add(new DocumentFragment.Item(indent + node.title, page));
+                result.add(new Item(indent + node.title, page));
             }
             if (node.down != null)
                 flattenOutlineNodes(result, node.down, indent + "    ");
         }
     }
 
-    public synchronized ArrayList<DocumentFragment.Item> getOutline() {
-        ArrayList<DocumentFragment.Item> result = new ArrayList<DocumentFragment.Item>();
+    public synchronized ArrayList<Item> getOutline() {
+        ArrayList<Item> result = new ArrayList<Item>();
         flattenOutlineNodes(result, outline, "");
         return result;
     }
@@ -429,4 +430,7 @@ public class MuPDFCore {
         isEditable = true;
     }
 
+    public boolean isImage() {
+        return "Image".equals(doc.getMetaData(Document.META_FORMAT));
+    }
 }

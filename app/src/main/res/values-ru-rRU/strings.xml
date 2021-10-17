@@ -184,7 +184,8 @@
     <string name="blank"></string>
     <string name="download">Сохранить в\nдокументов</string>
     <string name="delete">Удалить</string>
-    <string name="select_atleast_one_file">Пожалуйста, выберите по крайней мере 2 файла</string>
+    <string name="select_at_least_one_file">Выберите хотя бы 1 файл</string>
+    <string name="select_at_least_two_files">Пожалуйста, выберите не менее 2 файлов</string>
     <string name="entr_password_desc">Введите пароль для выбранного PDF-файла. Нажмите \"Отмена\", чтобы выбрать другой файл</string>
     <string name="enter_password_title">Введите пароль владельца</string>
     <string name="incorrect_password">Неверный пароль. Попробуйте ввести пароль еще раз</string>
@@ -276,4 +277,13 @@
     <string name="watermark_failed"><![CDATA[Наше программное обеспечение удалит только такие водяные знаки.\n \u25CF  Водяные знаки программным обеспечением camscanner в PDF файле.\n \u25CF Водяные знаки добавлены в PDF\n \u25CF Водяные знаки, которые добавлены как Слои на странице PDF, которые не заблокированы.\n\nВодяные знаки, созданные любым другим способом, не будут удалены этим инструментом. В будущем мы постараемся добавить больше алгоритмов для удаления водяных знаков.\n\nPDF-документы могут выражать водяной знак любым из следующих методов:\n \u25CF Page Graphics (как и страницы фонов), Изображения и т.д.…) встроены внутри страницы.\n \u25CF Артефакты разбиения на страницы (заголовки, Footers и т.д.…)\n \u25CF Слой Page(aka Optional Content Groups)\n \u25CF PDF Annotations (похож на другие аннотации, такие как Strike, Выделите, Комментарий и т.д.…)]]></string>
     <string name="already_purchased">Куплено</string>
     <string name="already_purchased_desc">Вы уже приобрели приложение в прошлом. Мы восстановили вашу покупку</string>
+    <string name="rename">Переименуйте файл</string>
+    <string name="err_file_delete">Ошибка при удалении файла</string>
+    <string name="err_file_rename">Ошибка переименования файла</string>
+    <string name="rename_description">Пожалуйста, введите новое имя для вашего файла.</string>
+    <string name="file_delete_success">Файл успешно удален</string>
+    <string name="rename_success">Файл успешно переименован</string>
+    <string name="manage_permission_description"><![CDATA[Начиная с Android 11, разрешения на чтение файлов на SD-картах были отключены Android, если не было предоставлено явное разрешение. Теперь мы перенаправим вас в настройки. Пожалуйста, предоставьте нам разрешение на чтение и управление файлами в вашем хранилище, чтобы включить такие функции, как просмотр файлов, библиотека PDF, включить инструменты PDF для сохранения результатов PDF и т. Д.]]></string>
+    <string name="proceed">Продолжить</string>
+    <string name="select_multiple_enabled">Множественный выбор включен</string>
 </resources>

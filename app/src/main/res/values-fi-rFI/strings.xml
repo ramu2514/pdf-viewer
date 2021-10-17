@@ -184,7 +184,8 @@
     <string name="blank"></string>
     <string name="download">Tallenna\n-asiakirjoihin</string>
     <string name="delete">Poista</string>
-    <string name="select_atleast_one_file">Valitse vähintään 2 tiedosto</string>
+    <string name="select_at_least_one_file">Valitse vähintään yksi tiedosto</string>
+    <string name="select_at_least_two_files">Valitse vähintään 2 tiedostoa</string>
     <string name="entr_password_desc">Syötä valitsemasi PDF-tiedoston. Paina peruuta valinta valitsemalla toinen tiedosto</string>
     <string name="enter_password_title">Anna Omistajan Salasana</string>
     <string name="incorrect_password">Virheellinen salasana. Yritä kirjoittaa salasana uudelleen</string>
@@ -276,4 +277,13 @@
     <string name="watermark_failed"><![CDATA[Ohjelmistomme poistaa vain alle tyyppisiä vesileimoja.\n \u25CF  Vesileimoja camscanner ohjelmisto PDF-tiedosto luotu.\n \u25CF Vesileimat lisätty huomautuksina PDF\n \u25CF Vesileimat, jotka lisätään kerroksina PDF-sivulla, joita ei ole lukittu.\n\nTällä työkalulla ei poisteta millään muulla tavoin luotuja vesileimoja. Tulevaisuudessa yritämme lisätä lisää algoritmeja vesileimojen poistamiseksi.\n\nPDF-asiakirjat voivat ilmaista vesileiman jollakin seuraavista menetelmistä:\n \u25CF Sivugrafiikka (sivujen taustat, Kuvat jne…) upotettu sivun sisäpuolelle.\n \u25CF Sivutus Artifacts(Otsikot, Alatunnisteet jne…)\n \u25CF Kerros sivussa (aka valinnainen sisältöryhmät)\n \u25CF PDF Huomautukset (samanlainen kuin muut huomautukset, kuten Strike, Korostus, kommentti jne…)]]></string>
     <string name="already_purchased">Jo Ostettu</string>
     <string name="already_purchased_desc">Olet jo ostanut sovelluksen aikaisemmin. Olemme palauttaneet ostoksesi</string>
+    <string name="rename">Nimeä tiedosto uudelleen</string>
+    <string name="err_file_delete">Virhe poistettaessa tiedostoa</string>
+    <string name="err_file_rename">Virhe tiedoston uudelleennimeämisessä</string>
+    <string name="rename_description">Anna tiedostollesi uusi nimi.</string>
+    <string name="file_delete_success">Tiedosto poistettiin</string>
+    <string name="rename_success">Tiedoston uudelleennimeäminen onnistui</string>
+    <string name="manage_permission_description"><![CDATA[Android 11: stä alkaen Android on poistanut SD -korttien tiedostojen lukuoikeudet, ellei nimenomaista lupaa ole myönnetty. Ohjaamme sinut nyt asetuksiin. Anna meille oikeudet lukea ja hallita tallennustilasi tiedostoja, jotta voimme ottaa käyttöön ominaisuuksia, kuten tiedostojen selaamisen, PDF -kirjaston, ottaa käyttöön PDF -työkalut PDF -tulosten tallentamiseksi jne ...]]></string>
+    <string name="proceed">Edetä</string>
+    <string name="select_multiple_enabled">Useita valintoja käytössä</string>
 </resources>

@@ -184,7 +184,8 @@
     <string name="blank"></string>
     <string name="download">Salvar Para\nDocumentos</string>
     <string name="delete">excluir</string>
-    <string name="select_atleast_one_file">Por favor selecione pelo menos 2 arquivos</string>
+    <string name="select_at_least_one_file">Selecione pelo menos 1 arquivo</string>
+    <string name="select_at_least_two_files">Selecione pelo menos 2 arquivos</string>
     <string name="entr_password_desc">Digite a senha do PDF que você selecionou. Pressione Cancelar para selecionar outro arquivo</string>
     <string name="enter_password_title">Digite a senha do proprietário</string>
     <string name="incorrect_password">Senha incorreta. Tente digitar a senha novamente</string>
@@ -276,4 +277,13 @@
     <string name="watermark_failed"><![CDATA[Nosso software só será removido abaixo de marcas d\'água.\n \u25CF  Marcas d\'água por software de varredura de arquivo PDF gerado.\n \u25CF Marcas d\'água adicionadas como anotações no PDF\n \u25CF Marcas d\'água que são adicionadas como Layers em PDF que não estão bloqueados.\n\nMarcas d\'água criadas por qualquer outra forma não serão removidas por esta ferramenta. No futuro, tentaremos adicionar mais algoritmos para remover marcas d\'água.\n\ndocumentos PDF podem expressar uma marca d\'água usando qualquer uma das seguintes técnicas:\n \u25CF Gráficos de Página (como os fundos da página, Imagens etc…) incorporadas dentro da página.\n \u25CF Artefatos de Paginação (Cabeçalhos, Rodapés etc…)\n \u25CF Camada na Página (também conhecida como Grupos de Conteúdo Opcionais)\n \u25CF anotações PDF (semelhante a outras anotações como Golpe, Destaco, Comentário etc…)]]></string>
     <string name="already_purchased">Já comprado</string>
     <string name="already_purchased_desc">Você já comprou o aplicativo no passado. Nós restauramos sua compra</string>
+    <string name="rename">Renomear arquivo</string>
+    <string name="err_file_delete">Erro ao excluir o arquivo</string>
+    <string name="err_file_rename">Erro ao renomear o arquivo</string>
+    <string name="rename_description">Por favor, dê um novo nome para o seu arquivo.</string>
+    <string name="file_delete_success">Arquivo excluído com sucesso</string>
+    <string name="rename_success">Arquivo renomeado com sucesso</string>
+    <string name="manage_permission_description"><![CDATA[A partir do Android 11, as permissões para ler arquivos em cartões SD foram desativadas pelo Android, a menos que uma permissão explícita tenha sido concedida. Agora iremos redirecioná-lo para as configurações. Conceda-nos permissões para ler e gerenciar os arquivos em seu armazenamento para habilitar recursos como navegar por arquivos, biblioteca de PDF, habilitar ferramentas de PDF para salvar resultados de PDF etc ...]]></string>
+    <string name="proceed">Continuar</string>
+    <string name="select_multiple_enabled">Seleção múltipla habilitada</string>
 </resources>

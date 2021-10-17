@@ -184,7 +184,8 @@
     <string name="blank"></string>
     <string name="download">Guardar en\ndocumentos</string>
     <string name="delete">Eliminar</string>
-    <string name="select_atleast_one_file">Por favor, seleccione al menos 2 archivos</string>
+    <string name="select_at_least_one_file">Seleccione al menos 1 archivo</string>
+    <string name="select_at_least_two_files">Seleccione al menos 2 archivos</string>
     <string name="entr_password_desc">Introduzca la contraseña para el PDF que ha seleccionado. Pulse Cancelar para seleccionar otro archivo</string>
     <string name="enter_password_title">Introduzca la contraseña del propietario</string>
     <string name="incorrect_password">Contraseña incorrecta. Intente volver a introducir la contraseña</string>
@@ -276,4 +277,13 @@
     <string name="watermark_failed"><![CDATA[Nuestro software solo se eliminará por debajo del tipo de marcas de agua.\n \u25CF  Marcas de agua por software de camscanner en archivo PDF generado.\n \u25CF Marcas de agua añadidas como anotaciones en PDF\n \u25CF Marcas de agua que se añaden como Capas en la página PDF que no están bloqueadas.\n\nLas marcas de agua creadas por cualquier otra vía no serán eliminadas por esta herramienta. En el futuro intentaremos añadir más algoritmos para eliminar marcas de agua.\n\ndocumentos PDF pueden expresar una marca de agua utilizando cualquiera de las siguientes técnicas:\n \u25CF Gráficos de página (Como los fondos de página, Imágenes etc…) incrustadas en la página.\n \u25CF Artefactos de paginación(Encabezados, Pilas etc…)\n \u25CF Capa en Grupos de Contenido Opcional (también conocido como Grupo de Contenido Opcional)\n \u25CF Anotaciones PDF (similares a otras anotaciones como Golpe, Resaltado, comentario, etc…)]]></string>
     <string name="already_purchased">Ya comprado</string>
     <string name="already_purchased_desc">Ya has comprado la aplicación en el pasado. Hemos restaurado tu compra</string>
+    <string name="rename">Renombrar archivo</string>
+    <string name="err_file_delete">Error al eliminar el archivo</string>
+    <string name="err_file_rename">Error al cambiar el nombre del archivo</string>
+    <string name="rename_description">Ingrese un nuevo nombre para su archivo.</string>
+    <string name="file_delete_success">Archivo eliminado correctamente</string>
+    <string name="rename_success">Archivo renombrado correctamente</string>
+    <string name="manage_permission_description"><![CDATA[A partir de Android 11, Android deshabilitó los permisos para leer archivos en tarjetas SD a menos que se otorgara un permiso explícito. Ahora lo redireccionaremos a la configuración. Concédanos permisos para leer y administrar los archivos en su almacenamiento para habilitar funciones como buscar archivos, biblioteca PDF, habilitar herramientas PDF para guardar resultados en PDF, etc.]]></string>
+    <string name="proceed">Continuar</string>
+    <string name="select_multiple_enabled">Selección múltiple habilitada</string>
 </resources>

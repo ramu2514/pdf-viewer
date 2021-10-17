@@ -184,7 +184,8 @@
     <string name="blank"></string>
     <string name="download">Gem til\ndokumenter</string>
     <string name="delete">Slet</string>
-    <string name="select_atleast_one_file">Vælg mindst 2 fil</string>
+    <string name="select_at_least_one_file">Vælg mindst 1 fil</string>
+    <string name="select_at_least_two_files">Vælg mindst 2 filer</string>
     <string name="entr_password_desc">Indtast adgangskode for den PDF, du har valgt. Tryk på annullering for at vælge en anden fil</string>
     <string name="enter_password_title">Indtast Adgangskode For Ejer</string>
     <string name="incorrect_password">Forkert adgangskode. Prøv at indtaste adgangskode igen</string>
@@ -276,4 +277,13 @@
     <string name="watermark_failed"><![CDATA[Vores software vil kun fjerne under slags vandmærker.\n \u25CF  Vandmærker af camscanner software på PDF-fil genereret.\n \u25CF Vandmærker tilføjet som annotationer i PDF\n \u25CF Vandmærker, der tilføjes som lag i PDF-side, som ikke er låst.\n\nVandmærker oprettet på anden måde vil ikke blive fjernet af dette værktøj. I fremtiden vil vi forsøge at tilføje flere algoritmer til at fjerne vandmærker.\n\nPDF-dokumenter kan udtrykke et vandmærke ved hjælp af en af følgende teknikker:\n \u25CF Page Graphics(Like Page backgrounds, Billeder osv…) indlejret i siden.\n \u25CF Pagination Artifacts(Headers, Footers osv…)\n \u25CF Layer in Page(aka Valgfri Content Groups)\n \u25CF PDF Annotationer (svarende til andre annotationer som Strike, Fremhævning, kommentar…)]]></string>
     <string name="already_purchased">Allerede Købt</string>
     <string name="already_purchased_desc">Du har allerede købt appen tidligere. Vi har gendannet dit køb</string>
+    <string name="rename">Omdøb fil</string>
+    <string name="err_file_delete">Fejl ved sletning af filen</string>
+    <string name="err_file_rename">Fejl ved omdøbning af filen</string>
+    <string name="rename_description">Indtast venligst et nyt navn på din fil.</string>
+    <string name="file_delete_success">Filen blev slettet</string>
+    <string name="rename_success">Filen blev omdøbt</string>
+    <string name="manage_permission_description"><![CDATA[Fra og med Android 11 blev tilladelserne til at læse filer på SD -kort deaktiveret af android, medmindre eksplicit tilladelse blev givet. Vi vil nu omdirigere dig til indstillingerne. Giv os tilladelse til at læse og administrere filerne i dit lager for at aktivere funktioner som gennemse filer, PDF -bibliotek, aktivere PDF -værktøjer til at gemme pdf -resultat osv ...]]></string>
+    <string name="proceed">Fortsæt</string>
+    <string name="select_multiple_enabled">Flere markeringer aktiveret</string>
 </resources>

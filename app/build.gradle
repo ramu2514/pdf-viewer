@@ -12,7 +12,7 @@ dependencies {
     implementation 'com.android.billingclient:billing:4.0.0'
     implementation 'com.itextpdf:itext7-core:7.1.14'
     implementation 'com.madgag.spongycastle:core:1.58.0.0'
-    implementation 'com.google.firebase:firebase-core:19.0.1'
+    implementation 'com.google.firebase:firebase-core:19.0.2'
 
     androidTestImplementation 'tools.fastlane:screengrab:2.1.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
@@ -37,8 +37,8 @@ android {
     defaultConfig {
         minSdkVersion 16 //change to 18 while running fastlane screengrab
         targetSdkVersion 31
-        versionName '3.82'
-        versionCode 90027
+        versionName '3.84'
+        versionCode 90028
         ndkVersion '21.3.6528147'
         multiDexEnabled true
 
@@ -46,6 +46,7 @@ android {
     }
     buildTypes {
         debug {
+            debuggable true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
             zipAlignEnabled true

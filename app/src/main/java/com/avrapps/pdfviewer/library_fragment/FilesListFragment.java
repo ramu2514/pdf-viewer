@@ -72,7 +72,7 @@ public class FilesListFragment extends Fragment {
                 ((ImageView) v).setImageResource(R.drawable.ic_multiselect);
             } else {
                 recyclerAdapter.enableMultiSelection();
-                ((ImageView) v).setImageResource(R.drawable.ic_baseline_open_in_browser_24);
+                ((ImageView) v).setImageResource(R.drawable.ic_baseline_open_in_browser_black_24);
             }
             enableSelection = !enableSelection;
         });

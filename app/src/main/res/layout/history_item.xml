@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:drawableTop="@drawable/ic_baseline_open_in_browser_24"
+            android:drawableTop="@drawable/ic_baseline_open_in_browser_black_24"
             android:text="@string/view_file" />
 
         <Button

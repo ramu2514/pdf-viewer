@@ -184,7 +184,8 @@
     <string name="blank"></string>
     <string name="download">Uložit do\ndokumentů</string>
     <string name="delete">Vymazat</string>
-    <string name="select_atleast_one_file">Vyberte prosím alespoň 2 soubory</string>
+    <string name="select_at_least_one_file">Vyberte prosím alespoň 1 soubor</string>
+    <string name="select_at_least_two_files">Vyberte alespoň 2 soubory</string>
     <string name="entr_password_desc">Zadejte heslo pro PDF, které jste vybrali. Pro výběr jiného souboru stiskněte tlačítko Storno</string>
     <string name="enter_password_title">Zadejte heslo vlastníka</string>
     <string name="incorrect_password">Nesprávné heslo. Zkuste znovu zadat heslo</string>
@@ -276,4 +277,13 @@
     <string name="watermark_failed"><![CDATA[Náš software odstraní pouze ty druhy vodoznaků.\n \u25CF  Vodoznaky pomocí camscaneru v generovaném souboru PDF.\n \u25CF Vodoznaky přidány jako poznámky do PDF\n \u25CF Vodoznaky, které jsou přidány jako vrstvy do PDF stránky, které nejsou uzamčeny.\n\nVodoznaky vytvořené jiným způsobem nebudou tímto nástrojem odstraněny. V budoucnu se pokusíme přidat další algoritmy pro odstranění vodoznaků.\n\nDokumenty PDF mohou vyjadřovat vodoznak pomocí některé z následujících technik:\n \u25CF Grafika stránek (Liketová stránka, pozadí, Obrázky atd.…) vložené uvnitř stránky.\n \u25CF Stránkování artefaktů (záhlaví, Zápatí atd…)\n \u25CF Layer in Page(aka Optional Content Groups)\n \u25CF PDF anotace (podobné jiným poznámkám jako Strike, Zvýraznit, komentář atd.…)]]></string>
     <string name="already_purchased">Již zakoupeno</string>
     <string name="already_purchased_desc">Již jste aplikaci v minulosti zakoupili. Váš nákup jsme obnovili.</string>
+    <string name="rename">Přejmenuj soubor</string>
+    <string name="err_file_delete">Chyba při mazání souboru</string>
+    <string name="err_file_rename">Chyba při přejmenování souboru</string>
+    <string name="rename_description">Zadejte nový název souboru.</string>
+    <string name="file_delete_success">Soubor byl úspěšně odstraněn</string>
+    <string name="rename_success">Soubor byl úspěšně přejmenován</string>
+    <string name="manage_permission_description"><![CDATA[Od Androidu 11 byla Androidem oprávnění ke čtení souborů na SD kartách zakázána, pokud nebylo uděleno výslovné povolení. Nyní vás přesměrujeme do nastavení. Udělte nám prosím oprávnění ke čtení a správě souborů ve vašem úložišti a povolte funkce, jako je procházení souborů, knihovna PDF, povolení nástrojů PDF pro ukládání výsledků PDF atd ...]]></string>
+    <string name="proceed">Pokračovat</string>
+    <string name="select_multiple_enabled">Vícenásobný výběr povolen</string>
 </resources>

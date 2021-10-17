@@ -143,7 +143,7 @@
     <string name="close">关闭</string>
     <string name="buy">购买</string>
     <string name="buy_pro"> 购买专业版 </string>
-    <string name="buy_pro_description"><![CDATA[ Thanks for being an active user of PDF Viewer. PDF Viewer is also available in pro version. Do you want to give it a try? Benefits of Pro version \n\u25CF Dark Theme can be enabled \n\u25CF Sign PDF Documents with your Name \n\u25CF Unlimited access to PDF Tools with out ads and many more coming soon ]]></string>
+    <string name="buy_pro_description"><![CDATA[ 感谢您成为 PDF 查看器的活跃用户。 PDF 查看器也有专业版。你想试一试吗？专业版 \n\u25CF 可以启用深色主题 \n\u25CF 用您的姓名签署 PDF 文档 \n\u25CF 无限制地访问 PDF 工具，没有广告，更多功能即将推出 ]]></string>
     <string name="want_to_grant_Access">除非允许存储访问权限，可移动存储中的 PDF 文件不可编辑。 您需要从侧面选择SD卡，并提供一次性访问SDCARD的权限。 \n您想现在授予访问权限吗？</string>
     <string name="enter_field_value">输入字段值</string>
     <string name="update_text">更新文本</string>
@@ -184,7 +184,8 @@
     <string name="blank"></string>
     <string name="download">保存到\n文档</string>
     <string name="delete">删除</string>
-    <string name="select_atleast_one_file">请选择至少 2 个文件</string>
+    <string name="select_at_least_one_file">请至少选择 1 个文件</string>
+    <string name="select_at_least_two_files">请至少选择 2 个文件</string>
     <string name="entr_password_desc">输入您选择的 PDF 密码。点击取消选择另一个文件</string>
     <string name="enter_password_title">输入所有者密码</string>
     <string name="incorrect_password">密码不正确。请再次输入密码</string>
@@ -276,4 +277,13 @@
     <string name="watermark_failed"><![CDATA[我们的软件只会移除以下水印类型。\n \u25CF  在 PDF 文件上通过摄像机软件移除水印。\n \u25CF 水印已添加为 PDF\n \u25CF 水印，这些水印被添加为 PDF 页面中未被锁定的图层。\n\n任何其他方式创建的水印不会被此工具删除。 今后，我们将尝试添加更多的算法去除水印。\n\nPDF 文档可以使用以下任何技术表示水印：\n \u25CF 页面图形(如页面背景) 页面内嵌入的图像等…。\n \u25CF 绘制图案(页眉) 页脚等…)\n \u25CF 页面中的图层(aka Optional Content Groups)\n \u25CF PDF 注释(类似于罢工等其他注释) 高亮，评论等…)]]></string>
     <string name="already_purchased">已购买</string>
     <string name="already_purchased_desc">您已经在过去购买了该应用。我们已经恢复了您的购买</string>
+    <string name="rename">重新命名文件</string>
+    <string name="err_file_delete">删除文件时出错</string>
+    <string name="err_file_rename">重命名文件时出错</string>
+    <string name="rename_description">请为您的文件输入新名称。</string>
+    <string name="file_delete_success">文件删除成功</string>
+    <string name="rename_success">文件重命名成功</string>
+    <string name="manage_permission_description"><![CDATA[从 Android 11 开始，除非明确授予权限，否则 android 将禁用读取 SD 卡中文件的权限。我们现在将您重定向到设置。请授予我们读取和管理您存储中的文件的权限，以启用浏览文件、PDF 库、启用 PDF 工具以保存 pdf 结果等功能...]]></string>
+    <string name="proceed">继续</string>
+    <string name="select_multiple_enabled">多选已启用</string>
 </resources>

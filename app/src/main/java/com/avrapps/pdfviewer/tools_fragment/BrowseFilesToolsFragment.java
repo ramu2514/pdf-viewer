@@ -56,6 +56,7 @@ public class BrowseFilesToolsFragment extends Fragment {
     List<String> extensions;
     boolean multiSelect = false, passwordCheck = true;
     private boolean showHidden = false;
+    int minimumSelect = 1;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -73,6 +74,7 @@ public class BrowseFilesToolsFragment extends Fragment {
         if (bundle != null) {
             String formats = bundle.getString("formats", ".pdf");
             multiSelect = bundle.getBoolean("multiSelect", false);
+            minimumSelect = bundle.getInt("minimumSelect");
             passwordCheck = bundle.getBoolean("passwordCheck", true);
             extensions = Arrays.asList(formats.split(","));
         }
@@ -255,7 +257,7 @@ public class BrowseFilesToolsFragment extends Fragment {
         private final LayoutInflater mInflater;
         File[] data;
         private boolean checkboxVisible;
-        private LinkedHashMap<String, String> selectedFiles = new LinkedHashMap<>();
+        private final LinkedHashMap<String, String> selectedFiles = new LinkedHashMap<>();
 
         FilesListRecycler(Context context, File[] data, boolean selection) {
             this.mInflater = LayoutInflater.from(context);
@@ -265,18 +267,13 @@ public class BrowseFilesToolsFragment extends Fragment {
             TextView openAction = activity.findViewById(R.id.open_Action);
             openAction.setVisibility(multiSelect ? View.VISIBLE : View.GONE);
             openAction.setOnClickListener(v -> {
-                onDoneSelected();
+                if (minimumSelect == 2 && selectedFiles.size() < 2) {
+                    Toast.makeText(activity, R.string.select_at_least_two_files, Toast.LENGTH_LONG).show();
+                } else {
+                    activity.continueOperationsOnFileSelect(selectedFiles);
+                }
             });
         }
-
-        void onDoneSelected(){
-            if (selectedFiles.size() < 2) {
-                Toast.makeText(activity, R.string.select_atleast_one_file, Toast.LENGTH_LONG).show();
-            } else {
-                activity.continueOperationsOnFileSelect(selectedFiles);
-            }
-        }
-
         public void setData(File[] data) {
             this.data = data;
         }
@@ -401,7 +398,9 @@ public class BrowseFilesToolsFragment extends Fragment {
                         currentDir = data[position];
                         refreshFiles();
                     } else {
-                        if (!checkboxVisible) {
+                        if (checkboxVisible) {
+                            checkBox.setChecked(!checkBox.isChecked());
+                        } else {
                             if (passwordCheck && PDFUtilities.isPasswordProtected(data[position].getAbsolutePath())) {
                                 resolvePasswords(data[position].getAbsolutePath(), true, null);
                             } else {

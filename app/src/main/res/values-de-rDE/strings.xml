@@ -67,7 +67,7 @@
     <string name="mark_favorite">Als Favorit markieren</string>
     <string name="unmark_favorite">Favorit entfernen</string>
     <string name="shortcuts_title">PDF-Viewer Tastenkürzel</string>
-    <string name="shortcuts_description"><![CDATA[Double Tap   ->  Zoom In/out 2x\nSingle Tap   ->  Show/Hide Scrollbar\nPinch in/out ->  Zoom in/out 25x\nLong Tap     ->  Text Selection Options]]></string>
+    <string name="shortcuts_description"><![CDATA[Doppeltippen -> Vergrößern/Verkleinern 2x\nEinzelnes Tippen -> Bildlaufleiste anzeigen/ausblenden\nAuf- und Zuziehen -> 25x\nLanges Tippen -> Textauswahloptionen]]></string>
     <string name="ok">Okay</string>
     <string name="pdf_info">PDF-Informationen</string>
     <string name="copy">Kopieren</string>
@@ -184,7 +184,8 @@
     <string name="blank"></string>
     <string name="download">In\nDokumente speichern</string>
     <string name="delete">Löschen</string>
-    <string name="select_atleast_one_file">Bitte wählen Sie mindestens 2 Datei</string>
+    <string name="select_at_least_one_file">Bitte wählen Sie mindestens 1 Datei aus</string>
+    <string name="select_at_least_two_files">Bitte wählen Sie mindestens 2 Dateien aus</string>
     <string name="entr_password_desc">Geben Sie das Passwort für das ausgewählte PDF ein. Drücken Sie Abbrechen, um eine andere Datei auszuwählen</string>
     <string name="enter_password_title">Besitzer-Passwort eingeben</string>
     <string name="incorrect_password">Falsches Passwort. Bitte Passwort erneut eingeben</string>
@@ -276,4 +277,13 @@
     <string name="watermark_failed"><![CDATA[Unsere Software entfernt nur die unten stehenden Wasserzeichen.\n \u25CF  Wasserzeichen von der Camscanner-Software auf PDF-Datei generiert.\n \u25CF Wasserzeichen als Anmerkungen im PDF\n \u25CF Wasserzeichen hinzugefügt, die nicht gesperrt sind.\n\nWasserzeichen, die auf andere Weise erstellt wurden, werden von diesem Tool nicht entfernt. In Zukunft werden wir versuchen, weitere Algorithmen hinzuzufügen, um Wasserzeichen zu entfernen.\n\nPDF-Dokumente können ein Wasserzeichen mit einer der folgenden Techniken ausdrucken:\n \u25CF Seitengrafiken (Wie Seitenhintergründe, Bilder etc…) eingebettet in Seite.\n \u25CF Pagination Artefakt(Kopfzeilen, Fußzeilen etc…)\n \u25CF Ebene in Page(aka Optionale Inhaltsgruppen)\n \u25CF PDF-Anmerkungen (ähnlich wie bei anderen Anmerkungen wie Strike, Hervorhebung, Kommentar etc…)]]></string>
     <string name="already_purchased">Bereits gekauft</string>
     <string name="already_purchased_desc">Sie haben die App in der Vergangenheit bereits gekauft. Wir haben Ihren Kauf wiederhergestellt</string>
+    <string name="rename">Datei umbenennen</string>
+    <string name="err_file_delete">Fehler beim Löschen der Datei</string>
+    <string name="err_file_rename">Fehler beim Umbenennen der Datei</string>
+    <string name="rename_description">Bitte geben Sie einen neuen Namen für Ihre Datei ein.</string>
+    <string name="file_delete_success">Datei erfolgreich gelöscht</string>
+    <string name="rename_success">Datei erfolgreich umbenannt</string>
+    <string name="manage_permission_description"><![CDATA[Ab Android 11 wurden die Berechtigungen zum Lesen von Dateien auf SD-Karten von Android deaktiviert, es sei denn, es wurde eine ausdrückliche Berechtigung erteilt. Wir leiten Sie nun zu den Einstellungen weiter. Bitte erteilen Sie uns die Berechtigung, die Dateien in Ihrem Speicher zu lesen und zu verwalten, um Funktionen wie Dateien durchsuchen, PDF-Bibliothek, PDF-Tools zum Speichern von PDF-Ergebnissen usw. zu aktivieren.]]></string>
+    <string name="proceed">Fortfahren</string>
+    <string name="select_multiple_enabled">Mehrfachauswahl aktiviert</string>
 </resources>

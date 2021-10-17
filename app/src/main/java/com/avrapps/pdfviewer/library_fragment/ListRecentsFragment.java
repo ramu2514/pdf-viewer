@@ -31,7 +31,6 @@ import com.avrapps.pdfviewer.library_fragment.data.LastOpenDocuments;
 import com.avrapps.pdfviewer.results_fragment.FirebaseUtils;
 import com.avrapps.pdfviewer.utils.DateTimeUtils;
 import com.avrapps.pdfviewer.utils.MiscUtils;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -53,7 +52,7 @@ public class ListRecentsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_collection_object, container, false);
+        return inflater.inflate(R.layout.fragment_recent_favorites, container, false);
     }
 
     @Override
@@ -119,7 +118,7 @@ public class ListRecentsFragment extends Fragment {
         boolean multiSelection = false;
         List<LastOpenDocuments> data;
         MainActivity activity;
-        ArrayList<Integer> deletedPages = new ArrayList<>();
+        ArrayList<Integer> selectedFiles = new ArrayList<>();
         boolean isListViewPreferred;
 
         RecentlyOpenedDocumentsAdapter(MainActivity context, List<LastOpenDocuments> data, boolean isListViewPreferred) {
@@ -173,21 +172,33 @@ public class ListRecentsFragment extends Fragment {
         }
 
         private void deleteSelected() {
-            Collections.sort(deletedPages, Collections.reverseOrder());
-            for (Integer position : deletedPages) {
+            Collections.sort(selectedFiles, Collections.reverseOrder());
+            for (Integer position : selectedFiles) {
                 int intPosition = position;
                 LastOpenDocuments doc = data.get(intPosition);
-                if(doc.getPathToDocument().contains("PDFViewerLite/imports")){
+                if (doc.getPathToDocument().contains("PDFViewerLite/imports")) {
                     try {
                         new File(doc.getPathToDocument()).delete();
-                    }catch (Exception ex){
+                    } catch (Exception ex) {
                         ex.printStackTrace();
                     }
                 }
                 doc.delete();
                 data.remove(intPosition);
             }
-            deletedPages.clear();
+            selectedFiles.clear();
+        }
+
+        private void openSelected() {
+            ArrayList<String> filePaths = new ArrayList<>();
+            for (Integer position : selectedFiles) {
+                int intPosition = position;
+                LastOpenDocuments doc = data.get(intPosition);
+                filePaths.add(doc.getPathToDocument());
+            }
+            Uri uri = Uri.fromFile(new File(filePaths.get(0)));
+            MiscUtils.openDoc(uri, activity, filePaths);
+            selectedFiles.clear();
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
@@ -201,9 +212,9 @@ public class ListRecentsFragment extends Fragment {
                 checkbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
                     int position = getAdapterPosition();
                     if (isChecked) {
-                        deletedPages.add(position);
+                        selectedFiles.add(position);
                     } else {
-                        deletedPages.remove(Integer.valueOf(position));
+                        selectedFiles.remove(Integer.valueOf(position));
                     }
                 });
                 fileName = itemView.findViewById(R.id.name);
@@ -211,15 +222,16 @@ public class ListRecentsFragment extends Fragment {
                 fileExtension = itemView.findViewById(R.id.file_extension);
                 thumbnail = itemView.findViewById(R.id.doc_thumbnail);
                 View.OnClickListener listener = v -> {
-                    int position = getAdapterPosition();
+                    checkbox.setChecked(!checkbox.isChecked());
                     if (!multiSelection) {
+                        int position = getAdapterPosition();
                         Log.e(TAG, "position: " + position);
                         LastOpenDocuments dataModel = data.get(position);
                         File doc = new File(dataModel.getPathToDocument());
                         if (doc.exists()) {
                             Uri uri = Uri.fromFile(doc);
                             MiscUtils.openDoc(uri, activity, new ArrayList<>());
-                            FirebaseUtils.analyticsFileOpen(activity,"FILE_OPEN_RECENT", uri);
+                            FirebaseUtils.analyticsFileOpen(activity, "FILE_OPEN_RECENT", uri);
                         } else {
                             Toast.makeText(getContext(), "Document no longer exist on device", Toast.LENGTH_LONG).show();
                         }
@@ -229,25 +241,23 @@ public class ListRecentsFragment extends Fragment {
                 itemView.setOnLongClickListener(v -> {
                     multiSelection = true;
                     notifyDataSetChanged();
-                    FloatingActionButton fab = activity.findViewById(R.id.fab);
-                    FloatingActionButton fabCancel = activity.findViewById(R.id.fabCancel);
-                    fab.setVisibility(View.VISIBLE);
-                    fabCancel.setVisibility(View.VISIBLE);
-                    fab.setOnClickListener(view -> {
+                    activity.findViewById(R.id.fabContainer).setVisibility(View.VISIBLE);
+                    activity.findViewById(R.id.fabDelete).setOnClickListener(view -> {
                         deleteSelected();
-                        clearSelection(fab, fabCancel);
+                        clearSelection();
                     });
-                    fabCancel.setOnClickListener(view -> {
-                        clearSelection(fab, fabCancel);
+                    activity.findViewById(R.id.fabCancel).setOnClickListener(view -> clearSelection());
+                    activity.findViewById(R.id.fabOpen).setOnClickListener(view -> {
+                        openSelected();
+                        clearSelection();
                     });
                     return true;
                 });
             }
 
-            private void clearSelection(FloatingActionButton fab, FloatingActionButton fabCancel) {
+            private void clearSelection() {
                 multiSelection = false;
-                fab.setVisibility(View.GONE);
-                fabCancel.setVisibility(View.GONE);
+                activity.findViewById(R.id.fabContainer).setVisibility(View.GONE);
                 notifyDataSetChanged();
             }
         }

@@ -184,7 +184,8 @@
     <string name="blank"></string>
     <string name="download">Salvează în\ndocumente</string>
     <string name="delete">Ștergere</string>
-    <string name="select_atleast_one_file">Vă rugăm să selectați cel puțin 2 fișiere</string>
+    <string name="select_at_least_one_file">Vă rugăm să selectați cel puțin 1 fișier</string>
+    <string name="select_at_least_two_files">Vă rugăm să selectați cel puțin 2 fișiere</string>
     <string name="entr_password_desc">Introduceți parola pentru fișierul PDF selectat. Apăsați anulați pentru a selecta un alt fișier</string>
     <string name="enter_password_title">Introdu parola proprietarului</string>
     <string name="incorrect_password">Parolă incorectă. Încercați din nou să introduceți parola</string>
@@ -276,4 +277,13 @@
     <string name="watermark_failed"><![CDATA[Software-ul nostru va elimina doar un fel de filigran.\n \u25CF  filialele camscaner ale software-ului pe fișierul PDF generat.\n \u25CF Marcaje adăugate ca adnotări în PDF\n \u25CF Marcaje care sunt adăugate ca Layers în pagina PDF care nu sunt blocate.\n\nMarcajele create prin orice alt mod nu vor fi eliminate de această unealtă. În viitor vom încerca să adăugăm mai mulți algoritmi pentru a elimina filigrane.\n\nDocumentele PDF pot exprima un filigran folosind oricare dintre următoarele tehnici:\n \u25CF Page Graphics(Îmi place Page backgrounds), Imaginile etc…) sunt încorporate în interiorul paginii.\n \u25CF Artefacte Pagininare (Sărbători, Footer etc…)\n \u25CF Layer în Pagină (grupuri de conținut opțional)\n \u25CF Annotări PDF (similar cu alte adnotări precum Strike, Evidențiază, Comentariu etc…)]]></string>
     <string name="already_purchased">Deja Achiziționat</string>
     <string name="already_purchased_desc">Ați achiziționat deja aplicația în trecut. V-am restaurat achiziția</string>
+    <string name="rename">Redenumește fisierul</string>
+    <string name="err_file_delete">Eroare la ștergerea fișierului</string>
+    <string name="err_file_rename">Eroare la redenumirea fișierului</string>
+    <string name="rename_description">Vă rugăm să introduceți un nume nou pentru fișierul dvs.</string>
+    <string name="file_delete_success">Fișierul a fost șters</string>
+    <string name="rename_success">Fișierul redenumit cu succes</string>
+    <string name="manage_permission_description"><![CDATA[Pornind de la Android 11, permisiunile pentru citirea fișierelor pe cardurile SD au fost dezactivate de Android, cu excepția cazului în care a fost acordată permisiunea explicită. Vă vom redirecționa acum către setări. Vă rugăm să ne acordați permisiuni pentru a citi și gestiona fișierele din spațiul de stocare pentru a activa funcții precum răsfoirea fișierelor, biblioteca PDF, activarea instrumentelor PDF pentru a salva rezultatele pdf etc.]]></string>
+    <string name="proceed">Continua</string>
+    <string name="select_multiple_enabled">Selecție multiplă activată</string>
 </resources>

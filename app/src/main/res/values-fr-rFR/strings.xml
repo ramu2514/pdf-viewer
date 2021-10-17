@@ -184,7 +184,8 @@
     <string name="blank"></string>
     <string name="download">Enregistrer dans\nDocuments</string>
     <string name="delete">Supprimez</string>
-    <string name="select_atleast_one_file">Veuillez sélectionner le fichier atleast 2</string>
+    <string name="select_at_least_one_file">Veuillez sélectionner au moins 1 fichier</string>
+    <string name="select_at_least_two_files">Veuillez sélectionner au moins 2 fichiers</string>
     <string name="entr_password_desc">Entrez le mot de passe pour le PDF que vous avez sélectionné. Appuyez sur Annuler pour sélectionner un autre fichier</string>
     <string name="enter_password_title">Entrez le mot de passe du propriétaire</string>
     <string name="incorrect_password">Mot de passe incorrect. Essayez à nouveau de saisir le mot de passe</string>
@@ -276,4 +277,13 @@
     <string name="watermark_failed"><![CDATA[Notre logiciel ne supprimera que le type de filigranes en dessous.\n \u25CF  Les filigranes par logiciel de scanner de camion sur le fichier PDF généré.\n \u25CF Les filigranes ajoutés en tant qu\'annotations dans PDF\n \u25CF Les filigranes qui sont ajoutées en tant que calques dans la page PDF qui ne sont pas verrouillées.\n\nLes filigranes créées par un autre moyen ne seront pas supprimées par cet outil. À l\'avenir, nous allons essayer d\'ajouter plus d\'algorithmes pour supprimer les filigranes.\n\nLes documents PDF peuvent exprimer un filigrane en utilisant l\'une des techniques suivantes :\n \u25CF Graphiques de Page (comme les fonds de page, Images etc…) intégrées dans la page.\n \u25CF Artefacts de pagination (en-têtes, Pied de page, etc…)\n \u25CF Couche dans Page(aka Groupes de Contenu Optionnels)\n \u25CF Annotations PDF (similaires à d\'autres annotations comme Strike, Surbrillance, Commentaire etc…)]]></string>
     <string name="already_purchased">Déjà acheté</string>
     <string name="already_purchased_desc">Vous avez déjà acheté l\'application dans le passé. Nous avons restauré votre achat</string>
+    <string name="rename">Renommer le fichier</string>
+    <string name="err_file_delete">Erreur lors de la suppression du fichier</string>
+    <string name="err_file_rename">Erreur lors du renommage du fichier</string>
+    <string name="rename_description">Veuillez entrer un nouveau nom pour votre fichier.</string>
+    <string name="file_delete_success">Fichier supprimé avec succès</string>
+    <string name="rename_success">Fichier renommé avec succès</string>
+    <string name="manage_permission_description"><![CDATA[À partir d\'Android 11, les autorisations de lecture de fichiers sur les cartes SD ont été désactivées par Android, sauf si une autorisation explicite a été accordée. Nous allons maintenant vous rediriger vers les paramètres. Veuillez nous accorder les autorisations pour lire et gérer les fichiers de votre stockage pour activer des fonctionnalités telles que parcourir les fichiers, la bibliothèque PDF, activer les outils PDF pour enregistrer le résultat pdf, etc.]]></string>
+    <string name="proceed">Procéder</string>
+    <string name="select_multiple_enabled">Sélection multiple activée</string>
 </resources>

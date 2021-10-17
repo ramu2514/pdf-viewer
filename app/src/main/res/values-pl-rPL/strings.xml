@@ -184,7 +184,8 @@
     <string name="blank"></string>
     <string name="download">Zapisz do\ndokumentów</string>
     <string name="delete">Usuń</string>
-    <string name="select_atleast_one_file">Proszę wybrać co najmniej 2 pliki</string>
+    <string name="select_at_least_one_file">Wybierz co najmniej 1 plik</string>
+    <string name="select_at_least_two_files">Wybierz co najmniej 2 pliki</string>
     <string name="entr_password_desc">Wprowadź hasło do wybranego PDF. Naciśnij Anuluj, aby wybrać inny plik</string>
     <string name="enter_password_title">Wprowadź hasło właściciela</string>
     <string name="incorrect_password">Nieprawidłowe hasło. Spróbuj wprowadzić hasło ponownie</string>
@@ -276,4 +277,13 @@
     <string name="watermark_failed"><![CDATA[Nasze oprogramowanie usunie tylko poniżej znaków wodnych.\n \u25CF  Znaki wodne wytworzone przez oprogramowanie do skanera kamery.\n \u25CF Znaki wodne dodane jako adnotacje w PDF\n \u25CF Znaki wodne, które są dodawane jako warstwy na stronie PDF, które nie są zablokowane.\n\nZnaki wodne utworzone w jakikolwiek inny sposób nie zostaną usunięte przez to narzędzie. W przyszłości spróbujemy dodać więcej algorytmów, aby usunąć znaki wodne.\n\nDokumenty PDF mogą wyrażać znak wodny przy użyciu jednej z następujących technik:\n \u25CF Grafika stron (jak tła strony), Obrazy itp…) osadzone wewnątrz strony.\n \u25CF Artefakty stronicowania (Nagłówki, Stopki itp…)\n \u25CF Warstwa na stronie (aka Opcjonalne grupy treści)\n \u25CF Adnotacje PDF (podobne do innych adnotacji takich jak Strike, Podkreślaj, komentarz itp…)]]></string>
     <string name="already_purchased">Już zakupiono</string>
     <string name="already_purchased_desc">Aplikacja została już zakupiona w przeszłości. Przywróciliśmy Twój zakup</string>
+    <string name="rename">Zmień nazwę pliku</string>
+    <string name="err_file_delete">Błąd podczas usuwania pliku</string>
+    <string name="err_file_rename">Błąd podczas zmiany nazwy pliku</string>
+    <string name="rename_description">Proszę podać nową nazwę dla swojego pliku.</string>
+    <string name="file_delete_success">Plik został pomyślnie usunięty</string>
+    <string name="rename_success">Pomyślnie zmieniono nazwę pliku</string>
+    <string name="manage_permission_description"><![CDATA[Począwszy od Androida 11, uprawnienia do odczytu plików na kartach SD zostały wyłączone przez Androida, chyba że udzielono wyraźnego pozwolenia. Przekierujemy Cię teraz do ustawień. Udziel nam uprawnień do odczytu i zarządzania plikami w Twojej pamięci, aby włączyć funkcje, takie jak przeglądanie plików, biblioteka PDF, włączanie narzędzi PDF do zapisywania wyników w formacie PDF itp.]]></string>
+    <string name="proceed">Przystępować</string>
+    <string name="select_multiple_enabled">Wielokrotny wybór włączony</string>
 </resources>

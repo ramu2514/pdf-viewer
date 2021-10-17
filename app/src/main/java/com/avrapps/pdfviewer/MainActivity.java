@@ -1,5 +1,9 @@
 package com.avrapps.pdfviewer;
 
+import static com.avrapps.pdfviewer.tools_fragment.constants.AppConstants.TOOL_IMAGE_TO_PDF;
+import static com.avrapps.pdfviewer.tools_fragment.constants.AppConstants.TOOL_MERGE_PDF;
+import static com.avrapps.pdfviewer.tools_fragment.constants.AppConstants.TOOL_UNLOCK_PDF;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -338,11 +342,12 @@ public class MainActivity extends AppCompatActivity {
         browseFilesToolsFragment = new BrowseFilesToolsFragment();
         Bundle bundle = new Bundle();
         String formats = ".pdf";
-        if (operation == 4) {
+        if (operation == TOOL_IMAGE_TO_PDF) {
             formats = ".jpg,.jpeg,.png,.bmp,.tif.,tiff";
         }
-        bundle.putBoolean("passwordCheck", !(operation == 2 || operation == 4));
-        bundle.putBoolean("multiSelect", operation == 4 || operation == 8);
+        bundle.putBoolean("passwordCheck", !(operation == TOOL_UNLOCK_PDF || operation == TOOL_IMAGE_TO_PDF));
+        bundle.putBoolean("multiSelect", operation == TOOL_IMAGE_TO_PDF || operation == TOOL_MERGE_PDF);
+        bundle.putInt("minimumSelect", operation == TOOL_MERGE_PDF ? 2 : 1);
         bundle.putString("formats", formats);
         browseFilesToolsFragment.setArguments(bundle);
         openFragment(browseFilesToolsFragment);

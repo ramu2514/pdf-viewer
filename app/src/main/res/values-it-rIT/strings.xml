@@ -184,7 +184,8 @@
     <string name="blank"></string>
     <string name="download">Salva in\ndocumenti</string>
     <string name="delete">Elimina</string>
-    <string name="select_atleast_one_file">Si prega di selezionare almeno 2 file</string>
+    <string name="select_at_least_one_file">Seleziona almeno 1 file</string>
+    <string name="select_at_least_two_files">Seleziona almeno 2 file</string>
     <string name="entr_password_desc">Inserire la password per il PDF selezionato. Premere Annulla per selezionare un altro file</string>
     <string name="enter_password_title">Inserisci Password Del Proprietario</string>
     <string name="incorrect_password">Password errata. Riprova ad inserire la password</string>
@@ -276,4 +277,13 @@
     <string name="watermark_failed"><![CDATA[Il nostro software rimuoverà solo sotto i tipi di filigrane.\n \u25CF  Filigrane dal software camscanner su file PDF generato.\n \u25CF Filigrane aggiunte come annotazioni in PDF\n \u25CF Filigrane che vengono aggiunte come Livelli nella pagina PDF che non sono bloccate.\n\nLe filigrane create da qualsiasi altro modo non verranno rimosse da questo strumento. In futuro proveremo ad aggiungere più algoritmi per rimuovere le filigrane.\n\nI documenti PDF possono esprimere una filigrana utilizzando una delle seguenti tecniche:\n \u25CF Page Graphics(Come sfondo pagina, Immagini ecc…) incorporato all\'interno della pagina.\n \u25CF Artefatti Di Paginazione(Intestazioni, Footers etc…)\n \u25CF Layer in Page(aka Optional Content Groups)\n \u25CF PDF Annotazioni (simili ad altre annotazioni come Strike, Evidenziazione, commento ecc…)]]></string>
     <string name="already_purchased">Già Acquistato</string>
     <string name="already_purchased_desc">Hai già acquistato l\'app in passato. Abbiamo ripristinato l\'acquisto</string>
+    <string name="rename">Rinomina il file</string>
+    <string name="err_file_delete">Errore durante l\'eliminazione del file</string>
+    <string name="err_file_rename">Errore durante la ridenominazione del file</string>
+    <string name="rename_description">Inserisci un nuovo nome per il tuo file.</string>
+    <string name="file_delete_success">File eliminato con successo</string>
+    <string name="rename_success">File rinominato con successo</string>
+    <string name="manage_permission_description"><![CDATA[A partire da Android 11, le autorizzazioni per leggere i file nelle schede SD sono state disabilitate da Android a meno che non sia stata concessa l\'autorizzazione esplicita. Ora ti reindirizzeremo alle impostazioni. Ti preghiamo di concederci le autorizzazioni per leggere e gestire i file nella tua memoria per abilitare funzionalità come sfogliare file, libreria PDF, abilitare Strumenti PDF per salvare risultati pdf ecc…]]></string>
+    <string name="proceed">Procedere</string>
+    <string name="select_multiple_enabled">Selezione multipla abilitata</string>
 </resources>

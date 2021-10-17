@@ -184,7 +184,8 @@
     <string name="blank"></string>
     <string name="download">\nドキュメントに保存</string>
     <string name="delete">削除</string>
-    <string name="select_atleast_one_file">少なくとも 2 つのファイルを選択してください</string>
+    <string name="select_at_least_one_file">少なくとも1つのファイルを選択してください</string>
+    <string name="select_at_least_two_files">少なくとも2つのファイルを選択してください</string>
     <string name="entr_password_desc">選択したPDFのパスワードを入力してください。キャンセルを押して別のファイルを選択してください</string>
     <string name="enter_password_title">オーナーパスワードを入力してください</string>
     <string name="incorrect_password">パスワードが正しくありません。もう一度パスワードを入力してください</string>
@@ -273,7 +274,16 @@
     <string name="watermark_remove_success">透かしを削除しました</string>
     <string name="error_watermark_remove">透かしの削除中にエラーが発生しました。</string>
     <string name="watermark_not_removed">透かしが削除されていませんか？</string>
-    <string name="watermark_failed"><![CDATA[Our software will only remove below kind of watermarks.\n \u25CF  Watermarks by camscanner software on PDF file generated.\n \u25CF Watermarks added as annotations in PDF\n \u25CF Watermarks which are added as Layers in PDF page which are not locked.\n\nWatermarks created by any other way will not be removed by this tool. In future we will try to add more algorithms to remove watermarks.\n\nPDF documents may express a watermark using any of the following techniques:\n \u25CF Page Graphics(Like Page backgrounds, Images etc…) embedded inside page.\n \u25CF Pagination Artifacts(Headers, Footers etc…)\n \u25CF Layer in Page(aka Optional Content Groups)\n \u25CF PDF Annotations (similar to other annotations like Strike, Highlight, Comment etc…)]]></string>
+    <string name="watermark_failed"><![CDATA[当社のソフトウェアは、以下の種類の透かしのみを削除します。\n \u25CF  生成されたPDFファイルにcamscannerソフトウェアによって透かし。\n \u25CF 透かしは、PDFに注釈として追加\n \u25CF ロックされていないPDFページに層として添加される透かし。\n\n他の方法で作成された透かしは、このツールでは削除されません。将来的には、透かしを削除するためのアルゴリズムをさらに追加する予定です。\n\n：PDFドキュメントは、以下の技術のいずれか使用して透かしを発現することができる\n \u25CF ページグラフィックス（のようなページの背景、画像等…）ページ内に埋め込まれています。\n \u25CF ページ付けアーティファクト（ヘッダー、フッターなど…）\n \u25CF ページ内のレイヤー（別名オプションのコンテンツグループ）\n \u25CF PDF注釈（ストライク、ハイライト、コメントなどの他の注釈と同様…）]]></string>
     <string name="already_purchased">既に購入済み</string>
     <string name="already_purchased_desc">既にアプリを購入済みです。購入を復元しました。</string>
+    <string name="rename">ファイルの名前を変更</string>
+    <string name="err_file_delete">ファイルの削除中にエラーが発生しました</string>
+    <string name="err_file_rename">ファイルの名前変更中にエラーが発生しました</string>
+    <string name="rename_description">ファイルの新しい名前を入力してください。</string>
+    <string name="file_delete_success">ファイルが正常に削除されました</string>
+    <string name="rename_success">ファイルの名前が正常に変更されました</string>
+    <string name="manage_permission_description"><![CDATA[Android 11以降、明示的な権限が付与されていない限り、SDカード内のファイルを読み取る権限はAndroidによって無効にされていました。設定にリダイレクトします。ファイルの参照、PDFライブラリ、PDFツールによるPDF結果の保存などの機能を有効にするために、ストレージ内のファイルを読み取って管理する権限を付与してください...]]></string>
+    <string name="proceed">続行</string>
+    <string name="select_multiple_enabled">複数選択可能</string>
 </resources>

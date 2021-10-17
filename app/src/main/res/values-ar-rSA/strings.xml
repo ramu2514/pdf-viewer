@@ -184,7 +184,8 @@
     <string name="blank"></string>
     <string name="download">حفظ في\nمستندات</string>
     <string name="delete">حذف</string>
-    <string name="select_atleast_one_file">الرجاء تحديد ملف على الأقل 2</string>
+    <string name="select_at_least_one_file">الرجاء تحديد ملف واحد على الأقل</string>
+    <string name="select_at_least_two_files">الرجاء تحديد ملفين على الأقل</string>
     <string name="entr_password_desc">أدخل كلمة مرور PDF التي قمت بتحديدها. اضغط على إلغاء لتحديد ملف آخر</string>
     <string name="enter_password_title">أدخل كلمة مرور المالك</string>
     <string name="incorrect_password">كلمة المرور غير صحيحة. حاول إدخال كلمة المرور مرة أخرى</string>
@@ -276,4 +277,13 @@
     <string name="watermark_failed"><![CDATA[سيزيل برنامجنا تحت نوع العلامات المائية.\n \u25CF  علامات مائية بواسطة برنامج الكامير على ملف PDF تم إنشاؤه.\n \u25CF أضيفت العلامات المائية كشروح في PDF\n \u25CF علامات مائية تضاف كطبقات في صفحة PDF غير مقفلة.\n\nالعلامات المائية التي تم إنشاؤها بأي طريقة أخرى لن تتم إزالتها بهذه الأداة. في المستقبل سوف نحاول إضافة المزيد من الخوارزميات لإزالة العلامات المائية.\n\nيمكن لمستندات PDF أن تعبر عن علامة مائية باستخدام أي من التقنيات التالية:\n \u25CF Ppage Graphics(مثل خلفيات الصفحات، صور إلخ…) مضمنة داخل الصفحة.\n \u25CF أدوات تقسيم الصفحات(الرؤوس)، تذييل…\n \u25CF طبقة في الصفحة (المعروف باسم مجموعات المحتوى الاختيارية)\n \u25CF شروح PDF (شبيهة بشروح أخرى مثل Strike, أبرز، تعليق إلخ…)]]></string>
     <string name="already_purchased">تم شراؤها بالفعل</string>
     <string name="already_purchased_desc">لقد قمت بالفعل بشراء التطبيق في الماضي. لقد قمنا باستعادة شرائك</string>
+    <string name="rename">إعادة تسمية الملف</string>
+    <string name="err_file_delete">خطأ في حذف الملف</string>
+    <string name="err_file_rename">خطأ في إعادة تسمية الملف</string>
+    <string name="rename_description">من فضلك في اسم جديد لملفك.</string>
+    <string name="file_delete_success">تم حذف الملف بنجاح</string>
+    <string name="rename_success">تمت إعادة تسمية الملف بنجاح</string>
+    <string name="manage_permission_description"><![CDATA[بدءًا من Android 11 ، تم تعطيل أذونات قراءة الملفات في بطاقات SD بواسطة android ما لم يتم منح إذن صريح. سنقوم الآن بإعادة توجيهك إلى الإعدادات. يرجى منحنا أذونات لقراءة وإدارة الملفات الموجودة في وحدة التخزين الخاصة بك لتمكين ميزات مثل تصفح الملفات ، ومكتبة PDF ، وتمكين أدوات PDF لحفظ نتيجة pdf وما إلى ذلك ...]]></string>
+    <string name="proceed">تقدم</string>
+    <string name="select_multiple_enabled">تم تمكين التحديد المتعدد</string>
 </resources>

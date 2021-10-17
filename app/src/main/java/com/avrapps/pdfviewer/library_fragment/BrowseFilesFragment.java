@@ -82,16 +82,7 @@ public class BrowseFilesFragment extends Fragment {
             refreshFiles();
         });
 
-        view.findViewById(R.id.selectMultiple).setOnClickListener(v -> {
-            if (enableSelection) {
-                recyclerAdapter.openSelected();
-                ((ImageView) v).setImageResource(R.drawable.ic_multiselect);
-            } else {
-                openFiles(currentDir.getAbsolutePath(), true);
-                ((ImageView) v).setImageResource(R.drawable.ic_baseline_open_in_browser_24);
-            }
-            enableSelection = !enableSelection;
-        });
+        view.findViewById(R.id.selectMultiple).setOnClickListener(this::initEnableSelection);
         Spinner spinner = view.findViewById(R.id.spinner_nav);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(activity, R.array.spinner_list_item_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -138,6 +129,17 @@ public class BrowseFilesFragment extends Fragment {
         openStorages();
 
         return view;
+    }
+
+    private void initEnableSelection(View v) {
+        if (enableSelection) {
+            recyclerAdapter.openSelected();
+        } else {
+            openFiles(currentDir.getAbsolutePath(), true);
+            ((ImageView) v).setImageResource(R.drawable.ic_baseline_open_in_browser_black_24);
+            enableSelection = true;
+            Toast.makeText(activity,R.string.select_multiple_enabled,Toast.LENGTH_LONG).show();
+        }
     }
 
     private void openStorages() {
@@ -385,6 +387,8 @@ public class BrowseFilesFragment extends Fragment {
                 Uri uri = Uri.fromFile(new File(selectedFiles.get(0)));
                 MiscUtils.openDoc(uri, activity, selectedFiles);
                 FirebaseUtils.analyticsFileOpen(activity,"FILE_OPEN_MANY_BROWSE", uri);
+            } else {
+                Toast.makeText(activity,R.string.select_at_least_one_file,Toast.LENGTH_LONG).show();
             }
         }
 
@@ -420,7 +424,9 @@ public class BrowseFilesFragment extends Fragment {
                         currentDir = data[position];
                         refreshFiles();
                     } else {
-                        if (!checkboxVisible) {
+                        if (checkboxVisible) {
+                            checkBox.setChecked(!checkBox.isChecked());
+                        } else {
                             Uri uri = Uri.fromFile(data[position]);
                             MiscUtils.openDoc(uri, activity, selectedFiles);
                             FirebaseUtils.analyticsFileOpen(activity,"FILE_OPEN_OPEN_MANY_BROWSE",uri);
@@ -428,7 +434,10 @@ public class BrowseFilesFragment extends Fragment {
                     }
                 };
                 itemView.setOnClickListener(listener);
-
+                itemView.setOnLongClickListener(view -> {
+                    initEnableSelection(activity.findViewById(R.id.selectMultiple));
+                    return true;
+                });
             }
         }
     }

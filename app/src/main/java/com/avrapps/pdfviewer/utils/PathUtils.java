@@ -1,5 +1,7 @@
 package com.avrapps.pdfviewer.utils;
 
+import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.AUTO_IMPORT_FILES;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -18,8 +20,6 @@ import java.io.InputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Date;
-
-import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.AUTO_IMPORT_FILES;
 
 
 public class PathUtils {
@@ -72,8 +72,10 @@ public class PathUtils {
         } catch (Exception ex) {
             logs.append("Error getting Filename.\n").append(getExceptionString(ex));
         }
+        File preDestination = null;
         File destinationPath = new File(folder, getFileName);
         if (destinationPath.exists()) {
+            preDestination = new File(destinationPath.getAbsolutePath());
             destinationPath = new File(folder, new Date().getTime() + "_" + getFileName);
         }
         InputStream is = null;
@@ -86,7 +88,6 @@ public class PathUtils {
             do {
                 bos.write(buf);
             } while (is.read(buf) != -1);
-            return destinationPath;
         } catch (IOException e) {
             e.printStackTrace();
             logs.append(getExceptionString(e));
@@ -99,7 +100,18 @@ public class PathUtils {
                 logs.append(getExceptionString(e));
             }
         }
-        return null;
+        if (preDestination != null &&
+                preDestination.length()
+                        == destinationPath.length()) {
+            preDestination.delete();
+            destinationPath.renameTo(preDestination);
+            return preDestination;
+        }
+        if(preDestination!=null) {
+            System.out.println("preDestination.length():" + preDestination.length());
+        }
+        System.out.println("destinationPath.length():" + destinationPath.length());
+        return destinationPath;
     }
 
     private static String getExceptionString(Exception e) {
@@ -184,7 +196,7 @@ public class PathUtils {
             String fileName = getFileName(uri, context);
             int i = fileName.lastIndexOf('.');
             if (i > 0) {
-                return fileName.substring(i+1).toUpperCase();
+                return fileName.substring(i + 1).toUpperCase();
             }
         } catch (Exception ignored) {
         }

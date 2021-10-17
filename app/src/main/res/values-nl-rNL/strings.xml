@@ -184,7 +184,8 @@
     <string name="blank"></string>
     <string name="download">Opslaan in\ndocumenten</string>
     <string name="delete">Verwijderen</string>
-    <string name="select_atleast_one_file">Selecteer tenminste 2 bestand</string>
+    <string name="select_at_least_one_file">Selecteer ten minste 1 bestand</string>
+    <string name="select_at_least_two_files">Selecteer minimaal 2 bestanden</string>
     <string name="entr_password_desc">Voer het wachtwoord in voor de geselecteerde PDF-bestand. Druk op annuleren om een ander bestand te selecteren</string>
     <string name="enter_password_title">Voer wachtwoord eigenaar in</string>
     <string name="incorrect_password">Onjuist wachtwoord. Probeer het wachtwoord opnieuw in te voeren</string>
@@ -276,4 +277,13 @@
     <string name="watermark_failed"><![CDATA[Onze software zal alleen hieronder watermerken verwijderen.\n \u25CF  Watermerken door camscanner software in het PDF-bestand.\n \u25CF Watermerken toegevoegd als aantekeningen in PDF\n \u25CF Watermarks die als Layers worden toegevoegd in PDF-pagina die niet zijn vergrendeld.\n\nWatermerken die op een andere manier zijn gemaakt worden niet door deze tool verwijderd. In de toekomst zullen we proberen meer algoritmes toe te voegen om watermerken te verwijderen.\n\nPDF-documenten kunnen een watermerk uitdrukken met behulp van een van de volgende technieken:\n \u25CF Page Graphics(zoals Page Backgrounds, Afbeeldingen enz…) ingesloten op de pagina.\n \u25CF Paginering Artefacts(koppen), Footers enz…)\n \u25CF Layer in Page(aka Optionele Content Groepen)\n \u25CF PDF aantekeningen (vergelijkbaar met andere aantekeningen zoals Strike, Hoogte, Commentaar enz…)]]></string>
     <string name="already_purchased">Al gekocht</string>
     <string name="already_purchased_desc">U heeft de app al gekocht in het verleden. We hebben uw aankoop hersteld</string>
+    <string name="rename">Hernoem bestand</string>
+    <string name="err_file_delete">Fout bij het verwijderen van het bestand</string>
+    <string name="err_file_rename">Fout bij het hernoemen van het bestand</string>
+    <string name="rename_description">Gelieve een nieuwe naam voor uw bestand in te voeren.</string>
+    <string name="file_delete_success">Bestand succesvol verwijderd</string>
+    <string name="rename_success">Bestand succesvol hernoemd</string>
+    <string name="manage_permission_description"><![CDATA[Vanaf Android 11 werden de machtigingen om bestanden op SD-kaarten te lezen door Android uitgeschakeld, tenzij expliciete toestemming werd verleend. We zullen je nu doorverwijzen naar de instellingen. Verleen ons alstublieft toestemming om de bestanden in uw opslag te lezen en te beheren om functies zoals bladeren door bestanden, PDF-bibliotheek, PDF-hulpmiddelen in te schakelen om pdf-resultaten op te slaan, enz...]]></string>
+    <string name="proceed">Doorgaan</string>
+    <string name="select_multiple_enabled">Meervoudige selectie ingeschakeld</string>
 </resources>

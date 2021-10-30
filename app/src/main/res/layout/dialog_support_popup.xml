@@ -74,17 +74,59 @@
         android:textSize="20sp"
         android:textStyle="bold"
         tools:ignore="HardcodedText" />
-    <Button
+    <TextView
         android:id="@+id/change_log"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="10dp"
-        android:background="@color/transparent"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
         android:text="Change Log"
         android:textAllCaps="false"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/github_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Github - Contribute for Project"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/report_bug_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="@color/transparent"
+        android:text="Report Bug over Email"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/help_fixing_translations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/transparent"
+        android:text="Report translation issues"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         android:textStyle="bold|italic"
         tools:ignore="HardcodedText" />
 </LinearLayout>

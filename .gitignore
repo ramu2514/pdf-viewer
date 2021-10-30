@@ -5,10 +5,8 @@
 MAVEN
 android.keystore
 build
-gradle.properties
 local.properties
 secrets.properties
-gradle/
 .DS_Store
 /build
 /captures

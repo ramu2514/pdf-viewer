@@ -285,7 +285,8 @@
     <string name="rename_description">Please into new name for your file.</string>
     <string name="file_delete_success">File deleted Successfully</string>
     <string name="rename_success">File renamed successfully</string>
-    <string name="manage_permission_description"><![CDATA[Starting Android 11, the permissions to read files in SD cards was disabled by android unless explicit permission was granted. We will now redirect you to the settings. Please grant us permissions to read & manage the files in your storage to enable features like browse files, PDF library, enable PDF Tools to Save pdf result etc...]]></string>
+    <string name="manage_permission_description"><![CDATA[Starting Android 11, the permissions to read files in SD cards was disabled by android unless explicit permission was granted. We will now redirect you to the settings. Please grant us permissions to read & manage the files in your storage to enable features like browse files, PDF library, enable PDF Tools to Save pdf result etc…]]></string>
     <string name="proceed">Proceed</string>
     <string name="select_multiple_enabled">Multiple Selection Enabled</string>
+    <string name="email_description">Type your email here… You can also report issue on Telegram.\n\n</string>
 </resources>

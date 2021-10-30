@@ -208,7 +208,8 @@ public class PageView extends ViewGroup {
         float docRelX1 = (x1 - getLeft()) / scale;
         float docRelY1 = (y1 - getTop()) / scale;
 
-        mSearchView.invalidate();
+        if (mSearchView != null)
+            mSearchView.invalidate();
 
         StructuredText result = mCore.getText();
         com.artifex.mupdf.fitz.Point a = new com.artifex.mupdf.fitz.Point(docRelX0, docRelY0);
@@ -234,7 +235,8 @@ public class PageView extends ViewGroup {
         float docRelY1 = (mSize.y - getTop()) / scale;
 
 
-        mSearchView.invalidate();
+        if (mSearchView != null)
+            mSearchView.invalidate();
 
         StructuredText result = mCore.getText();
         com.artifex.mupdf.fitz.Point a = new com.artifex.mupdf.fitz.Point(docRelX0, docRelY0);
@@ -699,7 +701,8 @@ public class PageView extends ViewGroup {
                 mPatch = new OpaqueImageView(mContext);
                 mPatch.setScaleType(ImageView.ScaleType.MATRIX);
                 addView(mPatch);
-                mSearchView.bringToFront();
+                if (mSearchView != null)
+                    mSearchView.bringToFront();
             }
 
             CancellableTaskDefinition<Void, Void> task;

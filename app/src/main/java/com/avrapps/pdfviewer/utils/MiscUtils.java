@@ -1,5 +1,9 @@
 package com.avrapps.pdfviewer.utils;
 
+import static android.provider.MediaStore.VOLUME_EXTERNAL;
+import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.APP_THEME_IDS;
+import static com.avrapps.pdfviewer.utils.PathUtils.TAG;
+
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -45,10 +49,6 @@ import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Objects;
-
-import static android.provider.MediaStore.VOLUME_EXTERNAL;
-import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.APP_THEME_IDS;
-import static com.avrapps.pdfviewer.utils.PathUtils.TAG;
 
 public class MiscUtils {
     public static void copyTextToClipBoard(Context context, String textCopied) {
@@ -117,7 +117,7 @@ public class MiscUtils {
                     ", Segments: " + data.getPathSegments().toString();
             FirebaseUtils.analyticsSimpleCount(activity, "FAIL_OPEN_PDF_"+data.getScheme() );
             Toast.makeText(activity, R.string.cant_load_file, Toast.LENGTH_LONG).show();
-            MiscUtils.sendBugEmail(activity, log + uri);
+            MiscUtils.sendBugEmail(activity, log + uri, "avrapps.reports@gmail.com");
         }
     }
 
@@ -128,10 +128,10 @@ public class MiscUtils {
         PrintWriter pw = new PrintWriter(sw);
         e.printStackTrace(pw);
         ex1.printStackTrace(pw);
-        sendBugEmail(activity, sw.toString());
+        sendBugEmail(activity, sw.toString(), "avrapps.reports@gmail.com");
     }
 
-    public static void sendBugEmail(Context activity, String s) {
+    public static void sendBugEmail(Context activity, String s, String emailAddress) {
         StringWriter sw = new StringWriter();
         sw.append(s);
         String manufacturer = Build.MANUFACTURER;
@@ -141,7 +141,7 @@ public class MiscUtils {
         String stacktrace = sw.toString();
         final Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setType("plain/text");
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"avrapps.reports@gmail.com"});
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{emailAddress});
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, activity.getString(R.string.email_bug_subject));
         emailIntent.putExtra(Intent.EXTRA_TEXT, stacktrace);
 

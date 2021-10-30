@@ -21,4 +21,8 @@
 -keepattributes SourceFile,LineNumberTable
 -keepattributes EnclosingMethod
 
--keep,includedescriptorclasses public class com.google.android.ads.nativetemplates { *; }
+# Fix Verify Error Issues on image to pdf tool.
+-keepnames class com.itextpdf.layout.** {*;}
+
+#No longer have Ads
+#-keep,includedescriptorclasses public class com.google.android.ads.nativetemplates { *; }

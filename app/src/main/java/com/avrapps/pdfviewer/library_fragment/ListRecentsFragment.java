@@ -196,8 +196,10 @@ public class ListRecentsFragment extends Fragment {
                 LastOpenDocuments doc = data.get(intPosition);
                 filePaths.add(doc.getPathToDocument());
             }
-            Uri uri = Uri.fromFile(new File(filePaths.get(0)));
-            MiscUtils.openDoc(uri, activity, filePaths);
+            if (filePaths.size() > 0) {
+                Uri uri = Uri.fromFile(new File(filePaths.get(0)));
+                MiscUtils.openDoc(uri, activity, filePaths);
+            }
             selectedFiles.clear();
         }
 

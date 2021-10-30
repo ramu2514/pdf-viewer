@@ -1,13 +1,28 @@
+## Version 3.85 (90029)
+
+* Fixed Bug - Fixed crashes in recent/favourites when some action is selected without selecting any
+  files
+* Fixed Bug - Fixed Image to pdf tool crashes due to pro guard issues. Todo: Identify the root cause
+  and re-enable obfuscation on classnames to reduce APK size
+* Fixed Bug - Fixed crashes during app close if search bar operations are in progress during app
+  close.
+* Enhancements - Compressed few images to avenge apk size increase due to deobfuscation.
+* Enhancements - Added github link in help.support
+
 ## Version 3.84 (90028)
-* Fixed bug - Earlier PDF options like compress pdf etc... were shown on any file like jpg, epub etc... Now its fixed
+
+* Fixed bug - Earlier PDF options like compress pdf etc... were shown on any file like jpg, epub
+  etc... Now its fixed
 * Fixed bug - Prevent creation of multiple entries for same file in recent files
-* Fixed bug - Exit viewer on reading mode not showing buttons on App earlier. Fixed now. 
+* Fixed bug - Exit viewer on reading mode not showing buttons on App earlier. Fixed now.
 * Enhancement - Image to PDF minimum select 2 files was removed. Now you can convert 1 image to PDF
-* Enhancement - Share option was added for non pdf  files
-* Enhancement - Print option was added for image  files
+* Enhancement - Share option was added for non pdf files
+* Enhancement - Print option was added for image files
 * Enhancement - Permissions popup dialog for Android 11 devices was improved
-* Enhancement - Improved multi selection experience on Tools & recent files/favorites. Now just tap on item to select the line
-* Enhancement - 9 new languages support- Afrikaans, Catalan,  Hungarian, Korean, Norwegian, Telugu, Turkish, Vietnamese, Chinese (Taiwan)
+* Enhancement - Improved multi selection experience on Tools & recent files/favorites. Now just tap
+  on item to select the line
+* Enhancement - 9 new languages support- Afrikaans, Catalan, Hungarian, Korean, Norwegian, Telugu,
+  Turkish, Vietnamese, Chinese (Taiwan)
 * Enhancement - Enabled Split pdf option from document viewer options
 * New Feature - Added option to rename file
 
@@ -78,7 +93,6 @@ Basic support added for TV
   - Delete pages from PDF 
   - Convert Images to PDF
   - Merge Multiple PDFs
-  
 
 ## Prior Versions of 3.5
 All change logs were lost in space and time :)

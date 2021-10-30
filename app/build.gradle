@@ -37,8 +37,8 @@ android {
     defaultConfig {
         minSdkVersion 16 //change to 18 while running fastlane screengrab
         targetSdkVersion 31
-        versionName '3.84'
-        versionCode 90028
+        versionName '3.85'
+        versionCode 90029
         ndkVersion '21.3.6528147'
         multiDexEnabled true
 

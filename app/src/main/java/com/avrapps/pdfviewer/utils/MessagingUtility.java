@@ -192,7 +192,19 @@ public class MessagingUtility {
             dialog.dismiss();
         });
         view.findViewById(R.id.change_log).setOnClickListener(v -> {
-            showWebviewDialog(mContext,"file:///android_asset/change_log.html");
+            showWebviewDialog(mContext, "file:///android_asset/change_log.html");
+            dialog.dismiss();
+        });
+        view.findViewById(R.id.report_bug_email).setOnClickListener(v -> {
+            openSupportLink(mContext, v);
+            dialog.dismiss();
+        });
+        view.findViewById(R.id.github_link).setOnClickListener(v -> {
+            openSupportLink(mContext, v);
+            dialog.dismiss();
+        });
+        view.findViewById(R.id.help_fixing_translations).setOnClickListener(v -> {
+            openSupportLink(mContext, v);
             dialog.dismiss();
         });
         dialog.show();
@@ -209,6 +221,12 @@ public class MessagingUtility {
             MiscUtils.viewInBrowser(context, "https://www.youtube.com/channel/UCpaFI1o4vvgK9vK5ckpGOSA/featured");
         } else if (id == R.id.telegram) {
             MiscUtils.viewInBrowser(context, "https://t.me/joinchat/RkQRo-ZwZFmJpdLj");
+        } else if (id == R.id.help_fixing_translations) {
+            MiscUtils.viewInBrowser(context, "https://crowdin.com/project/pdf-viewer-lite/settings#translations");
+        } else if (id == R.id.github_link) {
+            MiscUtils.viewInBrowser(context, "https://github.com/ramu2514/pdf-viewer");
+        } else if (id == R.id.report_bug_email) {
+            MiscUtils.sendBugEmail(context, context.getString(R.string.email_description), "avrapps.store@gmail.com");
         }
     }
 }

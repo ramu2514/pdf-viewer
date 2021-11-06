@@ -8,7 +8,6 @@
     <string name="remind_later">"Remind Later"</string>
     <string name="rating_text">If you like our application, Please rate our application in play store.\n\nThank you for your support\nAVR Apps</string>
     <string name="dialog_button_no">Don\'t show again.</string>
-    <string name="recently_opened_documents">Recent</string>
 
     <string name="cancel">Cancel</string>
     <string name="cannot_open_document">Cannot open document</string>
@@ -39,14 +38,8 @@
     <string name="pick_file">Pick File</string>
     <string name="no_recent_files">No recently opened files. Pick a file to view</string>
     <string name="cant_load_file">Could not load file. We request you for the logs. Please email error report to us to fix the issue</string>
-    <string name="support_us">Support Us</string>
     <string name="share_app">Share App</string>
-    <string name="share_our_app_body">Share our app to your friends</string>
-    <string name="rate_app">Rate App</string>
-    <string name="rate_app_body">Rate us on play store</string>
     <string name="more_apps">More Apps</string>
-    <string name="more_apps_body">Support us by installing more of our Apps…</string>
-    <string name="allowed_files">Allowed Files</string>
     <string name="show_hidden_files">Hidden Files</string>
     <string name="share">Share</string>
     <string name="print">Print</string>
@@ -59,10 +52,6 @@
     <string name="file_Size">File Size</string>
     <string name="navigation_help">Navigation Help</string>
     <string name="bookmarks">Bookmarks</string>
-    <string name="delete_recent">This will just remove the entry from Recent File List. Your file will be safe in your storage.\n\nDo you want to proceed?</string>
-    <string name="delete_recent_title">Remove From Recent Items</string>
-    <string name="delete_faviorie_list">Remove From Favorites</string>
-    <string name="delete_favorite">This will just remove the entry from Favorites List. Your file will be safe in your storage. \n\nDo you want to proceed?</string>
     <string name="no_faviorites">No favorites added. PLease make one after opening the file</string>
     <string name="mark_favorite">Mark as Favorite</string>
     <string name="unmark_favorite">Remove Favorite</string>
@@ -73,21 +62,15 @@
     <string name="copy">Copy</string>
     <string name="open_files">Open Files</string>
     <string name="settings">Settings</string>
-    <string name="more">More</string>
     <string name="no_supported_files_in_the_folder">No supported files in the folder</string>
-    <string name="browse_files_from_your_device">Browse files from your device (Recommended)</string>
     <string name="browse_files">Browse Files</string>
     <string name="annotation_not_supported">Annotation not supported</string>
-    <string name="select_multiple">Select Multiple</string>
     <string name="open">OPEN</string>
     <string name="title_select_storage">Choose Storage</string>
     <string name="title_select_files">Select Files</string>
     <string name="other_files">Other Selected FIles</string>
     <string name="type_your_reply">Type your Comment</string>
     <string name="reply">Comment</string>
-    <string name="settings_bg_color_dialog">Pick Color</string>
-    <string name="settings_default_color_confirm">Confirm</string>
-    <string name="settings_bg_color_confirm">Confirm</string>
     <string name="pdf_author_title">Author Name for PDF Annotations</string>
     <string name="dark_theme">Dark Theme for App</string>
     <string name="grand_access_to_sdcard">Grand Access to SDCARD</string>
@@ -118,8 +101,6 @@
     <string name="hours_ago">%d hours ago</string>
     <string name="yesterday">Yesterday</string>
     <string name="days_ago">%d days ago</string>
-    <string name="document_not_supported">Unsupported Document Format</string>
-    <string name="unsuppoted_format">Unsupported Document Format</string>
     <string name="selected"> Selected</string>
     <string name="recent_files">Recent Files</string>
     <string name="favorites">Your Favorites</string>
@@ -134,7 +115,6 @@
     <string name="epub_library_title">EPUB</string>
     <string name="tiff_library_title">TIFF</string>
     <string name="xps_library_title">XPS/CBZ/FB2</string>
-    <string name="yes">Yes</string>
     <string name="incorrct_path">Incorrect path Chosen</string>
     <string name="select_proper_path_desc"><![CDATA[Please select root folder of SDCARD %s.\nWith out this permission you can\'t add edit PDF & annotations/form filling will not work]]></string>
     <string name="dont_Show_again">Do not show again</string>
@@ -173,16 +153,13 @@
     <string name="pick_files_desc">Pick files using Android File Picker from Drive,Photos, Other Apps…</string>
     <string name="select_pdf">Select File</string>
     <string name="no_file_chosen">No file Selected</string>
-    <string name="dialog_title_permission_denied">Permission Denied</string>
     <string name="file_selected">File Selected:</string>
     <string name="destination_folder">Destination Folder:</string>
-    <string name="please_wait">Please wait until the process is completed</string>
     <string name="set_password">Set Password</string>
     <string name="share_file">Share\nFile</string>
     <string name="view_file">View\nFile</string>
     <string name="home">Home</string>
     <string name="history">History</string>
-    <string name="others">Settings/\nHelp</string>
     <string name="blank" />
     <string name="download">Save To\nDocuments</string>
     <string name="delete">Delete</string>
@@ -191,8 +168,6 @@
     <string name="entr_password_desc">Enter password for the PDF you have selected. Press cancel to select another file</string>
     <string name="enter_password_title">Enter Owner Password</string>
     <string name="incorrect_password">Incorrect Password. Try entering password again</string>
-    <string name="file_Stored">File stored to Documents. </string>
-    <string name="exception_storing">Exception Storing file to Documents</string>
     <string name="share_pdf">Sharing PDF.</string>
     <string name="pdf_generated">PDF Generated using PDFTools. </string>
     <string name="page_">Page : </string>
@@ -247,9 +222,7 @@
     <string name="error_saving_pdf">Exception Storing file to Documents</string>
     <string name="file_saved_to_docs">File stored to Documents. </string>
     <string name="extra_details">Destination File: %s\nDestination Size: %s %s</string>
-    <string name="check_out_app">Hey check out this interesting app.</string>
     <string name="select_pages">Select Pages</string>
-    <string name="create_pdf">Create PDF</string>
     <string name="delete_all">Delete All</string>
     <string name="delete_help">This clears all files which are imported to the PDF Viewer Lite folder from the other apps as well as the entries associated with it from recent files, favorites.</string>
     <string name="clear">Clear</string>
@@ -271,7 +244,6 @@
     <string name="text_viewer">Text Viewer</string>
     <string name="html_viewer">HTML Viewer</string>
     <string name="cant_open_file">Could not open/read file</string>
-    <string name="set_remove_password">Password Set/Remove</string>
     <string name="remove_watermark">Remove Watermark</string>
     <string name="watermark_remove_success">Watermark removed Successfully</string>
     <string name="error_watermark_remove">Error removing watermark.</string>
@@ -289,4 +261,26 @@
     <string name="proceed">Proceed</string>
     <string name="select_multiple_enabled">Multiple Selection Enabled</string>
     <string name="email_description">Type your email here… You can also report issue on Telegram.\n\n</string>
+    <string name="install_module"><![CDATA[<h2>Feature not present</h2><p>This feature is not included into the app by default, as we want to keep this a light weight application(&lt;10MB) which can run even in low storage & old generation devices. <br>We need to add these features to your device as additional modules. <a href=\"https://developer.android.com/codelabs/on-demand-dynamic-delivery#0\">Learn more about ondemand module here</a>.</p><b>Installing this feature Brings you the following features.</b><br> * Document Scanner - Turn your phone camera to a document scanner. Backup them up to your google drive.<br> * Sync your Favorites to Drive - Mark your important documents as favorite. Turn on backup in settings & link your google drive account.<br><br><br>To add this feature you require internet connection. Google Play store will download ~6MB of resources.]]></string>
+    <string name="cant_start_feature">Could not start the feature</string>
+    <string name="help_support"><![CDATA[Help & Support]]></string>
+    <string name="donate_us_desc">Like our app? Help us a little by donating us</string>
+    <string name="donate_us">Donate Us</string>
+    <string name="rate_us_description">Encourage us by rating the app in Play Store</string>
+    <string name="follow_us_description">Follow us and Stay Connected</string>
+    <string name="report_issues_description">Contribute us by helping/reporting issues</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="change_log">Change Log</string>
+    <string name="github_contribute">Github - Contribute for Project</string>
+    <string name="report_bug">Report Bug over Email</string>
+    <string name="report_translation">Report translation issues</string>
+    <string name="scan">Scan</string>
+    <string name="title_documentscannerandsync">Document Scanner &amp; Backup</string>
+    <string name="doc_scanner">Document Scanner</string>
+    <string name="backup_settings">Backup Settings</string>
+    <string name="backup_settings_description">Click to access the settings to backup your favorite PDF and scanned documents to drive.</string>
+    <string name="module_download_progress">Progress : %s \%</string>
+    <string name="module_failed_no_network">Could not download as network is not available</string>
+    <string name="module_failed">Could not download module due to some Error. Error code: %s</string>
+
 </resources>

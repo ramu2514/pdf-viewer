@@ -4,15 +4,8 @@
     <dimen name="ambilwarna_hsvWidth">240dp</dimen>
     <dimen name="ambilwarna_hueWidth">30dp</dimen>
     <dimen name="ambilwarna_spacer">8dp</dimen>
-    <dimen name="icon_size">24dp</dimen>
 
 
     <!--Native ads-->
-    <dimen name="gnt_default_margin">10dp</dimen>
-    <dimen name="gnt_text_size_small">12sp</dimen>
-    <dimen name="gnt_text_size_large">15sp</dimen>
-    <dimen name="gnt_ad_indicator_width">25dp</dimen>
-    <dimen name="gnt_ad_indicator_height">20dp</dimen>
-    <dimen name="gnt_ad_indicator_text_size">10sp</dimen>
     <integer name="grid_columns">3</integer>
 </resources>

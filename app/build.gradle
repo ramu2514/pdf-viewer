@@ -13,6 +13,7 @@ dependencies {
     implementation 'com.itextpdf:itext7-core:7.1.14'
     implementation 'com.madgag.spongycastle:core:1.58.0.0'
     implementation 'com.google.firebase:firebase-core:19.0.2'
+    implementation 'com.google.android.play:core:1.10.2'
 
     androidTestImplementation 'tools.fastlane:screengrab:2.1.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
@@ -74,6 +75,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    dynamicFeatures = [':DocumentScannerAndSync']
 }
 
 Properties props = new Properties()

@@ -1,5 +1,7 @@
 package com.avrapps.pdfviewer.utils;
 
+import static com.avrapps.pdfviewer.settings_fragment.constants.AppConstants.PROVACY_POLICY;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.preference.PreferenceManager;
 import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +21,8 @@ import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -160,7 +165,7 @@ public class MessagingUtility {
             dialog.dismiss();
             callback.onButtonClick("");
         });
-        if(shouldShownegative) {
+        if (shouldShownegative) {
             alert.setNegativeButton(R.string.dismiss, (dialog, which) -> dialog.dismiss());
         }
         alert.setCancelable(false);
@@ -176,7 +181,23 @@ public class MessagingUtility {
         alert.setPositiveButton(R.string.close, (dialog, i) -> dialog.dismiss());
         AlertDialog dialog = alert.create();
         view.findViewById(R.id.twitter).setOnClickListener(v -> {
+            showBuyApplicationDailog(mContext);
+            dialog.dismiss();
+        });
+        ((RatingBar) (view.findViewById(R.id.rating))).setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> {
+            SharingUtils.rateApp(mContext, mContext.getPackageName());
+            dialog.dismiss();
+        });
+        view.findViewById(R.id.donate_us).setOnClickListener(v -> {
             openSupportLink(mContext, v);
+            dialog.dismiss();
+        });
+        view.findViewById(R.id.share_it).setOnClickListener(v -> {
+            SharingUtils.shareApp(mContext);
+            dialog.dismiss();
+        });
+        view.findViewById(R.id.more_apps).setOnClickListener(v -> {
+            SharingUtils.openDeveloperPage(mContext);
             dialog.dismiss();
         });
         view.findViewById(R.id.facebook).setOnClickListener(v -> {
@@ -195,6 +216,10 @@ public class MessagingUtility {
             showWebviewDialog(mContext, "file:///android_asset/change_log.html");
             dialog.dismiss();
         });
+        view.findViewById(R.id.privacy_policy).setOnClickListener(v -> {
+            showPrivacyPolicyDialog(mContext);
+            dialog.dismiss();
+        });
         view.findViewById(R.id.report_bug_email).setOnClickListener(v -> {
             openSupportLink(mContext, v);
             dialog.dismiss();
@@ -208,6 +233,18 @@ public class MessagingUtility {
             dialog.dismiss();
         });
         dialog.show();
+    }
+
+    private static void showPrivacyPolicyDialog(Activity mContext) {
+        AlertDialog.Builder alert = new AlertDialog.Builder(mContext);
+        TextView textView = new TextView(mContext);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+        textView.setText(Html.fromHtml(PROVACY_POLICY));
+        textView.setPadding(25, 25, 25, 25);
+        alert.setCancelable(false);
+        alert.setView(textView);
+        alert.setPositiveButton(R.string.close, (dialog, i) -> dialog.dismiss());
+        alert.show();
     }
 
 

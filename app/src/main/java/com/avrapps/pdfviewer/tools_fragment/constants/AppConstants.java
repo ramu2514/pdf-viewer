@@ -36,6 +36,7 @@ public class AppConstants {
             new Tool(R.string.remove_watermark, R.drawable.remove_watermark, R.color.colorPrimaryDarkYellow, 11)
     );
     public static final HashMap<Integer, Integer> TOOL_NAMES = getToolNames();
+    public static final HashMap<Integer, String> TOOL_NAME_CODES = getToolNameIdentifier();
     public static final LinkedHashMap<String, String> SUPPORTED_LANGUAGES = getSupportedLanguages();
 
     private static HashMap<Integer, Integer> getToolNames() {
@@ -55,8 +56,25 @@ public class AppConstants {
         return toolNames;
     }
 
+    private static HashMap<Integer, String> getToolNameIdentifier() {
+        HashMap<Integer, String> toolNames = new HashMap<>();
+        toolNames.put(TOOL_COMPRESS, "COMPRESS");
+        toolNames.put(TOOL_PROTECT, "PROTECT");
+        toolNames.put(TOOL_UNLOCK_PDF, "UNLOCK_PDF");
+        toolNames.put(TOOL_DELETE_PAGES, "DELETE_PAGES");
+        toolNames.put(TOOL_IMAGE_TO_PDF, "IMAGE_TO_PDF");
+        toolNames.put(TOOL_REORDER_PAGES, "REORDER_PAGES");
+        toolNames.put(TOOL_WATERMARK_PDF, "WATERMARK_PDF");
+        toolNames.put(TOOL_SPLIT_PDF, "SPLIT_PDF");
+        toolNames.put(TOOL_MERGE_PDF, "MERGE_PDF");
+        toolNames.put(TOOL_PDF_TO_IMAGES, "PDF_TO_IMAGES");
+        toolNames.put(TOOL_ROTATE_PAGES, "ROTATE_PAGES");
+        toolNames.put(TOOL_REMOVE_WATERMARK, "REMOVE_WATERMARK");
+        return toolNames;
+    }
+
     private static LinkedHashMap<String, String> getSupportedLanguages() {
-        LinkedHashMap<String , String> languageNameToLocale = new LinkedHashMap<>();
+        LinkedHashMap<String, String> languageNameToLocale = new LinkedHashMap<>();
         languageNameToLocale.put("Device Default", "device");
         languageNameToLocale.put("English", "en_US");
         languageNameToLocale.put("Afrikaans", "af_ZA");

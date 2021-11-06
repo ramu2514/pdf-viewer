@@ -99,13 +99,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawablePadding="8dp"
-        android:drawableTint="@color/black"
         android:visibility="gone"
         android:padding="10dp"
         android:text="@string/speak_out_visible_page"
         android:textColor="@color/black"
         app:drawableLeftCompat="@drawable/ic_baseline_play_arrow_24"
-        />
+        app:drawableTint="@color/black" />
 
     <TextView
         android:id="@+id/tv_bm_compress_pdf"
@@ -114,11 +113,11 @@
         android:layout_height="wrap_content"
         android:drawablePadding="8dp"
         android:visibility="gone"
-        android:drawableTint="@color/black"
         android:padding="10dp"
         android:text="@string/compress_pdf"
         android:textColor="@color/black"
-        app:drawableLeftCompat="@drawable/ic_compress_pdf" />
+        app:drawableLeftCompat="@drawable/ic_compress_pdf"
+        app:drawableTint="@color/black" />
 
     <TextView
         android:id="@+id/tv_split_pdf"
@@ -126,12 +125,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawablePadding="8dp"
-        android:drawableTint="@color/black"
         android:padding="10dp"
         android:text="@string/split_pdf"
         android:textColor="@color/black"
         android:visibility="gone"
-        app:drawableLeftCompat="@drawable/ic_split_pdf" />
+        app:drawableLeftCompat="@drawable/ic_split_pdf"
+        app:drawableTint="@color/black" />
 
     <!-- protect/unprotect single -->
     <TextView
@@ -141,12 +140,11 @@
         android:layout_height="wrap_content"
         android:drawablePadding="8dp"
         android:visibility="gone"
-        android:drawableTint="@color/black"
         android:padding="10dp"
         android:text="@string/protect_pdf"
         android:textColor="@color/black"
         app:drawableLeftCompat="@drawable/ic_add_password"
-        />
+        app:drawableTint="@color/black" />
 
     <TextView
         android:id="@+id/tv_bm_remove_password"
@@ -155,11 +153,11 @@
         android:layout_height="wrap_content"
         android:drawablePadding="8dp"
         android:visibility="gone"
-        android:drawableTint="@color/black"
         android:padding="10dp"
         android:text="@string/remove_password"
         android:textColor="@color/black"
-        app:drawableLeftCompat="@drawable/ic_remove_password" />
+        app:drawableLeftCompat="@drawable/ic_remove_password"
+        app:drawableTint="@color/black" />
 
     <TextView
         android:id="@+id/tv_bm_delete_pages"
@@ -167,13 +165,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawablePadding="8dp"
-        android:drawableTint="@color/black"
         android:visibility="gone"
         android:padding="10dp"
         android:text="@string/delete_pages"
         android:textColor="@color/black"
         app:drawableLeftCompat="@drawable/ic_delete_pages"
-        />
+        app:drawableTint="@color/black" />
 
     <TextView
         android:id="@+id/rotate_page"
@@ -181,13 +178,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawablePadding="8dp"
-        android:drawableTint="@color/black"
         android:visibility="gone"
         android:padding="10dp"
         android:text="@string/rotate_this_page"
         android:textColor="@color/black"
         app:drawableLeftCompat="@drawable/ic_baseline_rotate_right_24"
-        />
+        app:drawableTint="@color/black" />
 
     <TextView
         android:id="@+id/tv_bm_pdf_to_images"
@@ -196,11 +192,10 @@
         android:layout_height="wrap_content"
         android:drawablePadding="8dp"
         android:visibility="gone"
-        android:drawableTint="@color/black"
         android:padding="10dp"
         android:text="@string/extract_pages"
         android:textColor="@color/black"
         app:drawableLeftCompat="@drawable/ic_merge_pdf"
-        />
+        app:drawableTint="@color/black" />
 
 </LinearLayout>

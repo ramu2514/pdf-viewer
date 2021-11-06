@@ -65,7 +65,7 @@
             android:background="?android:attr/selectableItemBackground"
             android:drawableTop="@drawable/ic_apps_black_24dp"
             android:onClick="openOthersFragment"
-            android:text="@string/more" />
+            android:text="@string/scan" />
 
     </LinearLayout>
 

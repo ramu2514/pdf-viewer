@@ -158,7 +158,7 @@ public class FilesListFragment extends Fragment {
         ArrayList<File> data, original;
         Drawable pdfIcon, epubIcon, tifIcon, xpsIcon, cbzIcon, fb2Icon;
         private boolean checkboxVisible;
-        private ArrayList<String> selectedFiles = new ArrayList<>();
+        private final ArrayList<String> selectedFiles = new ArrayList<>();
 
         FilesListRecycler(Context context, ArrayList<File> data, boolean selection) {
             this.mInflater = LayoutInflater.from(context);

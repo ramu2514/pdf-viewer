@@ -1,5 +1,8 @@
 package com.avrapps.pdfviewer.utils;
 
+import static android.content.Context.USB_SERVICE;
+import static android.os.Build.VERSION.SDK_INT;
+
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -34,9 +37,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
-
-import static android.content.Context.USB_SERVICE;
-import static android.os.Build.VERSION.SDK_INT;
 
 public class StorageUtils {
 
@@ -336,8 +336,9 @@ public class StorageUtils {
     }
 
     public static class StorageDirectoryParcelable {
-        private String path, name;
-        private int icon;
+        private final String path;
+        private final String name;
+        private final int icon;
 
         public StorageDirectoryParcelable(String path, String name, int icon) {
             this.path = path;

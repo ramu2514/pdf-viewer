@@ -2,10 +2,10 @@ package com.avrapps.pdfviewer.tools_fragment.data;
 
 public class Tool {
 
-    private int toolName;
+    private final int toolName;
     private int drawable;
-    private int background;
-    private int operationCode;
+    private final int background;
+    private final int operationCode;
 
     public Tool(int toolName, int drawable, int background, int operationCode) {
         this.toolName = toolName;

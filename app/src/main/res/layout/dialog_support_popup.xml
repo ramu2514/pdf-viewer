@@ -1,132 +1,285 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/telegram"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
-        android:background="#36afe2"
-        android:drawableStart="@drawable/ic_telegram"
-        android:drawablePadding="10dp"
-        android:gravity="start"
-        android:padding="10dp"
-        android:text="Telegram"
-        android:textAllCaps="false"
+        android:background="?attr/readerControls"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/help_support"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="bold"
-        tools:ignore="HardcodedText" />
-    <Button
-        android:id="@+id/youtube"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
-        android:background="#CB2027"
-        android:drawableStart="@drawable/ic_youtube"
-        android:drawablePadding="10dp"
-        android:gravity="start"
-        android:padding="10dp"
-        android:text="Youtube"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:ignore="HardcodedText" />
+        android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/twitter"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
-        android:background="#55acee"
-        android:drawableStart="@drawable/ic_twitter"
-        android:drawablePadding="10dp"
-        android:gravity="start"
-        android:padding="10dp"
-        android:text="Twitter"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:ignore="HardcodedText" />
-    <Button
-        android:id="@+id/facebook"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
-        android:background="#4267B2"
-        android:drawableStart="@drawable/ic_facebook"
-        android:drawablePadding="10dp"
-        android:gravity="start"
-        android:padding="10dp"
-        android:text="Facebook"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:ignore="HardcodedText" />
-    <TextView
-        android:id="@+id/change_log"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="0dp"
-        android:text="Change Log"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        tools:ignore="HardcodedText" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/github_link"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Github - Contribute for Project"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        tools:ignore="HardcodedText" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/report_bug_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="0dp"
-        android:background="@color/transparent"
-        android:text="Report Bug over Email"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        tools:ignore="HardcodedText" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="@string/donate_us_desc"
+                android:textColor="@color/black" />
 
-    <TextView
-        android:id="@+id/help_fixing_translations"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/transparent"
-        android:text="Report translation issues"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        tools:ignore="HardcodedText" />
+            <Button
+                android:id="@+id/donate_us"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/transparent"
+                android:text="@string/donate_us"
+                android:textColor="@color/color_accent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/grey" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/rate_us_description"
+                android:textColor="@color/black" />
+
+            <RatingBar
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:isIndicator="false"
+                android:numStars="5"
+                android:stepSize="0.1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/share_it"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawablePadding="8dp"
+                        android:text="@string/share_app"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textStyle="bold|italic"
+                        app:drawableLeftCompat="@drawable/ic_share_black_24dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/more_apps"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/more_apps"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textStyle="bold|italic"
+                        app:drawableLeftCompat="@drawable/ic_apps_black_24dp" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/grey" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="@string/follow_us_description"
+                android:textColor="@color/black" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/telegram"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="#36afe2"
+                    android:drawableStart="@drawable/ic_telegram"
+                    android:drawablePadding="20dp"
+                    android:gravity="start"
+                    android:padding="6dp"
+                    android:text=""
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/youtube"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="#CB2027"
+                    android:drawableStart="@drawable/ic_youtube"
+                    android:gravity="start"
+                    android:padding="6dp"
+                    android:text=""
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/twitter"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="#55acee"
+                    android:drawableStart="@drawable/ic_twitter"
+                    android:padding="6dp"
+                    android:text=""
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/facebook"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="#4267B2"
+                    android:drawableStart="@drawable/ic_facebook"
+                    android:padding="6dp"
+                    android:text=""
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/grey" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="@string/report_issues_description"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/github_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="@string/github_contribute"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/report_bug_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="0dp"
+                android:background="@color/transparent"
+                android:text="@string/report_bug"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/help_fixing_translations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@color/transparent"
+                android:text="@string/report_translation"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/grey" />
+
+            <TextView
+                android:id="@+id/change_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="0dp"
+                android:text="@string/change_log"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/privacy_policy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="0dp"
+                android:text="@string/privacy_policy"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>

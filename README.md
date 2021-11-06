@@ -52,9 +52,9 @@ https://itextpdf.com/en/how-buy/agpl-license
 https://medium.com/androiddevelopers/local-development-and-testing-with-fakesplitinstallmanager-57083e1840a4
 https://github.com/android/app-bundle-samples/blob/f35cfe96ae22cfb84e13057f44a2e54bba16abbd/DynamicFeatures/app/src/main/java/com/google/android/samples/dynamicfeatures/MainActivity.kt
 
-./gradlew bundleDebug java -jar ~/Downloads/bundletool-all-1.5.0.jar build-apks --overwrite
+./gradlew bundleDebug && java -jar ~/configs/bundletool-all-1.8.2.jar build-apks --overwrite
 --local-testing --bundle app/build/outputs/bundle/debug/app-debug.aab --output
-app/build/outputs/apk/debug.apks java -jar ~/Downloads/bundletool-all-1.5.0.jar install-apks --apks
+app/build/outputs/apk/debug.apks && java -jar ~/configs/bundletool-all-1.8.2.jar install-apks --apks
 app/build/outputs/apk/debug.apks
 
 ### Debugging

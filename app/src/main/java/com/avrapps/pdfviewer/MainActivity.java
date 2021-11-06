@@ -5,6 +5,7 @@ import static com.avrapps.pdfviewer.tools_fragment.constants.AppConstants.TOOL_M
 import static com.avrapps.pdfviewer.tools_fragment.constants.AppConstants.TOOL_UNLOCK_PDF;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
@@ -21,6 +22,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,8 +45,10 @@ import com.avrapps.pdfviewer.utils.MessagingUtility;
 import com.avrapps.pdfviewer.utils.MiscUtils;
 import com.avrapps.pdfviewer.utils.PermissionUtils;
 import com.avrapps.pdfviewer.utils.PreferenceUtil;
-import com.avrapps.pdfviewer.utils.SharingUtils;
 import com.avrapps.pdfviewer.viewer_fragment.DocumentFragment;
+import com.google.android.play.core.splitcompat.SplitCompat;
+import com.google.android.play.core.splitinstall.SplitInstallManager;
+import com.google.android.play.core.splitinstall.SplitInstallManagerFactory;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.io.File;
@@ -85,6 +89,12 @@ public class MainActivity extends AppCompatActivity {
             restoreOpenFragmentOnReopen(savedInstanceState);
         }
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(newBase);
+        SplitCompat.installActivity(this);
     }
 
     @Override
@@ -184,7 +194,23 @@ public class MainActivity extends AppCompatActivity {
         fragmentOpen = "OthersFragment";
         showGridListViewOption(false);
         setButtonBackground(R.id.more_button);
-        openFragment(new OthersFragment());
+        SplitInstallManager splitInstallManager = SplitInstallManagerFactory.create(this);
+        if (!splitInstallManager.getInstalledModules().contains("DocumentScannerAndSync")) {
+            openFragment(new OthersFragment());
+        } else {
+            openScannerFragment();
+        }
+    }
+
+    public void openScannerFragment() {
+        Fragment fragment;
+        try {
+            fragment = (Fragment) Class.forName("com.avrapps.documentscanner.ScanFragment").newInstance();
+        } catch (Exception e) {
+            Toast.makeText(this, R.string.cant_start_feature, Toast.LENGTH_SHORT).show();
+            return;
+        }
+        openFragment(fragment);
     }
 
     private void openFragment(Fragment f) {
@@ -278,24 +304,6 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             this.finish();
-        }
-    }
-
-    public void performAction(View view) {
-        int id = view.getId();
-        switch (id) {
-            case R.id.share_app:
-                SharingUtils.shareApp(this);
-                break;
-            case R.id.more_apps:
-                SharingUtils.openDeveloperPage(this);
-                break;
-            case R.id.rate_app:
-                SharingUtils.rateApp(this, this.getPackageName());
-                break;
-            case R.id.install_doc_scanner:
-                SharingUtils.rateApp(this, "com.avrapps.documentscanner");
-                break;
         }
     }
 

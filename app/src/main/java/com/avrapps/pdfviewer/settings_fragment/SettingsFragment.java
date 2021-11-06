@@ -11,6 +11,7 @@ import static com.avrapps.pdfviewer.tools_fragment.constants.AppConstants.SUPPOR
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.UriPermission;
 import android.os.Build;
@@ -23,6 +24,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -134,6 +136,9 @@ public class SettingsFragment extends Fragment {
                 MessagingUtility.showBuyApplicationDailog(activity);
             }
         });
+
+        LinearLayout backup_settings = view.findViewById(R.id.backup_settings);
+        backup_settings.setOnClickListener(v -> startActivity(new Intent(activity, BackupSettings.class)));
 
         SwitchCompat prefKeepScreenOn = view.findViewById(R.id.prefKeepScreenOn);
         prefKeepScreenOn.setChecked(sp.getBoolean(KEEP_SCREEN_ON, false));
